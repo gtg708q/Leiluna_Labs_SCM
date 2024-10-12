@@ -1,0 +1,275 @@
+﻿BOM ID,TYPE,PHX Class,Theoretical QTY,Location,Cycle Count,Date Counted,UOM,Theo' x Actual Variance,Past 30 MO,Past 30 FO,Manufactured-Fulfilled,Received QTY After Actual Count (From Receiving Logs Only) (+),MFG After Actual (-),rank,,,,,,Theoretical QTY,Actual Count,Date Counted,WH Remarks,Variance,Random Count,Date Counted,Subtype
+Organic Room Packaging,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Scoop-.625cc,Scoop,A,"14,000.00",,"5,000.00",09/01/24,units,180.00%,4800,4800,0,9000,6800,3,,,,,,7200,"16,411.00",10/07/24,,14.69%,"16,411.00",10/07/24,Organic Room Packaging
+Scoop-1.25cc,Scoop,C,"3,600.00",,"3,600.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,3600,"2,500.00",10/07/24,,-44.00%,"2,500.00",10/07/24,Organic Room Packaging
+PCH-5oz-TH-OrganicMonkFruit-Preprinted,container/Pouch,A,"5,200.00",,"5,200.00",09/01/24,units,0.00%,4400,4400,0,0,6400,10,,,,,,-1200,"9,550.00",10/07/24,,45.55%,"9,550.00",10/07/24,Organic Room Packaging
+PCH-5oz-NAT-OrganicMonkfruit-Preprinted,container/Pouch,A,"10,556.00",,"10,556.00",09/01/24,units,0.00%,0,0,0,0,0,39,,,,,,10556,"9,260.00",10/07/24,,-14.00%,"9,260.00",10/07/24,Organic Room Packaging
+PCH-5oz-NAT-OrganicStevia-Preprinted,container/Pouch,B,"9,700.00",,"9,700.00",09/01/24,units,0.00%,0,0,0,0,0,102,,,,,,9700,"13,343.00",10/07/24,,27.30%,"13,343.00",10/07/24,Organic Room Packaging
+PCH-5oz-PS-OrganicMonkfruit-Preprinted,Label,A,"9,700.00",,"9,700.00",09/01/24,units,0.00%,0,0,0,0,0,16,,,,,,9700,"6,400.00",10/07/24,,-51.56%,"6,400.00",10/07/24,Organic Room Packaging
+PCH-5oz-PS-OrganicStevia-Preprinted,Label,A,"8,400.00",,"8,400.00",09/01/24,units,0.00%,0,0,0,0,1700,20,,,,,,6700,"4,600.00",10/07/24,,-82.61%,"4,600.00",10/07/24,Organic Room Packaging
+PCH-5oz-WHYZ-OrganicMonkFruit-Preprinted,container/Pouch,A,0,,0,09/01/24,units,0.00%,0,0,0,0,0,13,,,,,,0,"5,350.00",10/07/24,,100.00%,"5,350.00",10/07/24,Organic Room Packaging
+Pouches,,,,,,,,,,,,,,,,,,,,,,,,,,,
+PCH-1oz-Stndup-WHITE-Matt,Container/Pouch,B,"8,000.00",,"8,000.00",09/01/24,units,0.00%,0,0,0,0,0,,,,,,,8000,"6,041.00",10/07/24,,-32.43%,"6,041.00",10/07/24,Pouches
+PCH-2oz-Stndup-WH-Matt,Container/Pouch,,"2,100.00",,"2,100.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,2100,"4,880.00",10/07/24,,56.97%,"4,880.00",10/07/24,Pouches
+PCH-4oz-Stndup-WH-Matt,container/Pouch,B,"7,400.00",,"7,400.00",09/01/24,units,0.00%,150,150,0,0,150,105,,,,,,7250,"3,863.00",10/07/24,,-91.56%,"3,863.00",10/07/24,Pouches
+PCH-5oz-Stndup-WH-Matt,Container/Pouch,C,"9,000.00",,"9,000.00",09/01/24,units,0.00%,700,600,100,0,1000,8,,,,,,8000,"8,440.00",10/07/24,,-6.64%,"8,440.00",10/07/24,Pouches
+PCH-8oz-Stndup-WH-Matt,container/Pouch,B,"9,000.00",,"9,000.00",09/01/24,units,0.00%,800,800,0,0,800,24,,,,,,8200,"9,547.00",10/07/24,,5.73%,"9,547.00",10/07/24,Pouches
+PCH-16oz-Stndup-WH-Matt,Eco Bags,B,"4,000.00",,"4,000.00",09/01/24,units,0.00%,500,550,-50,0,1000,28,,,,,,3000,"1,275.00",10/07/24,,-213.73%,"1,275.00",10/07/24,Pouches
+PCH-24oz-Stndup-WH-Matt,container/Pouch,,500,,500,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,500,0,10/07/24,,-100.00%,0,10/07/24,Pouches
+PCH-32oz-Stndup-WHITE-Matt,container/Pouch,,990,,990,09/01/24,units,0.00%,0,0,0,0,0,,,,,,,990,"1,480.00",10/07/24,,33.11%,"1,480.00",10/07/24,Pouches
+PCH-1kg-Stndup-WHITE-Matt,container/Pouch,,50,,50,09/01/24,units,0.00%,0,0,0,0,0,,,,,,,50,50,10/07/24,,0.00%,50,10/07/24,Pouches
+PCH-5oz-Stndup-BLACK-Matt,Container/Pouch,B,"2,000.00",,"1,000.00",09/01/24,units,100.00%,0,0,0,1000,0,54,,,,,,2000,"1,500.00",10/07/24,,-33.33%,"1,500.00",10/07/24,Pouches
+PCH-1oz-Stndup-BLACK-Matt,Container/Pouch,C,"4,000.00",,"4,000.00",09/01/24,units,0.00%,0,0,0,0,0,91,,,,,,4000,"3,000.00",10/07/24,,-33.33%,"3,000.00",10/07/24,Pouches
+PCH-32oz-Stndup-BLACK-Matt,container/Pouch,PLC-2024,0,,0,09/01/24,units,0.00%,0,0,0,0,0,,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Pouches
+Brand Name Pouches,,,,,,,,,,,,,,,,,,,,,,,,,,,
+PCH-4oz-TH-New-Preprinted,container/Pouch,,"3,500.00",,"3,500.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,3500,723,10/07/24,,-384.09%,723,10/07/24,Brand Name Pouches
+PCH-5oz-TH-New-Preprinted,container/Pouch,B,"3,130.00",,"3,130.00",09/01/24,units,0.00%,4253,4250,3,0,4983,15,,,,,,-1853,"2,400.00",10/07/24,,-30.42%,"2,400.00",10/07/24,Brand Name Pouches
+PCH-2oz-PS-Stndup-Matt,container/Pouch,C,"16,490.00",,"16,490.00",09/01/24,units,0.00%,0,0,0,0,0,129,,,,,,16490,"32,500.00",10/07/24,,49.26%,"32,500.00",10/07/24,Brand Name Pouches
+PCH-5oz-PS-Stndup-Matt,Container/Pouch,A,"27,792.00",,"27,792.00",09/01/24,units,0.00%,4330,4230,100,0,5350,17,,,,,,22442,"19,800.00",10/07/24,,-40.36%,"19,800.00",10/07/24,Brand Name Pouches
+PCH-8oz-PS-Stndup-Matt,container/Pouch,C,"1,800.00",,"1,800.00",09/01/24,units,0.00%,0,0,0,0,0,67,,,,,,1800,809,10/07/24,,-122.50%,809,10/07/24,Brand Name Pouches
+PCH-16oz-PS-Stndup-Matt,container/Pouch,,0,,,,units,0.00%,0,0,0,0,0,240,,,,,,0,,10/07/24,,0.00%,,10/07/24,Brand Name Pouches
+PCH-24oz-PS-Stndup-Matt,container/Pouch,,"1,900.00",,"1,900.00",09/01/24,units,0.00%,0,0,0,0,0,117,,,,,,1900,300,10/07/24,,-533.33%,300,10/07/24,Brand Name Pouches
+Bottles,,,,,,,,,,,,,,,,,,,,,,,,,,,
+BTL-2oz-Cosmo-White-20-410,Safety Shrink Band,C,"7,500.00",,"7,500.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,7500,"2,178.00",10/07/24,,-244.35%,"2,178.00",10/07/24,Bottles
+BTL-4oz-Cosmo-White-24-410-HS,CM Packaging-Container,,0,,0,09/01/24,units,0.00%,0,0,0,0,0,206,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Bottles
+BTL-4oz-Cosmo-White-20-410,Container/Pouch,B,"21,714.00",,"21,714.00",09/01/24,units,0.00%,3571,3560,11,0,4091,7,,,,,,17623,"15,477.00",10/07/24,,-40.30%,"15,477.00",10/07/24,Bottles
+BTL-8oz-Cosmo-White-24-410,container/Pouch,C,"9,000.00",,"9,000.00",09/01/24,units,0.00%,80,80,0,0,80,46,,,,,,8920,"14,485.00",10/07/24,,37.87%,"14,485.00",10/07/24,Bottles
+BTL-8oz-Cosmo-White-24-410-HS,CM Packaging-Container,A,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Bottles
+Cylinder Bottles,,,,,,,,,,,,,,,,,,,,,,,,,,,
+BTL-4oz-Cylinder-Round-White-24-410,Container/Pouch,B,900,,900,09/01/24,units,0.00%,800,800,0,0,1912,29,,,,,,-1012,"4,617.00",10/07/24,,80.51%,"4,617.00",10/07/24,Cylinder Bottles
+BTL-24-410-Cylinder-Round-8oz-White,Container/Pouch,A,"18,876.00",,"18,876.00",09/01/24,units,0.00%,12975,12872,103,0,14575,2,,,,,,4301,"8,780.00",10/07/24,,-114.99%,"8,780.00",10/07/24,Cylinder Bottles
+Misc Bottles/Containers,,,,,,,,,,,,,,,,,,,,,,,,,,,
+BTL-2oz-Oval-Teardrop-White-20-410,Container/Pouch,,"24,515.00",,"24,515.00",09/01/24,units,0.00%,0,90,-90,0,0,114,,,,,,24515,"129,000.00",10/07/24,,81.00%,"129,000.00",10/07/24,Misc Bottles/Containers
+BTL-16oz-Diamond-White-24-410,Container/Pouch,C,"2,953.00",,"2,953.00",09/01/24,units,0.00%,129,0,129,0,172,138,,,,,,2781,"2,820.00",10/07/24,,-4.72%,"2,820.00",10/07/24,Misc Bottles/Containers
+1/2oz-Thick-Wall-Jar+Lid-Black,Container/Pouch,PLC-2024,432,,432,09/01/24,units,0.00%,0,0,0,0,0,103,,,,,,432,0,10/07/24,,-100.00%,0,10/07/24,Misc Bottles/Containers
+BOX-TA-Cystic-Spot-Covalence,CM-Box,C,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Misc Bottles/Containers
+Caps,,,,,,,,,,,,,,,,,,,,,,,,,,,
+CAP-24-410-Drip-Tip,Top Cover,A,"19,000.00",,"19,000.00",09/01/24,units,0.00%,13775,13762,13,0,16487,1,,,,,,2513,"15,000.00",10/07/24,,-26.67%,"15,000.00",10/07/24,Caps
+CAP-20-410-Drip-Tip,Top Cover,,"9,500.00",,"9,500.00",09/01/24,units,0.00%,0,0,0,0,0,133,,,,,,9500,"5,000.00",10/07/24,,-90.00%,"5,000.00",10/07/24,Caps
+SPRAY-MIST-20-410-White-5.5-NEW,Top Cover,B,"23,850.00",,"23,850.00",09/01/24,units,0.00%,3571,3560,11,0,4134,6,,,,,,19716,"18,900.00",10/07/24,,-26.19%,"18,900.00",10/07/24,Caps
+"SPRAY-MIST-24-410-White-7.5""",Top Cover,C,"22,000.00",,"22,000.00",09/01/24,units,0.00%,80,80,0,0,80,108,,,,,,21920,"23,101.00",10/07/24,,4.77%,"23,101.00",10/07/24,Caps
+TRIGGER-SPRAYER-24-410-7.75-WHITE,Top Cover,,"3,600.00",,"3,600.00",09/01/24,units,0.00%,0,0,0,0,0,,,,,,,3600,"3,150.00",10/07/24,,-14.29%,"3,150.00",10/07/24,Caps
+TRIGGER-SPRAYER-24-410-7.75-Black,Top Cover,B,"1,100.00",,"1,100.00",09/01/24,units,0.00%,129,0,129,0,129,53,,,,,,971,750,10/07/24,,-46.67%,"1,100.00",8/19/2024,Caps
+LID-89-400-Cap-F217-Liner-White-HS,CM Packaging-Top,A,420,,420,09/01/24,units,0.00%,0,0,0,0,0,163,,,,,,420,0,10/07/24,,-100.00%,0,10/07/24,Caps
+Shrink Bands,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Safetry-Shrink-Dome-M1421CL-8oz,Safety Shrink Band,B,"19,951.00",,"19,951.00",09/01/24,units,0.00%,0,50,-50,0,0,34,,,,,,19951,0,10/07/24,,-100.00%,0,10/07/24,Shrink Bands
+M1006CL-Dome-Shrink-Band 66X175,Safety Shrink Band,,"15,000.00",,"15,000.00",09/01/24,units,0.00%,3571,3560,11,0,4134,5,,,,,,10866,"1,500.00",10/07/24,Located more of this BOM,-900.00%,"1,500.00",10/07/24,Shrink Bands
+M172-Shrink-Band-118x70,Safety Shrink Band,B,"20,000.00",,"20,000.00",09/01/24,units,0.00%,0,0,0,0,0,100,,,,,,20000,"3,200.00",10/07/24,Located more of this BOM,-525.00%,"3,200.00",10/07/24,Shrink Bands
+M879CL-Dome-Shrink-Band 77X240,Safety Shrink Band,B,"12,451.00",,"12,451.00",09/01/24,units,0.00%,0,0,0,0,0,69,,,,,,12451,"2,500.00",10/07/24,,-398.04%,"2,500.00",10/07/24,Shrink Bands
+M1109CL-Safety-Shrink-Band-100x38mm,Safety Shrink Band,A,"8,000.00",,"8,000.00",09/01/24,units,0.00%,129,0,129,0,129,22,,,,,,7871,"3,700.00",10/07/24,,-116.22%,"3,700.00",10/07/24,Shrink Bands
+M1005CL-Dome-Shrink-Band 77X185,Safety Shrink Band,,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Shrink Bands
+M1612CL-Dome-Shrink-Band 100X180mm,Safety Shrink Band,A,0,,0,09/01/24,units,0.00%,0,0,0,0,0,43,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Shrink Bands
+M15208CL-Clear-Perforated-Shrink-Band 152x150,Safety Shrink Band,,"10,000.00",,"10,000.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,10000,0,10/07/24,,-100.00%,0,10/07/24,Shrink Bands
+M1151CL-Dome-Shrink-Band-52x143,safety Shrink Band,C,"18,600.00",,"18,600.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,18600,"18,600.00",10/07/24,,0.00%,"18,600.00",10/07/24,Shrink Bands
+M139CL-Safety-Shrink-Band-75x28mm,Safety Shrink Band,,"14,000.00",,"14,000.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,14000,"13,200.00",10/07/24,,-6.06%,"13,200.00",10/07/24,Shrink Bands
+Safetry-Shrink-M175-57x36,Safety Shrink Band,,"15,000.00",,"15,000.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,15000,"11,000.00",10/07/24,,-36.36%,"11,000.00",10/07/24,Shrink Bands
+LABL-NS-Shrink-Sleeve-Liquid-Stevia-OG-US-2oz,Label,,"5,736.00",,"5,736.00",09/01/24,units,0.00%,0,90,-90,0,0,133,,,,,,5736,,10/07/24,,-100.00%,,10/07/24,Shrink Bands
+LABL-NS-Shrink-Sleeve-Liquid-Stevia-Vanilla-US-2oz,Label,,"3,940.00",,"3,940.00",09/01/24,units,0.00%,0,0,0,0,0,163,,,,,,3940,,10/07/24,,-100.00%,,10/07/24,Shrink Bands
+LABL-NS-Shrink-Sleeve-Liquid-Stevia-Caramel-US-2oz,Label,C,"4,140.00",,"4,140.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,4140,,10/07/24,,-100.00%,,10/07/24,Shrink Bands
+LABL-NS-Shrink-Sleeve-Liquid-Stevia-Chocolate-US-2oz,Label,,"3,736.00",,"3,736.00",09/01/24,units,0.00%,0,0,0,0,0,163,,,,,,3736,"3,736.00",10/07/24,,0.00%,"3,736.00",10/07/24,Shrink Bands
+LABL-NS-Shrink-Sleeve-Liquid-Stevia-Toffee-US-2oz,Label,C,"3,940.00",,"3,940.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,3940,"3,940.00",10/07/24,,0.00%,"3,940.00",10/07/24,Shrink Bands
+LABL-NS-Shrink-Sleeve-Monk-Fruit-Extract-US-2oz,Label,C,"4,200.00",,"4,200.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,4200,"4,200.00",10/07/24,,0.00%,"4,200.00",10/07/24,Shrink Bands
+CLEARECOBAG-4X5,Eco Bags,,"1,500.00",,"1,500.00",09/01/24,units,0.00%,0,90,-90,0,0,62,,,,,,1500,"1,500.00",10/07/24,,0.00%,"1,500.00",10/07/24,Shrink Bands
+CLEARECOBAG-6X8,Eco Bags,,"7,500.00",,"7,500.00",09/01/24,units,0.00%,1350,1350,0,0,1350,12,,,,,,6150,0,10/07/24,,-100.00%,0,10/07/24,Shrink Bands
+CLEARECOBAG-6X1,Eco Bags,,0,,,,units,0.00%,0,0,0,0,0,,,,,,,0,"2,800.00",10/07/24,,100.00%,"2,800.00",10/07/24,Shrink Bands
+CLEARECOBAG-7.5X10,Eco Bags,,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Shrink Bands
+CLEARECOBAG-10.5X14,Eco Bags,,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Shrink Bands
+CLEARECOBAG-8.25x10.25,Eco Bags,C,"2,030.00",,"2,030.00",09/01/24,units,0.00%,0,0,0,0,0,88,,,,,,2030,"2,030.00",10/07/24,,0.00%,"2,030.00",10/07/24,Shrink Bands
+Labels (Liquids),,,,,,,,,,,,,,,,,,,,,,,,,,,
+LABL-NS-3.75x4.75-Liquid-Stevia-US-4oz,Label,B,"1,580.00",,"1,580.00",09/01/24,units,0.00%,800,800,0,0,1912,29,,,,,,-332,"1,580.00",10/07/24,,0.00%,"1,580.00",8/19/2024,Labels (Liquids)
+LABL-NS-6x5-Liquid-Stevia-US-8oz,Eco Bags,A,"19,500.00",,"18,500.00",09/01/24,units,5.41%,11915,11812,103,1000,11915,4,,,,,,7585,"18,500.00",10/07/24,,-5.41%,"18,500.00",10/07/24,Labels (Liquids)
+LABL-NS-6x5-Monk-Fruit-Liquid-US-8oz,Label,B,"1,000.00",,"1,000.00",09/01/24,units,0.00%,0,0,0,0,0,85,,,,,,1000,"1,000.00",10/07/24,,0.00%,"1,000.00",10/07/24,Labels (Liquids)
+LABL-NS-6x5-Monk-Fruit-Liquid-Stevia-US-8oz,Label,B,"2,420.00",,"2,420.00",09/01/24,units,0.00%,0,0,0,0,0,118,,,,,,2420,"2,420.00",10/07/24,,0.00%,"2,420.00",10/07/24,Labels (Liquids)
+LABL-NS-6x5-Organic-Liquid-Stevia-US-8oz,Label,PLC-2024,0,,,,units,0.00%,0,0,0,0,0,,,,,,,0,,10/07/24,,0.00%,,10/07/24,Labels (Liquids)
+LABL-NS-2.875x3.750-Monk-Fruit-Stevia-Liquid-2oz,Label,C,"3,600.00",,"3,600.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,3600,"3,600.00",10/07/24,,0.00%,"3,600.00",10/07/24,Labels (Liquids)
+LABL-NS-6.125x5-Monk-Fruit-Stevia-Liquid-2oz,Label,,"6,500.00",,"6,500.00",09/01/24,units,0.00%,0,0,0,0,0,,,,,,,6500,"6,500.00",10/07/24,,0.00%,"6,500.00",10/07/24,Labels (Liquids)
+LABL-NS-6x5-Organic-Liquid-Monk-Fruit-US-8oz,Label,PLC-2024,500,,500,09/01/24,units,0.00%,0,0,0,0,0,,,,,,,500,500,10/07/24,,0.00%,500,10/07/24,Labels (Liquids)
+LABL-WHYZ-6.125x5-Liquid-Stevia-Drops-8oz,Label,A,"2,500.00",,"2,500.00",09/01/24,units,0.00%,1060,1060,0,0,1860,27,,,,,,640,"2,500.00",10/07/24,,0.00%,"2,500.00",8/19/2024,Labels (Liquids)
+LABL-TN-3.75x2.875-Liquid-Stevia-Drops-2oz,Label,C,"1,000.00",,"1,000.00",09/01/24,units,0.00%,0,0,0,0,0,163,,,,,,1000,"1,000.00",10/07/24,,0.00%,"1,000.00",10/07/24,Labels (Liquids)
+LABL-TN-6.125x5-Liquid-Stevia-Drops-8oz,Label,B,"1,479.00",,"1,479.00",09/01/24,units,0.00%,0,0,0,0,800,52,,,,,,679,"1,479.00",10/07/24,,0.00%,"1,479.00",10/07/24,Labels (Liquids)
+LABL-TN-2.5x3.125-Monk-Fruit-Sweetener-1oz,Label,PLC-2024,"1,000.00",,"1,000.00",09/01/24,units,0.00%,0,0,0,0,0,,,,,,,1000,"1,000.00",10/07/24,,0.00%,"1,000.00",10/07/24,Labels (Liquids)
+LABL-TN-2.5x3.125-Monk-Fruit-Sweetener-5oz,Label,PLC-2024,"1,000.00",,"1,000.00",09/01/24,units,0.00%,0,0,0,0,0,,,,,,,1000,"1,000.00",10/07/24,,0.00%,"1,000.00",10/07/24,Labels (Liquids)
+LABL-TN-2.5x3.125-Monk-Fruit-Sweetener-1lb,Label,PLC-2024,"1,000.00",,"1,000.00",09/01/24,units,0.00%,0,0,0,0,0,,,,,,,1000,"1,000.00",10/07/24,,0.00%,"1,000.00",10/07/24,Labels (Liquids)
+Purisure Labels,,,,,,,,,,,,,,,,,,,,,,,,,,,
+LABL-PS-3.75x3-Black-Tea-Iced-4oz,Label,A,"6,000.00",,"2,000.00",09/01/24,units,200.00%,3040,2940,100,4000,4060,19,,,,,,1940,"4,000.00",10/07/24,,-50.00%,"4,000.00",10/07/24,Purisure Labels
+LABL-PS-3.75x3-Black-Tea-125g,Label,A,"1,000.00",,0,09/01/24,units,0.00%,690,690,0,1000,690,59,,,,,,310,"2,000.00",10/07/24,,50.00%,"2,000.00",10/07/24,Purisure Labels
+LABL-PS-3.75x3-Green-Tea-Extract-250g,Label,C,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Purisure Labels
+LABL-PS-3.75x3-Shilajit-25g,Label,C,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,"1,700.00",10/07/24,,100.00%,"1,700.00",10/07/24,Purisure Labels
+LABL-PS-3.75x3-Shilajit-100g,Label,A,"1,930.00",,"1,930.00",09/01/24,units,0.00%,200,200,0,0,200,90,,,,,,1730,"1,930.00",10/07/24,,0.00%,"1,930.00",10/07/24,Purisure Labels
+LABL-PS-3.75x3-Green-Coffee-Ext-150g,Label,B,"1,500.00",,"1,500.00",09/01/24,units,0.00%,0,0,0,0,0,136,,,,,,1500,"1,500.00",10/07/24,,0.00%,"1,500.00",10/07/24,Purisure Labels
+LABL-PS-3.75x3-CDP-Choline-10g,Label,C,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Purisure Labels
+LABL-PS-3.75x3-CDP-Choline-50g,Label,B,700,,700,09/01/24,units,0.00%,0,0,0,0,0,123,,,,,,700,700,10/07/24,,0.00%,700,10/07/24,Purisure Labels
+LABL-PS-3.75x3-Vit-C-250g,Label,C,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Purisure Labels
+LABL-PS-4x6-Vitamin-C-1kg,Label,C,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Purisure Labels
+LABL-PS-3.75x3-Citrulline-Malate-250g,Label,C,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Purisure Labels
+LABL-PS-3.75x3-Citrulline-Malate-1kg,Label,C,"2,620.00",,"2,620.00",09/01/24,units,0.00%,0,0,0,0,0,119,,,,,,2620,"1,500.00",10/07/24,,-74.67%,"1,500.00",10/07/24,Purisure Labels
+LABL-PS-3.75x3-Alpha-GPC-25g,Label,C,0,,0,09/01/24,units,0.00%,0,0,0,0,0,155,,,,,,0,800,10/07/24,,100.00%,800,10/07/24,Purisure Labels
+LABL-PS-3.75x3-Alpha-GPC-100g,Label,C,"1,015.00",,515,09/01/24,units,97.09%,0,0,0,500,0,240,,,,,,1015,800,10/07/24,,-26.88%,800,10/07/24,Purisure Labels
+LABL-PS-3.75x3-Theanine-100g,Label,C,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Purisure Labels
+LABL-7X2.5-PS-Caffeine-L-Theanine,Label,C,"1,000.00",,"1,000.00",09/01/24,units,0.00%,0,0,0,0,0,133,,,,,,1000,"1,000.00",10/07/24,,0.00%,"1,000.00",10/07/24,Purisure Labels
+LABL-PS-3.75x3-Monk-Fruit-Stevia-Blend-4X-4oz,Label,C,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Purisure Labels
+LABL-PS-3.75x3-Myo-Inositol-1kg,Label,C,"1,020.00",,"1,020.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,1020,"1,020.00",10/07/24,,0.00%,"1,020.00",10/07/24,Purisure Labels
+LABL-PS-3.75x3-Longjack-200:1-100g,Label,C,500,,500,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,500,500,10/07/24,,0.00%,500,10/07/24,Purisure Labels
+LABL-PS-3.75x3-Longjack-100:1-25g,Label,,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Purisure Labels
+LABL-PS-3.75x3-Wheat-Grass-Org-150g,Label,C,"1,020.00",,"1,020.00",09/01/24,units,0.00%,0,0,0,0,0,182,,,,,,1020,"1,020.00",10/07/24,,0.00%,"1,020.00",10/07/24,Purisure Labels
+LABL-PS-3.75x3-Wheatgrass-Powder-Org-8oz,Label,C,"1,030.00",,"1,030.00",09/01/24,units,0.00%,0,0,0,0,0,201,,,,,,1030,"1,030.00",10/07/24,,0.00%,"1,030.00",10/07/24,Purisure Labels
+LABL-PS-3.75x3-Agmatine-100g,Label,C,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Purisure Labels
+LABL-PS-3.75x3-Dihydromyricetin-DHM-100g,Label,A,"1,380.00",,"1,380.00",09/01/24,units,0.00%,400,400,0,0,400,92,,,,,,980,"1,380.00",10/07/24,,0.00%,"1,380.00",10/07/24,Purisure Labels
+LABL-PS-3.75x4.75-Beta-Alanine-1kg,Label,C,"1,940.00",,"1,940.00",09/01/24,units,0.00%,0,0,0,0,0,180,,,,,,1940,"1,940.00",10/07/24,,0.00%,"1,940.00",10/07/24,Purisure Labels
+LABL-PS-3.75x3-Beta-Alanine-1kg,Label,,"1,940.00",,"1,940.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,1940,"1,940.00",10/07/24,,0.00%,"1,940.00",10/07/24,Purisure Labels
+LABL-PS-3.75x4.75-Spirulina-1kg,Label,,0,,,09/01/24,units,0.00%,0,0,0,0,0,,,,,,,0,,10/07/24,,0.00%,,10/07/24,Purisure Labels
+LABL-PS-3.75x4.75-Alcar-250g,Label,C,"1,490.00",,"1,490.00",09/01/24,units,0.00%,0,0,0,0,0,152,,,,,,1490,"1,490.00",10/07/24,,0.00%,"1,490.00",10/07/24,Purisure Labels
+LABL-PS-3.75x4.75-Spirulina-250g,Label,,0,,,09/01/24,units,0.00%,0,0,0,0,0,,,,,,,0,,10/07/24,,0.00%,,10/07/24,Purisure Labels
+LABL-PS-3.75x4.75-Spirulina-Org-16oz,Label,C,828,,828,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,828,828,10/07/24,,0.00%,828,10/07/24,Purisure Labels
+LABL-PS-3.75x3-Spirulina-Org-16oz,Label,,"1,020.00",,"1,020.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,1020,"1,020.00",10/07/24,,0.00%,"1,020.00",10/07/24,Purisure Labels
+LABL-PS-5.25x0.40-Methylene-Blue-5g,Label,PLC-2024,200,,200,09/01/24,units,0.00%,0,0,0,0,0,103,,,,,,200,200,10/07/24,,0.00%,200,10/07/24,Purisure Labels
+LABL-PS-3.75x2.875-Shrink-Sleeve-Liquid-Monk-Fruit-2oz,Label,C,"1,600.00",,"1,600.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,1600,"1,600.00",10/07/24,,0.00%,"1,600.00",10/07/24,Purisure Labels
+Teakihut Labels,,,,,,,,,,,,,,,,,,,,,,,,,,,
+LABL-TH-3.5x3-Black-Tea-4oz-Back,Label,A,"3,500.00",,500,09/01/24,units,600.00%,3753,3750,3,3000,4483,18,,,,,,-983,0,10/07/24,,-100.00%,500,8/19/2024,Teakihut Labels
+LABL-TH-3.75x3-Green-Tea-4oz,Label,B,"1,500.00",,"1,500.00",09/01/24,units,0.00%,0,0,0,0,0,,,,,,,1500,0,10/07/24,,-100.00%,0,10/07/24,Teakihut Labels
+LABL-TH-3.75x3-Matcha-Green-Tea-5oz-Organic-Back,Label,C,"1,030.00",,"1,030.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,1030,0,10/07/24,,-100.00%,0,10/07/24,Teakihut Labels
+LABL-TH-3.75x3-Puerh-4oz,Label,C,"1,283.00",,"1,283.00",09/01/24,units,0.00%,0,0,0,0,0,197,,,,,,1283,"1,000.00",10/07/24,,-28.30%,"1,000.00",10/07/24,Teakihut Labels
+LABL-TH-3.75x3-Monk-Stevia-Blend-4oz,Label,C,"1,020.00",,"1,020.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,1020,0,10/07/24,,-100.00%,0,10/07/24,Teakihut Labels
+LABL-TH-3.75x3-Matcha-Green-Tea-Org-4oz,Label,C,550,,550,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,550,0,10/07/24,,-100.00%,0,10/07/24,Teakihut Labels
+WHYz Labels,,,,,,,,,,,,,,,,,,,,,,,,,,,
+LABL-WHYZ-4x6-Beta-Alanine-350g,Label,C,"1,400.00",,"1,400.00",09/01/24,units,0.00%,0,0,0,0,0,192,,,,,,1400,"1,200.00",10/07/24,,-16.67%,"1,200.00",10/07/24,WHYZ Labels
+LABL-WHYZ-4x6-Alcar-125g,Label,C,"1,450.00",,"1,450.00",09/01/24,units,0.00%,0,0,0,0,0,139,,,,,,1450,"1,350.00",10/07/24,,-7.41%,"1,350.00",10/07/24,WHYZ Labels
+LABL-WHYZ-4x6-Shilajit-50g,Label,B,"3,660.00",,"3,660.00",09/01/24,units,0.00%,0,0,0,0,0,81,,,,,,3660,"1,890.00",10/07/24,,-93.65%,"1,890.00",10/07/24,WHYZ Labels
+LABL-WHYZ-4x6-Myo-Inositol-8oz,Label,C,350,,350,09/01/24,units,0.00%,0,0,0,0,0,96,,,,,,350,480,10/07/24,,27.08%,480,10/07/24,WHYZ Labels
+LABL-WHYZ-4x6-Magnesium-Bisglycinate-10oz,Label,C,"2,040.00",,"2,040.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,2040,"2,040.00",10/07/24,,0.00%,"2,040.00",10/07/24,WHYZ Labels
+LABL-WHYZ-4x6-Green-Coffee-Bean-Powder-125g,Label,C,515,,515,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,515,500,10/07/24,,-3.00%,500,10/07/24,WHYZ Labels
+LABL-WHYZ-4x6-Tongkat-Ali-Powder-4oz,Label,C,895,,895,09/01/24,units,0.00%,0,0,0,0,0,150,,,,,,895,250,10/07/24,,-258.00%,250,10/07/24,WHYZ Labels
+LABL-WHYZ-4x6-Organic-WheatGrass-Powder-300g,Label,C,"1,020.00",,"1,020.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,1020,"2,040.00",10/07/24,,50.00%,"2,040.00",10/07/24,WHYZ Labels
+LABL-WHYZ-4x6-Organic-Cordyceps-Powder-200g,Label,C,"1,020.00",,"1,020.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,1020,800,10/07/24,,-27.50%,800,10/07/24,WHYZ Labels
+LABL-WHYZ-4x6-Organic-Spirulina-Powder-250g,Label,C,"3,040.00",,"3,040.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,3040,"2,040.00",10/07/24,,-49.02%,"3,040.00",8/19/2024,WHYZ Labels
+LABL-WHYZ-4x6-Monk-Fruit-Ext-5oz,Label,A,"2,800.00",,300,09/01/24,units,833.33%,0,0,0,2500,0,13,,,,,,2800,"4,500.00",10/07/24,,37.78%,"4,500.00",10/07/24,WHYZ Labels
+LABL-WHYZ-4x6-Organic-Stevia-8oz,Label,B,820,,820,09/01/24,units,0.00%,0,0,0,0,0,79,,,,,,820,100,10/07/24,,-720.00%,100,10/07/24,WHYZ Labels
+LABL-WHYZ-4x6-Black-Tea-4.5oz,Label,PLC-2024,"1,000.00",,"1,000.00",09/01/24,units,0.00%,700,600,100,0,1000,58,,,,,,0,0,10/07/24,,-100.00%,0,10/07/24,WHYZ Labels
+LABL-WHYZ-2.5x6.5-Caffeine-Theanine-Capsules-120ct,Label,PLC-2024,0,,,,units,0.00%,0,0,0,0,0,240,,,,,,0,"1,020.00",10/07/24,,100.00%,"1,020.00",10/07/24,WHYZ Labels
+LABL-WHYZ-4x6-Organic-Matcha-Powder-125g,Label,C,0,,,,units,0.00%,0,0,0,0,0,240,,,,,,0,"1,020.00",10/07/24,,100.00%,"1,020.00",10/07/24,WHYZ Labels
+Tejonova Labels,,,,,,,,,,,,,,,,,,,,,,,,,,,
+LABL-TN-2.5x3.125-Organic-Stevia-Extract-1oz,Label,C,800,,800,09/01/24,units,0.00%,0,0,0,0,0,163,,,,,,800,"1,000.00",10/07/24,,20.00%,"1,000.00",10/07/24,Tejonova Labels
+LABL-TN-4x5.5-Organic-Stevia-Extract-5oz,Label,C,"1,000.00",,"1,000.00",09/01/24,units,0.00%,0,0,0,0,0,128,,,,,,1000,"1,800.00",10/07/24,,44.44%,"1,800.00",10/07/24,Tejonova Labels
+LABL-TN-2.5x3.125-Organic-Monk-Fruit-1oz,Label,C,"2,000.00",,"2,000.00",09/01/24,units,0.00%,0,0,0,0,0,94,,,,,,2000,"1,850.00",10/07/24,,-8.11%,"1,850.00",10/07/24,Tejonova Labels
+LABL-TN-4x5.5-Organic-Monk-Fruit-4.5oz,Label,B,"2,750.00",,550,09/01/24,units,400.00%,0,0,0,2200,0,56,,,,,,2750,"2,500.00",10/07/24,,-10.00%,"2,500.00",10/07/24,Tejonova Labels
+Alternative Labels for Preprinted Pouches,,,,,,,,,,,,,,,,,,,,,,,,,,,
+LABL-NS-3.75x3-Monk-Fruit-4oz-Front,Label,A,"1,095.00",,"1,095.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,1095,0,10/07/24,,-100.00%,0,10/07/24,Alternative Labels for Preprinted Pouches
+LABL-NS-3.75x3-Monk-Fruit-4oz-Back,Label,A,"1,095.00",,"1,095.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,1095,0,10/07/24,,-100.00%,0,10/07/24,Alternative Labels for Preprinted Pouches
+LABL-NS-3.75x3-Stevia-Powder-4oz-Front,Label,B,"1,073.00",,"1,073.00",09/01/24,units,0.00%,150,150,0,0,150,105,,,,,,923,"2,200.00",10/07/24,,51.23%,"2,200.00",10/07/24,Alternative Labels for Preprinted Pouches
+LABL-NS-3.75x3-Stevia-Powder-4oz-Back,Label,B,"1,073.00",,"1,073.00",09/01/24,units,0.00%,150,150,0,0,150,105,,,,,,923,"2,200.00",10/07/24,,51.23%,"2,200.00",10/07/24,Alternative Labels for Preprinted Pouches
+LABL-TH-3.75x3-Monk-Fruit-Extract-4oz,Label,A,"1,950.00",,"1,950.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,1950,0,10/07/24,,-100.00%,0,10/07/24,Alternative Labels for Preprinted Pouches
+LABL-PS-3.75x3-Monk-Fruit-Extract-125g,Label,A,"2,100.00",,"2,100.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,2100,0,10/07/24,,-100.00%,0,10/07/24,Alternative Labels for Preprinted Pouches
+LABL-PS-3.75x3-Stevia-Powder-125g,Label,A,0,,0,09/01/24,units,0.00%,0,0,0,0,0,,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Alternative Labels for Preprinted Pouches
+TreeActiv Labels,,,,,,,,,,,,,,,,,,,,,,,,,,,
+TA Milia Labels,,,,,,,,,,,,,,,,,,,,,,,,,,,
+LABL-TA-3.75x3-Milia-Patches-5pack,Label,C,"8,005.00",,"8,005.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,8005,0,10/07/24,,-100.00%,0,10/07/24,TA Milia Labels
+LABL-TA-3.75x3-TA-Milia-Treatment-Kit,Label,C,"3,705.00",,"3,705.00",09/01/24,units,0.00%,0,0,0,0,0,112,,,,,,3705,"2,100.00",10/07/24,,-76.43%,"2,100.00",10/07/24,TA Milia Labels
+LABL-TA-3.75x3-Milia-Patches,Label,A,"7,730.00",,"7,730.00",09/01/24,units,0.00%,500,500,0,0,1000,35,,,,,,6730,"7,397.00",10/07/24,We dont use this but mapping system thinks we do,-4.50%,"7,397.00",10/07/24,TA Milia Labels
+LABL-TA-4.75x4.75-Milia-Kit-Bundle,Label,A,"5,735.00",,"5,735.00",09/01/24,units,0.00%,500,500,0,0,1000,35,,,,,,4735,"5,735.00",10/07/24,,0.00%,"5,735.00",10/07/24,TA Milia Labels
+LABL-TA-5.8x0.625-Milia-Spot-Treatment-0.5oz,Label,C,"4,470.00",,"4,470.00",09/01/24,units,0.00%,0,0,0,0,0,112,,,,,,4470,"4,100.00",10/07/24,,-9.02%,"4,100.00",10/07/24,TA Milia Labels
+LABL-TA-3.75x3-Milia,Label,C,"2,500.00",,"2,500.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,2500,"2,500.00",10/07/24,,0.00%,"2,500.00",10/07/24,TA Milia Labels
+TA Skincare Cream Labels,,,,,,,,,,,,,,,,,,,,,,,,,,,
+LABL-TA-6.125X0.5625-Invis-Spot-Side,Label,B,"5,400.00",,"5,400.00",09/01/24,units,0.00%,0,0,0,0,0,65,,,,,,5400,"5,500.00",10/07/24,,1.82%,"5,500.00",10/07/24,TA Skincare Cream Labels
+LABL-TA-Face-Cream-Side-2oz,Label,A,"2,500.00",,"2,500.00",09/01/24,units,0.00%,0,0,0,0,0,63,,,,,,2500,"2,260.00",10/07/24,,-10.62%,"2,260.00",10/07/24,TA Skincare Cream Labels
+LABL-TA-1.25x7.125-Retinol-Cream-2oz,Label,C,200,,200,09/01/24,units,0.00%,0,0,0,0,0,163,,,,,,200,270,10/07/24,,25.93%,270,10/07/24,TA Skincare Cream Labels
+LABL-TA-1.25x7.125-Scar-Cream-Side-PLSF,Label,C,"2,503.00",,"2,503.00",09/01/24,units,0.00%,0,0,0,0,0,131,,,,,,2503,"2,503.00",10/07/24,,0.00%,"2,503.00",10/07/24,TA Skincare Cream Labels
+LABL-TA-1.25x7.125-Scar-Cream-Side-Shay,Label,PLC-2024,"1,999.00",,"1,999.00",09/01/24,units,0.00%,0,0,0,0,0,45,,,,,,1999,"1,999.00",10/07/24,,0.00%,"1,999.00",10/07/24,TA Skincare Cream Labels
+LABL-11.3125x1.625-Crepey-Skin-Cream-Side,Label,A,"1,600.00",,"1,600.00",09/01/24,units,0.00%,0,90,-90,0,0,49,,,,,,1600,"5,500.00",10/07/24,,70.91%,"5,500.00",10/07/24,TA Skincare Cream Labels
+LABL-TA-Psoriasis-Side,Label,B,"1,050.00",,"1,050.00",09/01/24,units,0.00%,0,0,0,0,0,143,,,,,,1050,"1,020.00",10/07/24,,-2.94%,"1,020.00",10/07/24,TA Skincare Cream Labels
+LABL-TA-Dermatitis-Side,Label,C,"1,500.00",,"1,500.00",09/01/24,units,0.00%,0,0,0,0,0,163,,,,,,1500,"1,680.00",10/07/24,,10.71%,"1,680.00",10/07/24,TA Skincare Cream Labels
+TA Skincare Lotion Labels,,,,,,,,,,,,,,,,,,,,,,,,,,,
+LABL-TA-Cucumber-Lotion-8oz,Label,A,"1,700.00",,"1,700.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,1700,350,10/07/24,,-385.71%,350,10/07/24,TA Skincare Lotion Labels
+LABL-TA-11.313x1.625-Rough-and-Bumpy-Skin-Lotion-8oz,Label,PLC-2024,"1,020.00",,"1,020.00",09/01/24,units,0.00%,0,0,0,0,0,96,,,,,,1020,650,10/07/24,,-56.92%,650,10/07/24,TA Skincare Lotion Labels
+TA Skincare Spray Labels,,,,,,,,,,,,,,,,,,,,,,,,,,,
+LABL-TA-3.75x4.75-Body-Spray-4oz,Label,A,"7,830.00",,"5,330.00",09/01/24,units,46.90%,3400,3400,0,2500,3400,9,,,,,,4430,"4,200.00",10/07/24,,-86.43%,"5,330.00",8/19/2024,TA Skincare Spray Labels
+LABL-TA-5.75x4.75-Acne-Eliminating-Body-Spray-8oz,Label,B,"8,719.00",,"8,719.00",09/01/24,units,0.00%,0,0,0,0,0,70,,,,,,8719,"6,850.00",10/07/24,,-27.28%,"6,850.00",10/07/24,TA Skincare Spray Labels
+LABL-TA-3.5x4.75-Alc-Free-Pillow-Spray-4oz,Label,,"2,014.00",,"2,014.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,2014,520,10/07/24,,-287.31%,520,10/07/24,TA Skincare Spray Labels
+LABL-TA-5.93x2.37-Acne-Face-Spray-4oz,Label,B,"1,750.00",,"1,750.00",09/01/24,units,0.00%,0,0,0,0,0,93,,,,,,1750,"1,200.00",10/07/24,,-45.83%,"1,200.00",10/07/24,TA Skincare Spray Labels
+LABL-TA-3.75x4.75-Toner-4oz,Label,B,615,,615,09/01/24,units,0.00%,0,0,0,0,0,137,,,,,,615,350,10/07/24,,-75.71%,350,10/07/24,TA Skincare Spray Labels
+LABL-TA-3.75x4.75-Yoga-Mat-Spray-4oz,Label,B,576,,576,09/01/24,units,0.00%,171,160,11,0,171,99,,,,,,405,250,10/07/24,,-130.40%,250,10/07/24,TA Skincare Spray Labels
+LABL-TA-3.75x4.75-Room-Spray-4oz,Label,C,"1,400.00",,"1,400.00",09/01/24,units,0.00%,0,0,0,0,0,158,,,,,,1400,"1,350.00",10/07/24,,-3.70%,"1,350.00",10/07/24,TA Skincare Spray Labels
+LABL-TA-3.75x4.75-Sleep-Spray-4oz,Label,C,100,,100,09/01/24,units,0.00%,0,0,0,0,0,141,,,,,,100,280,10/07/24,,64.29%,280,10/07/24,TA Skincare Spray Labels
+LABL-TA-5.3x5.2-Sleep-Spray-Lavender-8oz,Label,C,"1,200.00",,"1,200.00",09/01/24,units,0.00%,0,0,0,0,0,175,,,,,,1200,"1,000.00",10/07/24,,-20.00%,"1,000.00",10/07/24,TA Skincare Spray Labels
+LABL-TA-5.3125x5.25-Sleep-Spray-16oz,Label,C,748,,748,09/01/24,units,0.00%,129,0,129,0,129,145,,,,,,619,500,10/07/24,,-49.60%,500,10/07/24,TA Skincare Spray Labels
+LABL-5.75X5.25-Linen-Spray-Lav-Wrap,Label,B,760,,760,09/01/24,units,0.00%,0,0,0,0,0,80,,,,,,760,650,10/07/24,,-16.92%,650,10/07/24,TA Skincare Spray Labels
+LABL-TA-3.75x4.75-Air-Freshener-4oz,Label,C,300,,300,09/01/24,units,0.00%,0,0,0,0,0,,,,,,,300,350,10/07/24,,14.29%,350,10/07/24,TA Skincare Spray Labels
+LABL-TA-3.75x4.75-Shower-Spray-4oz,Label,C,250,,250,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,250,290,10/07/24,,13.79%,290,10/07/24,TA Skincare Spray Labels
+LABL-TA-3.75x4.75-Shower-Spray-Xtra-Stre-4oz,Label,C,"8,170.00",,"8,170.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,8170,50,10/07/24,,-16240.00%,50,10/07/24,TA Skincare Spray Labels
+LABL-TA-Pillow-Spray,Label,A,500,,500,09/01/24,units,0.00%,0,0,0,0,520,44,,,,,,-20,"1,600.00",10/07/24,,68.75%,500,8/19/2024,TA Skincare Spray Labels
+LABL-5.75X5-Hair-Growth-Bamb-Wrap,Label,B,133,,133,09/01/24,units,0.00%,80,80,0,0,80,149,,,,,,53,0,10/07/24,,-100.00%,0,10/07/24,TA Skincare Spray Labels
+LABL-5.75X5-Hair-Growth-Grape-Wrap,Label,C,800,,800,09/01/24,units,0.00%,0,0,0,0,0,162,,,,,,800,500,10/07/24,,-60.00%,500,10/07/24,TA Skincare Spray Labels
+LABL-5.75X5-Hair-Growth-Lav-Wrap,Label,C,893,,893,09/01/24,units,0.00%,0,0,0,0,0,148,,,,,,893,600,10/07/24,,-48.83%,600,10/07/24,TA Skincare Spray Labels
+TA Skincare Cleanser Labels,,,,,,,,,,,,,,,,,,,,,,,,,,,
+LABL-TA-5.75x4.75-Acne-Exfo-Body-Wash-8oz,Label,B,"2,178.00",,"2,178.00",09/01/24,units,0.00%,0,0,0,0,0,40,,,,,,2178,"2,178.00",10/07/24,,0.00%,"2,178.00",10/07/24,TA Skincare Cleanser Labels
+LABL-TA-5.75x4.75-Anti-Aging-Exfo-Body-Wash-8oz,Label,C,"1,000.00",,"1,000.00",09/01/24,units,0.00%,0,50,-50,0,0,127,,,,,,1000,"1,000.00",10/07/24,,0.00%,"1,000.00",10/07/24,TA Skincare Cleanser Labels
+LABL-TA-Acne-Eliminating-Face-Cleanser-8oz-HS,CM Packaging-Label,A,"1,385.00",,"1,385.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,1385,"1,385.00",10/07/24,,0.00%,"1,385.00",10/07/24,TA Skincare Cleanser Labels
+LABL-TA-Acne-Eliminating-Face-Cleanser-3.4oz-HS,CM Packaging-Label,,0,,0,09/01/24,units,0.00%,0,0,0,0,0,206,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,TA Skincare Cleanser Labels
+TA Misc Cosmetic Labels,,,,,,,,,,,,,,,,,,,,,,,,,,,
+LABL-TA-8.79x1.58-Four-In-One-Acne-Treatment-4oz,Label,B,"1,500.00",,"1,500.00",09/01/24,units,0.00%,0,0,0,0,0,109,,,,,,1500,"1,497.00",10/07/24,,-0.20%,"1,497.00",10/07/24,TA Misc Cosmetic Labels
+LABL-TA-3.94x1.625-Deep-Wrinkle-Serum-1oz,Label,,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,TA Misc Cosmetic Labels
+LABL-TA-7.5X3-Hair-Savior-60-caps,Label,C,485,,485,09/01/24,units,0.00%,0,0,0,0,0,152,,,,,,485,700,10/07/24,,30.71%,700,10/07/24,TA Misc Cosmetic Labels
+LABL-TA-5.75x4.75-After-Shave-Razor-Bump-8oz,Label,PLC-2024,"1,020.00",,"1,020.00",09/01/24,units,0.00%,0,0,0,0,0,140,,,,,,1020,"1,020.00",10/07/24,,0.00%,"1,020.00",10/07/24,TA Misc Cosmetic Labels
+LABL-TA-3.75x3-Acne-Patches,Label,B,"8,919.00",,"8,919.00",09/01/24,units,0.00%,0,0,0,0,0,70,,,,,,8919,"7,035.00",10/07/24,,-26.78%,"7,035.00",10/07/24,TA Misc Cosmetic Labels
+LABL-TA-3.75x3-2Step-Cystic-Face-Wash-Bundle,Label,C,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,TA Misc Cosmetic Labels
+LABL-TA-3.75x3-TA-2StepAcneKit-FCreamFWash3.4oz,Label,C,"1,053.00",,"1,053.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,1053,"1,053.00",10/07/24,,0.00%,"1,053.00",10/07/24,TA Misc Cosmetic Labels
+LABL-TA-3.75x3-5StepAcneKit,Label,C,900,,900,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,900,900,10/07/24,,0.00%,900,10/07/24,TA Misc Cosmetic Labels
+LABL-5.5x2-Skin-Savior-60,Label,,515,,515,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,515,515,10/07/24,,0.00%,515,10/07/24,TA Misc Cosmetic Labels
+LABL-10.5905x1.6418-TA-Four-In-One-Acne-Treatment-8oz,Label,C,"4,930.00",,"4,930.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,4930,"2,295.00",10/07/24,,-114.81%,"2,295.00",10/07/24,TA Misc Cosmetic Labels
+Alternative Labels for CM Cosmetics,,,,,,,,,,,,,,,,,,,,,,,,,,,
+LABL-TA-Acne-Eliminating-Face-Cleanser-8oz-HS,CM Packaging-Label,A,"1,385.00",,"1,385.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,1385,"1,385.00",10/07/24,,0.00%,"1,385.00",10/07/24,TA Alternative Labels for CM Cosmetics
+LABL-TA-Acne-Eliminating-Face-Cleanser-3.4oz-HS,CM Packaging-Label,,0,,0,09/01/24,units,0.00%,0,0,0,0,0,206,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,TA Alternative Labels for CM Cosmetics
+LABL-TA-5.8x0.625-Milia-Spot-Treatment-0.5oz,Label,C,"4,470.00",,"4,470.00",09/01/24,units,0.00%,0,0,0,0,0,112,,,,,,4470,"4,020.00",10/07/24,,-9.02%,"4,020.00",10/07/24,TA Alternative Labels for CM Cosmetics
+LABL-TA-5.8x0.625-Cystic-Acne-Spot-0.5oz-Covalence,CM Packaging-Label,C,"1,880.00",,"1,880.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,1880,800,10/07/24,,-135.00%,800,10/07/24,TA Alternative Labels for CM Cosmetics
+Ayadara Labels,,,,,,,,,,,,,,,,,,,,,,,,,,,
+LABL-AY-Charcoal-To-Sparkle-Acne-Wash-3.4oz-HS,CM Packaging-Label,C,400,,400,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,400,400,10/07/24,,0.00%,400,10/07/24,Ayadara Labels
+LABL-AY-Charcoal-To-Sparkle-Acne-Wash-8oz-HS,CM Packaging-Label,C,"2,540.00",,"2,540.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,2540,"2,540.00",10/07/24,,0.00%,"2,540.00",10/07/24,Ayadara Labels
+LABL-AY-6.125x0.5625-Warrior-2-Spot-Jar,Label,B,"3,000.00",,"3,000.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,3000,"1,510.00",10/07/24,,-98.68%,"1,510.00",10/07/24,Ayadara Labels
+LABL-AY-6.125x0.5625-Warrior-1-Spot-Jar,Label,B,649,,649,09/01/24,units,0.00%,0,0,0,0,0,72,,,,,,649,"1,500.00",10/07/24,,56.73%,"1,500.00",10/07/24,Ayadara Labels
+LABL-AY-3.75x3-Warrior-One-Front,Label,B,250,,250,09/01/24,units,0.00%,0,0,0,0,0,72,,,,,,250,100,10/07/24,,-150.00%,100,10/07/24,Ayadara Labels
+LABL-AY-3.75x3-Warrior-Two-Front,Label,B,700,,700,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,700,750,10/07/24,,6.67%,750,10/07/24,Ayadara Labels
+LABL-AY-3.75x4.75-Day-Night-Acne-Kit-Front,Label,B,500,,500,09/01/24,units,0.00%,0,0,0,0,0,82,,,,,,500,500,10/07/24,,0.00%,500,10/07/24,Ayadara Labels
+LABL-AY-3.75x4.75-Day-Night-Acne-Kit-Back,Label,B,500,,500,09/01/24,units,0.00%,0,0,0,0,0,82,,,,,,500,500,10/07/24,,0.00%,500,10/07/24,Ayadara Labels
+LABL-AY-Crepe-Repair-Side,Label,A,"12,597.00",,"12,597.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,12597,"9,200.00",10/07/24,,-36.92%,"9,200.00",10/07/24,Ayadara Labels
+LABL-AY-Scars-No-More-Side,Label,B,"1,500.00",,"1,500.00",09/01/24,units,0.00%,0,0,0,0,0,89,,,,,,1500,"1,233.00",10/07/24,,-21.65%,"1,233.00",10/07/24,Ayadara Labels
+LABL-1.25x7.125-Breakout-Warrior-Acne-Cream-Side,Label,B,"2,054.00",,"2,054.00",09/01/24,units,0.00%,0,0,0,0,0,82,,,,,,2054,"1,728.00",10/07/24,,-18.87%,"1,728.00",10/07/24,Ayadara Labels
+LABL-AY-7.125x3-Bootylicious-8oz,Label,B,"2,789.00",,"2,789.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,2789,"2,428.00",10/07/24,,-14.87%,"2,428.00",10/07/24,Ayadara Labels
+LABL-AY-Celestial-Body-Acne-Body-Lotion-8oz,Label,C,"1,030.00",,"1,030.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,1030,220,10/07/24,,-368.18%,220,10/07/24,Ayadara Labels
+LABL-8.79x1.58-AY-Exfoliate-Bad-Vibes-Acne-Scrub-4oz,Label,C,400,,400,09/01/24,units,0.00%,0,0,0,0,120,144,,,,,,280,80,10/07/24,,-400.00%,80,10/07/24,Ayadara Labels
+LABL-10.5905x1.6418-AY-Stardust-Sulfur-Scrub-8oz,Label,C,515,,515,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,515,292,10/07/24,,-76.37%,292,10/07/24,Ayadara Labels
+LABEL-AY-Namaste-In-Bed-Sleep-Spray-8oz,Label,C,867,,867,09/01/24,units,0.00%,0,0,0,0,0,121,,,,,,867,760,10/07/24,,-14.08%,760,10/07/24,Ayadara Labels
+LABL-AY-Acne-Face-Spray-4oz,Label,,400,,400,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,400,400,10/07/24,,0.00%,400,10/07/24,Ayadara Labels
+LABL-AY-Wild-God-Toner-4oz,Label,C,"2,400.00",,"2,400.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,2400,"2,400.00",10/07/24,,0.00%,"2,400.00",10/07/24,Ayadara Labels
+LABL-AY-Clear-Sleep-Pillow-Mist-4oz,Label,,"1,537.00",,"1,537.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,1537,"1,537.00",10/07/24,,0.00%,"1,537.00",10/07/24,Ayadara Labels
+LABL-AY-3.75x4.75-Yoga-Mat-Spray-4oz,Label,C,984,,984,09/01/24,units,0.00%,0,0,0,0,0,111,,,,,,984,"1,141.00",10/07/24,,13.76%,"1,141.00",10/07/24,Ayadara Labels
+LABL-AY-5.75x4.75-Boho-Body-Wash-Side-8oz,Label,C,"1,320.00",,"1,320.00",09/01/24,units,0.00%,0,0,0,0,0,156,,,,,,1320,"1,277.00",10/07/24,,-3.37%,"1,320.00",8/19/2024,Ayadara Labels
+LABL-AY-5.25x5.75-Shower-Spray-Euc-8oz,Label,C,400,,400,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,400,400,10/07/24,,0.00%,400,10/07/24,Ayadara Labels
+LABL-AY-7.5X3-Hair-Savior-60-caps,Label,B,200,,200,09/01/24,units,0.00%,0,0,0,0,0,77,,,,,,200,200,10/07/24,,0.00%,200,10/07/24,Ayadara Labels
+LABL-AY-3.75x4.75-Body-Spray-4oz,Label,B,"3,900.00",,"3,900.00",09/01/24,units,0.00%,0,0,0,0,0,25,,,,,,3900,"3,900.00",10/07/24,,0.00%,"3,900.00",8/19/2024,Ayadara Labels
+LABL-5.3125X5.25-AY-Reverse-Warrior-Body-Spray-8oz,Label,C,"3,173.00",,"3,173.00",09/01/24,units,0.00%,0,0,0,0,0,187,,,,,,3173,"1,500.00",10/07/24,,-111.53%,"1,500.00",10/07/24,Ayadara Labels
+LABEL AY-Here-Comes-The-Sun-Room-Spray 4oz,Label,C,434,,434,09/01/24,units,0.00%,0,0,0,0,0,87,,,,,,434,484,10/07/24,,10.33%,434,8/19/2024,Ayadara Labels
+LABL-AY-7.5x5.5-Here-Comes-The-Sun-Room-Spray-16oz,Label,C,"2,900.00",,"2,900.00",09/01/24,units,0.00%,0,0,0,0,43,174,,,,,,2857,"2,575.00",10/07/24,,-12.62%,"2,575.00",10/07/24,Ayadara Labels
+LABL-AY-0.625x6.188-Salicylic-Acid-Spot-0.5oz-PLSF,Label,PLC-2024,0,,,,units,0.00%,0,0,0,0,0,240,,,,,,0,"1,080.00",10/07/24,,100.00%,"1,080.00",10/07/24,Ayadara Labels
+LABL-AY-1.25x7.125-Salicylic-Acid-Acne-Face-Cream-2oz-PLSF,Label,PLC-2024,0,,,,units,0.00%,0,0,0,0,0,240,,,,,,0,"1,100.00",10/07/24,,100.00%,"1,100.00",10/07/24,Ayadara Labels
+LABL-AY-Sulfur-Bentonite-Clay-Face-Scrub-4oz-PLSF,Label,PLC-2024,0,,,,units,0.00%,0,0,0,0,0,240,,,,,,0,,10/07/24,,0.00%,,10/07/24,Ayadara Labels
+Promo Stickers,,,,,,,,,,,,,,,,,,,,,,,,,,,
+LABL-NS-1.5X1.5-25OFF,Label,,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Promo Stickers
+LABL-WHYZ-1.5X1.5-25OFF,Label,,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Promo Stickers
+LABL-PS-1.5X1.5-25OFF,Label,,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Promo Stickers
+LABL-TH-1.5X1.5-25OFF,Label,,0,,0,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,0,0,10/07/24,,0.00%,0,10/07/24,Promo Stickers
+LABL-TA-1.5X1.5-25OFF,Label,,"2,000.00",,"2,000.00",09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,2000,"1,000.00",10/07/24,,-100.00%,"1,000.00",10/07/24,Promo Stickers
+LABL-AY-1.5X1.5-25OFF,Label,,400,,400,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,400,300,10/07/24,,-33.33%,300,10/07/24,Promo Stickers
+INSRT-CYSTIC-3.5X2-INFOCARD,Label,,800,,800,09/01/24,units,0.00%,0,0,0,0,0,240,,,,,,800,"1,000.00",10/07/24,,20.00%,"1,000.00",10/07/24,Promo Stickers
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,

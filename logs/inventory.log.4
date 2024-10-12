@@ -1,0 +1,69 @@
+2024-10-11 16:02:54,895 INFO Starting Finished Goods import
+2024-10-11 16:03:06,821 INFO Retrieved 373 rows from Google Sheet: 1oW4mNov0iR8yyGq69gHGndYVRV2xbqC3N74KqC592Xc, range: Master List & Unit Cost!A:U
+2024-10-11 16:03:07,436 ERROR Error during Finished Goods import: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "ix_finished_goods_isku"
+DETAIL:  Key (isku)=() already exists.
+
+[SQL: UPDATE finished_goods SET isku=%(isku)s, asin=%(asin)s, common_name=%(common_name)s, phoenix_class=%(phoenix_class)s, material_cost=%(material_cost)s, labor_cost=%(labor_cost)s, total_unit_cost=%(total_unit_cost)s WHERE finished_goods.id = %(finished_goods_id)s]
+[parameters: {'isku': '', 'asin': '', 'common_name': 'Anti-Acne Treatment Lotion Extra Strength', 'phoenix_class': '', 'material_cost': 0.0, 'labor_cost': 0.0, 'total_unit_cost': 0.0, 'finished_goods_id': 175}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+Traceback (most recent call last):
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "ix_finished_goods_isku"
+DETAIL:  Key (isku)=() already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/app/data_import/inventory_import.py", line 155, in import_finished_goods
+    create_finished_good(db, row_dict)
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/app/data_import/inventory_import.py", line 387, in create_finished_good
+    db.flush()
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4352, in flush
+    self._flush(objects)
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4487, in _flush
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 4448, in _flush
+    flush_context.execute()
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 85, in save_obj
+    _emit_update_statements(
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/persistence.py", line 912, in _emit_update_statements
+    c = connection.execute(
+        ^^^^^^^^^^^^^^^^^^^
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1418, in execute
+    return meth(
+           ^^^^^
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "ix_finished_goods_isku"
+DETAIL:  Key (isku)=() already exists.
+
+[SQL: UPDATE finished_goods SET isku=%(isku)s, asin=%(asin)s, common_name=%(common_name)s, phoenix_class=%(phoenix_class)s, material_cost=%(material_cost)s, labor_cost=%(labor_cost)s, total_unit_cost=%(total_unit_cost)s WHERE finished_goods.id = %(finished_goods_id)s]
+[parameters: {'isku': '', 'asin': '', 'common_name': 'Anti-Acne Treatment Lotion Extra Strength', 'phoenix_class': '', 'material_cost': 0.0, 'labor_cost': 0.0, 'total_unit_cost': 0.0, 'finished_goods_id': 175}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-10-11 16:03:07,475 INFO Tables reset for initial finished_goods_inventory import.

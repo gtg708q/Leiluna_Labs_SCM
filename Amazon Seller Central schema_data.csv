@@ -1,0 +1,318 @@
+Label,Description,FieldType,DataType,TablesList,JoinsList
+Account Name,The name of the account.,DIMENSION,TEXT,"Orders, Fees, Returns, Reimb, Estimated Fee Fba, Returns Fba, Feedback, Inventory Events Fba, Inventory, Estimated Fee, Inventory Fba, Excess Inventory Fba, Sales And Traffic, Sales And Traffic By Asin","Orders, Feedback, Fees, Returns, Reimb, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Returns Fba, Inventory Events Fba, Inventory, Estimated Fee, Sales And Traffic, Sales And Traffic By Asin"
+Order Total,Order Total = Item Price + Item Tax + Shipping Price + Shipping Tax,METRIC,CURRENCY,Orders,"Orders, Feedback"
+Fees,SUM of all Item Fees that Amazon charges for listing the item.  Does not report Promotions and other charges that are not associated with Amazon's fees they charge for listing the item.,METRIC,CURRENCY,Fees,"Orders, Fees, Feedback"
+Orders Marketplace Name,"The marketplace name (I.E. United States, Canada, United Kingdom, France) for where the order was placed.",DIMENSION,TEXT,Orders,"Orders, Feedback"
+Total Supply Quantity,"The total item quantity that a seller has in Amazon's fulfillment network supply chain. This includes inventory that is available for shipping, inventory in inbound shipments, and inventory being transferred between Amazon fulfillment centers.",METRIC,NUMBER,Inventory Fba,"Inventory Fba, Excess Inventory Fba"
+Number Of Orders,The number of orders.,METRIC,NUMBER,"Feedback, Fees, Orders, Reimb, Returns, Returns Fba","Feedback, Orders, Fees, Reimb, Returns, Returns Fba"
+Average Sales per Order item ,"The average sales per order item, determined by dividing the ordered product sales by the total order items.",METRIC,CURRENCY,Sales And Traffic,Sales And Traffic
+Average Selling Price ,"The average price of units sold, calculated by dividing the total ordered product sales by the total units for the selected time period.",METRIC,CURRENCY,Sales And Traffic,Sales And Traffic
+Average Units per Order item,The average number of units for each order item for the selected time period.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Order Item Session Percentage,"The order item session percentage, calculated by dividing the total order items by the number of distinct session counts for the selected time period.",METRIC,PERCENT,Sales And Traffic,Sales And Traffic
+Traffic Order Item Session Percentage B2b,**B2B fields not yet ready Nov 2023**,METRIC,PERCENT,Sales And Traffic,Sales And Traffic
+Unit Session Percentage,Percentage conversion metric indicating how many units were purchased relative to the number of people who viewed the products.,METRIC,PERCENT,Sales And Traffic,Sales And Traffic
+Traffic Unit Session Percentage B2b,**B2B fields not yet ready Nov 2023**,METRIC,PERCENT,Sales And Traffic,Sales And Traffic
+Average Offer Count,The average number of offers listed for sale in that particular time period. It is calculated from the total number of offers and the total number of days in the time period.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Unit Session Percentage by ASIN,Percentage conversion metric indicating how many units were purchased relative to the number of people who viewed the products. This field can be dimensioned by ASIN.,METRIC,PERCENT,Sales And Traffic By Asin,Sales And Traffic By Asin
+A To Z Claim,Indicates whether an A-To-Z Claim was filed by the buyer.  Either N for No or Y for Yes.,DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Amazon Rma ID,The RMA Id assigned by Amazon,DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Business Price,The price set specifically for Business Customers.,DIMENSION,TEXT,Inventory,Inventory
+Carrier Damaged,"Inventory that was damaged by a carrier during receiving, while in transit to the customer, or while in transit back to Amazon due to a return.",METRIC,NUMBER,Inventory Events Fba,Inventory Events Fba
+Customer Damaged,Inventory that was damaged by a customer.,METRIC,NUMBER,Inventory Events Fba,Inventory Events Fba
+Comments,Comments provided with feedback.,DIMENSION,TEXT,Feedback,Feedback
+Currency Code,The currency code of currency used to complete a purchase.,DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Defective,"Inventory that does not look or function as described in the listing and is not visibly damaged, for example, a recalled product.",METRIC,NUMBER,Inventory Events Fba,Inventory Events Fba
+Distributor Damaged,"Inventory that was damaged by the seller, vendor, or distributor during receiving.",METRIC,NUMBER,Inventory Events Fba,Inventory Events Fba
+Expired,Inventory that has passed its expiration date as described in Date/Lot.,METRIC,NUMBER,Inventory Events Fba,Inventory Events Fba
+Fulfiller Damaged,Damaged at Amazon fulfillment center.,METRIC,NUMBER,Inventory Events Fba,Inventory Events Fba
+Returns - In Policy,Reports whether the Return was completed In Policy or not.  Will provide Y for yes and No for no.,DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Returns - Invoice Number,The invoice number for the order.,DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Returns - Is Prime,Notes whether or not the item purchased was a Prime order or not.  Will report Y for Prime and N for not Prime.,DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Item Name (returns),Name of item for inventory and returns reporting.,DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Returns - Label Cost,Cost of the shipping label for the return.,METRIC,CURRENCY,Returns,"Orders, Returns, Feedback"
+Returns - Label To Be Paid By,Identifies who will pay for the return label.  Will report Customer if customer will pay and Seller if seller will pay.,DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Returns - Label Type,The type of label that was used to ship the Return back.,DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Returns - Merchant RMA ID,RMA ID for the seller.,DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Returns - Merchant SKU,A merchant-defined unique identifier for a product.,DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Order Item ID,"Amazon’s unique, displayable identifier for an item within the order.",DIMENSION,TEXT,Fees,"Orders, Fees, Feedback"
+Returns - Order Amount,Revenue of item for returns reporting.,METRIC,NUMBER,Returns,"Orders, Returns, Feedback"
+Returns - Order Date,Date of order for returns reporting.,DIMENSION,YEAR_MONTH_DAY,Returns,"Orders, Returns, Feedback"
+Returns - Order Quantity,"Quantity ordered for Returns reporting, but not the quantity returned. Use Return Quantity to compare this metric to actual amount returned.",METRIC,NUMBER,Returns,"Orders, Returns, Feedback"
+Review Rating,"Rating on a scale of 1-5, but the API presently only provides Ratings of 3-5.",METRIC,NUMBER,Feedback,Feedback
+Refunded Amount,Amount refunded of an order.,METRIC,NUMBER,Returns,"Orders, Returns, Feedback"
+Returns - Resolution,The action taken to resolve the return.,DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Return Carrier,"The carrier that returned the item (USPS, UPS, etc.)",DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Return Delivery Date,Date returned merchandise was processed at the fulfillment center.,DIMENSION,YEAR_MONTH_DAY,Returns,"Orders, Returns, Feedback"
+Return Quantity,Number of units of an item returned.,METRIC,NUMBER,Returns,"Orders, Returns, Feedback"
+Return Reason Code,A short description of reason for return as indicated by the customer.,DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Return Request Status,"The status of the Return (Approved, etc.)",DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Return Type,The type of return.  Will typically report C-Returns for a customer return.,DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Sellable,Inventory that looks and functions as described in the listing.,METRIC,NUMBER,Inventory Events Fba,Inventory Events Fba
+Safe-T Action Reason,Response from Amazon for determining the Claim Status.,DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Safe-T Claim Creation Time,Date that the Safe-T Claim was created.,DIMENSION,YEAR_MONTH_DAY,Returns,"Orders, Returns, Feedback"
+Safe-T Claim ID,Unique ID assigned to the Safe-T claim.,DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Safe-T Claim Status,"Status of the claim (Granted, Denied, etc.)",DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Returns - Seller RMA ID,RMA ID assigned to the return.,DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Returns - Tracking ID,"The carrier’s tracking number for the package, if available.",DIMENSION,TEXT,Returns,"Orders, Returns, Feedback"
+Unknown,Inventory that has an Unknown disposition.,METRIC,NUMBER,Inventory Events Fba,Inventory Events Fba
+Unsellable,The number of units you have for a SKU in Amazon fulfillment centers in unsellable condition.,METRIC,NUMBER,Inventory Events Fba,Inventory Events Fba
+Warehouse Damaged,Inventory that was damaged at an Amazon fulfillment center.,METRIC,NUMBER,Inventory Events Fba,Inventory Events Fba
+Account ID,Amazon Seller ID,DIMENSION,TEXT,"Estimated Fee, Estimated Fee Fba, Excess Inventory Fba, Feedback, Fees, Inventory, Inventory Fba, Inventory Events Fba, Orders, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin","Inventory, Estimated Fee, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Feedback, Orders, Fees, Inventory Events Fba, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin"
+AFN Fulfillable Quantity,"The number of units you have for a SKU in Amazon fulfillment centers that can be picked, packed, and shipped.",METRIC,NUMBER,Inventory Fba,"Inventory Fba, Excess Inventory Fba"
+AFN Future Supply Buyable,The number of units available for customers to find and buy while inventory is on its way to an Amazon fulfillment center through In-Stock Head Start.,METRIC,NUMBER,Inventory Fba,"Inventory Fba, Excess Inventory Fba"
+AFN Inbound Receiving Quantity,"The number of units you have for a SKU that have not yet been received at an Amazon fulfillment center for processing, but are part of an inbound shipment with some units that have already been received and processed.",METRIC,NUMBER,Inventory Fba,"Inventory Fba, Excess Inventory Fba"
+AFN Inbound Shipped Quantity,The number of units you have for a SKU in an inbound shipment that you have notified Amazon about and provided a tracking number.,METRIC,NUMBER,Inventory Fba,"Inventory Fba, Excess Inventory Fba"
+AFN Inbound Working Quantity,The number of units you have for a SKU in an inbound shipment that you have notified Amazon about.,METRIC,NUMBER,Inventory Fba,"Inventory Fba, Excess Inventory Fba"
+AFN Listing Exists,"""Yes"" indicates that the item is listed for Fulfillment by Amazon.",DIMENSION,TEXT,Inventory Fba,"Inventory Fba, Excess Inventory Fba"
+Afn Researching Quantity,This represents the misplaced or warehouse damaged inventory that is actively being confirmed at Amazon's fulfillment centers.,METRIC,NUMBER,Inventory Fba,"Inventory Fba, Excess Inventory Fba"
+AFN Reserved Future Supply,The number of units that customers have purchased while inventory is on its way to an Amazon fulfillment center through In-Stock Head Start.,METRIC,NUMBER,Inventory Fba,"Inventory Fba, Excess Inventory Fba"
+AFN Reserved Quantity,"The number of units you have for a SKU in Amazon fulfillment centers that are currently being picked, packed, and shipped or are sidelined for measurement, sampling, or other internal processes.",METRIC,NUMBER,Inventory Fba,"Inventory Fba, Excess Inventory Fba"
+Afn Total Quantity,The total number of units you have for a SKU in an inbound shipment or in Amazon fulfillment centers: (afn-total-quantity) = (afn-warehouse-quantity) + (afn-inbound-working-quantity) + (afn-inbound-shipped-quantity) + (afn-inbound-receiving-quantity),METRIC,NUMBER,Inventory Fba,"Inventory Fba, Excess Inventory Fba"
+Afn Unsellable Quantity,The number of units you have for a SKU in Amazon fulfillment centers in unsellable condition.,METRIC,NUMBER,Inventory Fba,"Inventory Fba, Excess Inventory Fba"
+Afn Warehouse Quantity,The number of units you have for an SKU in Amazon fulfillment centers that have been processed: (afn-warehouse-quantity) = (afn-fulfillable-quantity) + (afn-unsellable-quantity) + (afn-reserved-quantity).,METRIC,NUMBER,Inventory Fba,"Inventory Fba, Excess Inventory Fba"
+Alert,Shows when an item has a low traffic or low conversion alert.  Low traffic indicates that a low number of potential buyers have seen the listings.  Low conversion indicates that potential buyers are viewing the listing but do not follow through to purchase the product.,DIMENSION,TEXT,Excess Inventory Fba,Excess Inventory Fba
+Amazon Order ID,"Amazon’s unique, displayable identifier for an order.",DIMENSION,TEXT,"Feedback, Fees, Orders, Reimb, Returns, Returns Fba","Feedback, Orders, Fees, Reimb, Returns, Returns Fba"
+Amount,"Reports totals for every type of fee, including Item Fees, Promotions, shipping, tax, promotions, gift wrap and even the selling price.  Best used in conjunction with the Type dimension in the fees table",METRIC,CURRENCY,Fees,"Orders, Fees, Feedback"
+Amount Per Unit,The per-unit reimbursement amount for this line item.,METRIC,CURRENCY,Reimb,Reimb
+Amount Total (Reimbursement),The total amount of the cash reimbursement for a line item.,METRIC,CURRENCY,Reimb,Reimb
+Approval Date,The date the reimbursement was approved.,DIMENSION,YEAR_MONTH_DAY_HOUR,Reimb,Reimb
+ASIN,Amazon Standard Identification Numbers (ASINs) are unique blocks of 10 letters and/or numbers that identify items. ASINs are assigned by Amazon. You can find the ASIN on the product detail page.,DIMENSION,TEXT,"Estimated Fee, Estimated Fee Fba, Excess Inventory Fba, Inventory, Inventory Fba, Orders, Reimb, Returns, Returns Fba, Sales And Traffic By Asin","Inventory, Estimated Fee, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Orders, Feedback, Reimb, Returns, Returns Fba, Sales And Traffic By Asin"
+Brand,The brand of your product,DIMENSION,TEXT,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Buy Box Price,The buybox-winning price for this item at the time the report was generated.,DIMENSION,TEXT,Excess Inventory Fba,Excess Inventory Fba
+Buyer Company Name,Company Name that made a purchase.,DIMENSION,TEXT,Orders,"Orders, Feedback"
+Buyer Tax Registration Country,Country that order was shipped to.,DIMENSION,TEXT,Orders,"Orders, Feedback"
+Buyer Tax Registration ID,"Tax registration ID of the buyer, if it exists.",DIMENSION,TEXT,Orders,"Orders, Feedback"
+Buyer Tax Registration Type,"Type of tax registration ID for the buyer, if it exists.",DIMENSION,TEXT,Orders,"Orders, Feedback"
+Case ID,The unique identifier assigned to the case when you request a reimbursement.,DIMENSION,NUMBER,Reimb,Reimb
+Category,The Category for taxes and fees.,DIMENSION,TEXT,Fees,"Orders, Fees, Feedback"
+Commercial Price,"**Hidden June 17 2024 no data, no competitors offer this field**",DIMENSION,TEXT,Inventory,Inventory
+Inventory Condition,"The condition of the unit (new, used, etc.)",DIMENSION,TEXT,"Excess Inventory Fba, Inventory Fba, Reimb","Excess Inventory Fba, Inventory Fba, Reimb"
+Currency,"The currency used for the purchase. Supported currencies include CDN, USD, GBP, EUR, and JPY.",DIMENSION,TEXT,"Estimated Fee Fba, Excess Inventory Fba, Fees, Orders","Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Orders, Fees, Feedback"
+Currency Unit (Reimbursement),The currency for the applicable marketplace for a reimbursement.,DIMENSION,TEXT,Reimb,Reimb
+Returns - Customer Comments,"When available, comments submitted by customers regarding the reason for the return are provided.",DIMENSION,TEXT,Returns Fba,"Orders, Returns Fba, Feedback"
+Data Freshness,Used by Power My Analytics to improve report quality.,DIMENSION,YEAR_MONTH_DAY_HOUR,"Estimated Fee, Estimated Fee Fba, Excess Inventory Fba, Feedback, Fees, Inventory, Inventory Fba, Inventory Events Fba, Orders, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin","Inventory, Estimated Fee, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Feedback, Orders, Fees, Inventory Events Fba, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin"
+Date And Time,Date and time for reporting.,DIMENSION,YEAR_MONTH_DAY_HOUR,"Estimated Fee, Estimated Fee Fba, Excess Inventory Fba, Feedback, Fees, Inventory, Inventory Fba, Inventory Events Fba, Orders, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin","Inventory, Estimated Fee, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Feedback, Orders, Fees, Inventory Events Fba, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin"
+Days Of Supply,The number of days your inventory is expected to last.,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Returns - Disposition,Condition of the returned item.,DIMENSION,TEXT,Returns Fba,"Orders, Returns Fba, Feedback"
+Estimated Cost Savings Of Recommended Actions,Estimated cost savings between taking the recommended action versus the storage fees you would incur on that inventory by taking no action.,METRIC,CURRENCY,Excess Inventory Fba,Excess Inventory Fba
+Estimated Delivery Services Fee Per Unit,Fee for delivery services.,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Estimated Excess,The number of units where the cost of holding your inventory would likely be more than the cost of taking action (such as reducing prices to increase sell through or removing excess units).,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Estimated Excess Quantity,Estimated; excess units are overstocked units based on your current sales; velocity and customer demand forecast. It’s costing you more to keep; these units on hand and pay storage fees than to reduce the number of; units through a price reduction or removal.,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Estimated Fee Total,The estimated fulfillment and Selling on Amazon fee,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Estimated Fixed Closing Fee,Estimated fixed FBA fee based on product price.,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Estimated Future Order Handling Fee Per Order,The estimated Order Handling Fee per order.,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Estimated Future Pick Pack Fee Per Unit,The estimated Pick & Pack Fee for your product per unit.,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Estimated Future Weight Handling Fee Per Unit,The estimated Weight Handling Fee for your product based on the Outbound Shipping Weight.,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Estimated Order Handling Fee Per Order,The estimated Order Handling Fee per order,DIMENSION,TEXT,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Estimated Pick Pack Fee Per Unit,The estimated Pick & Pack Fee for your product per unit,DIMENSION,TEXT,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Estimated Referral Fee Per Item,The estimated Selling on Amazon Referral Fee.,DIMENSION,TEXT,Estimated Fee,"Inventory, Estimated Fee"
+Estimated Referral Fee Per Unit,The estimated Selling on Amazon Referral Fee,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Estimated Storage Cost Next 30 Days,"The approximate amount of fees that you would incur 30 days from today, based on your current sales rate. It is a rolling estimate that reflects the monthly storage fee plus the estimated long-term storage fee.",METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Estimated Variable Closing Fee,The estimated Variable Closing Fee for your product,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Estimated Weight Handling Fee Per Unit,The estimated Weight Handling Fee for your product based on the Outbound Shipping Weight,DIMENSION,TEXT,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Excess Threshold,The maximum days of supply inventory for this item. Default 90 days of supply.,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Expected Domestic Fulfilment Fee Per Unit,Expected fee for fulfilling an order that is shipped to a domestic destination (not shipped cross-border).,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Expected Efn Fulfilment Fee Per Unit De,Expected fee to ship locally to Germany.,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Expected Efn Fulfilment Fee Per Unit Es,Expected fee to ship locally to Spain.,DIMENSION,TEXT,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Expected Efn Fulfilment Fee Per Unit Fr,Expected fee to ship locally to France.,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Expected Efn Fulfilment Fee Per Unit It,Expected fee to ship locally to Italy.,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Expected Efn Fulfilment Fee Per Unit Uk,Expected fee to ship locally to the UK.,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Expected Fulfillment Fee Per Unit,Expected fulfillment fee for each unit.,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Expected Future Domestic Fulfilment Fee Per Unit,Expected fee for fulfilling an order that is shipped to a domestic destination (not shipped cross-border).,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Expected Future Efn Fulfilment Fee Per Unit De,Expected fee to ship locally to Germany.,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Expected Future Efn Fulfilment Fee Per Unit Es,Expected fee to ship locally to Spain.,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Expected Future Efn Fulfilment Fee Per Unit Fr,Expected fee to ship locally to France.,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Expected Future Efn Fulfilment Fee Per Unit It,Expected fee to ship locally to Italy.,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Expected Future Efn Fulfilment Fee Per Unit Uk,Expected fee to ship locally to the UK.,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Expected Future Fulfillment Fee Per Unit,Expected fulfillment fee for each unit.,METRIC,CURRENCY,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+FNSKU,Fulfillment Network Stock Keeping Units (FNSKUs) are unique identifiers assigned by Amazon to products stored in and fulfilled from Amazon fulfillment centers.,DIMENSION,TEXT,"Estimated Fee Fba, Excess Inventory Fba, Inventory Fba, Reimb, Returns Fba","Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Reimb, Orders, Returns Fba, Feedback"
+Fulfilled By,The entity that fulfilled the item,DIMENSION,TEXT,"Estimated Fee Fba, Excess Inventory Fba, Orders","Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Orders, Feedback"
+Returns - Fulfillment Center ID,Fulfillment center where inventory is stored,DIMENSION,TEXT,Returns Fba,"Orders, Returns Fba, Feedback"
+Fulfillment Channel,"Indicates how the order was fulfilled, via Amazon (AFN) or Merchant (MFN)",DIMENSION,TEXT,"Inventory, Orders","Inventory, Orders, Feedback"
+Fulfilment Channel,Channel that fulfilled the order (Amazon vs Merchant),DIMENSION,TEXT,Inventory,Inventory
+Gift Wrap Price,"The amount the buyer paid for gift wrap. Amount is aggregate of the quantity, not unit price.",METRIC,CURRENCY,Orders,"Orders, Feedback"
+Gift Wrap Tax,"The amount the buyer paid for gift wrap tax. Amount is aggregate of the quantity, not unit price.",METRIC,NUMBER,Orders,"Orders, Feedback"
+Healthy Inventory Level,Quantity of inventory that is not considered excess based on product demand and your costs. Our recommendations are based on helping you reach this level of inventory.,DIMENSION,TEXT,Excess Inventory Fba,Excess Inventory Fba
+Inventory Age 0 To 90 Days,The number of sellable Units you have for a SKU that have been in the fulfillment center for the last 0-90 days,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Inventory Age 181 To 270 Days,The number of sellable Units you have for a SKU that have been in the fulfillment center for the last 181 – 270 days,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Inventory Age 271 To 365 Days,The number of sellable Units you have for a SKU that have been in the fulfillment center for the last 271 – 365 days,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Inventory Age 365 Plus Days,The number of sellable Units you have for a SKU that have been in the fulfillment center for the last 365+ days,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Inventory Age 91 To 180 Days,The number of sellable Units you have for a SKU that have been in the fulfillment center for the last 91 – 180 days,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Inventory Age Key,"When paired with Inventory Age Value, indicates the number of items in inventory that have aged 0-90 days, 91-180 days, etc.",DIMENSION,TEXT,Excess Inventory Fba,Excess Inventory Fba
+Inventory Age Value,"When paired with Inventory Age Key, indicates the number of items in inventory that have aged 0-90 days, 91-180 days, etc.",METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Inventory Quantity,The quantity of inventory reported.,METRIC,NUMBER,Inventory,Inventory
+Is Amazon Invoiced,Notes if the order is invoiced by Amazon or not.,DIMENSION,TEXT,Orders,"Orders, Feedback"
+Is Business Order,Indicates if the order is from an Amazon Business customer.,DIMENSION,TEXT,Orders,"Orders, Feedback"
+Is Exchange Order,Identifies if the order is an exchange order or not.,DIMENSION,TEXT,Orders,"Orders, Feedback"
+Is Heavy Or Bulky,Identifies if an shipment is heavy or bulky.,DIMENSION,TEXT,Orders,"Orders, Feedback"
+Is Replacement Order,Identifies if an order is for a replacement for a prior order.,DIMENSION,TEXT,Orders,"Orders, Feedback"
+Is Sold By Ab,When an order is a Sold By AB order the IsSoldByAB flag is set to true.,DIMENSION,TEXT,Orders,"Orders, Feedback"
+Is Transparency,Identifies if an ASIN or product is enrolled in the Transparency program.,DIMENSION,TEXT,Orders,"Orders, Feedback"
+Item Condition,Condition of the item being sold.,DIMENSION,TEXT,Inventory,Inventory
+Item Description,Description provided by seller of the item.,DIMENSION,TEXT,Inventory,Inventory
+Item Name (inventory),Name of the item.,DIMENSION,TEXT,"Estimated Fee, Inventory","Inventory, Estimated Fee"
+Item Note,Your description of the listing.,DIMENSION,TEXT,Inventory,Inventory
+Item Package Weight,The weight of the product including its packaging,METRIC,NUMBER,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Item Subtotal,"The amount the buyer paid for the item. Amount is aggregate of the quantity, not unit price.",METRIC,CURRENCY,Orders,"Orders, Feedback"
+Item Promotion Discount,Promotion discount applied to the order item.,METRIC,NUMBER,Orders,"Orders, Feedback"
+Item Status,Current status of this item within the order.,DIMENSION,TEXT,Orders,"Orders, Feedback"
+Item Tax,"The amount the buyer paid for item tax. Amount is aggregate of the quantity, not unit price.",METRIC,NUMBER,Orders,"Orders, Feedback"
+Item Volume,"The volume of the item, which is calculated by multiplying the longest side, median side, and shortest side together. These measurements generally correspond to the length, width, and height of the item.",METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Last Updated Date,The date of the most recent order update.,DIMENSION,YEAR_MONTH_DAY_HOUR,Orders,"Orders, Feedback"
+Length And Girth,"The longest side of your product, including its packaging, plus the girth, a unit measure, equivalent to 2 x (median side + shortest side)",METRIC,NUMBER,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+License Plate Number,A unique identifier code used as a sticker to identify items for returns.,DIMENSION,TEXT,Returns Fba,"Orders, Returns Fba, Feedback"
+Listing ID,A value derived by Amazon when an item is listed. The first 4 digits are the month and day it was listed.,DIMENSION,TEXT,Inventory,Inventory
+Longest Side,Measurement of the longest side of your product including its packaging,METRIC,NUMBER,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Lowest Price Includes Shipping,The lowest price (including shipping) for an item.,METRIC,CURRENCY,Excess Inventory Fba,Excess Inventory Fba
+Lowest Price Used,The lowest price (including shipping) for this item in used condition on Amazon.,METRIC,CURRENCY,Excess Inventory Fba,Excess Inventory Fba
+Marketplace,The marketplace where an item is listed.,DIMENSION,TEXT,Excess Inventory Fba,Excess Inventory Fba
+Marketplace ID,The ID for the marketplace where an item is listed.,DIMENSION,TEXT,"Estimated Fee, Excess Inventory Fba, Inventory, Inventory Fba, Returns, Sales And Traffic, Sales And Traffic By Asin","Inventory, Estimated Fee, Excess Inventory Fba, Inventory Fba, Orders, Returns, Feedback, Sales And Traffic, Sales And Traffic By Asin"
+Marketplace Name,"For FBA inventory reporting, the Amazon marketplace where the item is listed (United States, Germany, Spain, etc.).",DIMENSION,TEXT,"Estimated Fee, Excess Inventory Fba, Inventory, Inventory Fba, Returns","Inventory, Estimated Fee, Excess Inventory Fba, Inventory Fba, Orders, Returns, Feedback"
+Maximum Retail Price,This field is used to denote the maximum retail price.,METRIC,CURRENCY,Inventory,Inventory
+Median Side,Measurement of the side that is neither the longest nor the shortest side of your product including its packaging,METRIC,NUMBER,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Merchant Order ID,A unique identifier optionally supplied for the order by the Merchant.,DIMENSION,TEXT,Orders,"Orders, Feedback"
+MFN Fulfillable Quantity,"The quantity in your fulfillment network that can be picked, packed, and shipped.",METRIC,NUMBER,Inventory Fba,"Inventory Fba, Excess Inventory Fba"
+MFN Listing Exists,"""Yes"" indicates that the product is listed for fulfillment by you as the seller.",DIMENSION,TEXT,Inventory Fba,"Inventory Fba, Excess Inventory Fba"
+Number of Items,"The number of items that are included in the product (I.E. ""2-pack"", ""Dozen"")",METRIC,NUMBER,Orders,"Orders, Feedback"
+Open Date,The date an item was first listed.,DIMENSION,TEXT,Inventory,Inventory
+CBA/WBA Order Channel,The sub channel through which a sale was made for CBA/WBA orders.,DIMENSION,TEXT,Orders,"Orders, Feedback"
+Order Status,"Status of the order (Shipped, Cancelled, Pending, Shipping, etc.)",DIMENSION,TEXT,Orders,"Orders, Feedback"
+Original Order ID,The original ID of an order that has been modified and has had its Order ID changed.,DIMENSION,TEXT,Orders,"Orders, Feedback"
+Original Reimbursement ID,"For reimbursement reversals, the ID of the original reimbursement which is the subject of the reversal.  If this is not a reimbursement reversal, this field will be empty.",DIMENSION,NUMBER,Reimb,Reimb
+Reimbursement Type,"For a reimbursement reversal, this field will show the reason for the original reimbursement. If this is not a reimbursement reversal, this field will be empty.",DIMENSION,TEXT,Reimb,Reimb
+Parent ASIN,The Parent ASIN for an item.,DIMENSION,TEXT,"Orders, Sales And Traffic By Asin","Orders, Feedback, Sales And Traffic By Asin"
+Payment Method Details,"**Hidden June 17, 2024 No data, none of our competitors offer this field**",DIMENSION,TEXT,Orders,"Orders, Feedback"
+Pending Quantity,The inventory that is marked pending by Amazon.,METRIC,NUMBER,Inventory,Inventory
+Per Unit Volume,The volume in cubic feet of each inventory unit assessed the Long-Term Storage Fee.,METRIC,NUMBER,Inventory Fba,"Inventory Fba, Excess Inventory Fba"
+Price,The price set for an item.,DIMENSION,TEXT,"Estimated Fee, Inventory","Inventory, Estimated Fee"
+Price Designation,Indicates the type of business price that the buyer used.,DIMENSION,TEXT,Orders,"Orders, Feedback"
+Product Group,The Amazon department or category,DIMENSION,TEXT,"Estimated Fee Fba, Excess Inventory Fba","Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Product ID,ID designated by Amazon,DIMENSION,TEXT,Inventory,Inventory
+Product ID Type,Amazon defines product id type as follows 1 = ASIN 2 = ISBN 3 = UPC 4 = EAN,DIMENSION,TEXT,Inventory,Inventory
+Product Name,"The short title for the product, displayed in bold on the detail web page and in the title bar of the browser window.",DIMENSION,TEXT,"Estimated Fee Fba, Excess Inventory Fba, Inventory Fba, Inventory Events Fba, Orders, Reimb, Returns Fba","Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Inventory Events Fba, Orders, Feedback, Reimb, Returns Fba"
+Product Size Tier,The size tier assigned to your product by FBA based on its dimensions and weight,DIMENSION,TEXT,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Product Size Weight Band,The band tier assigned to your product by FBA based on its dimensions and weight,DIMENSION,TEXT,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Estimated long-term storage units,"The estimated number of units that will be subject to long-term storage fees (if applicable) on your next charge date, assuming no further sales. ",METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Estimated long-term storage fee,The estimated amount of the long-term storage fees (if applicable) for units in storage between 271-365 days.,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Promotion Ids,ID designated for a promotion.,DIMENSION,TEXT,Orders,"Orders, Feedback"
+Quantity,Quantity of items ordered.,METRIC,NUMBER,Orders,"Orders, Feedback"
+Quantity Reimbursed - Cash,The total number of units reimbursed with cash.,METRIC,NUMBER,Reimb,Reimb
+Quantity Reimbursed - Inventory,The number of units reimbursed with inventory.,METRIC,NUMBER,Reimb,Reimb
+Quantity Reimbursed - Total,The total number of units reimbursed with either cash or inventory (Quantity Reimbursed - Cash + Quantity Reimbursed - Inventory).,METRIC,NUMBER,Reimb,Reimb
+Quantity Returned Fba,Quantity of an item returned.,METRIC,NUMBER,Returns Fba,"Orders, Returns Fba, Feedback"
+Return Reason FBA,A short description of reason for return as indicated by the customer.,DIMENSION,TEXT,"Reimb, Returns Fba","Reimb, Orders, Returns Fba, Feedback"
+Recommended Action,"The action recommended for your inventory. Recommendations depend on your inventory position, ASIN alerts, and known inputs at the time the report is generated.",DIMENSION,TEXT,Excess Inventory Fba,Excess Inventory Fba
+Recommended Removal Quantity,The number of sellable units for a SKU that will have been in the fulfillment center for 181 to 365 days or 365 days or more on the next Inventory Cleanup date and need to be removed (assuming no further sales) to avoid the long-term storage fee.,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Recommended Sale Duration Days,Sale duration in days recommended to help you sell through your inventory based on your current inventory settings.,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Recommended Sales Price,Sales price recommended to help you sell through your inventory based on your current inventory settings. This value may be different from the lowest price or Buy Box price. We recommend that you keep your product at this price until you have sold through your excess inventory.,METRIC,CURRENCY,Excess Inventory Fba,Excess Inventory Fba
+Reimbursement ID,The unique identifier for this reimbursement. Each reimbursement may include multiple line items.,DIMENSION,NUMBER,Reimb,Reimb
+Ordered Product Sales by ASIN,"The amount of ordered product sales, calculated by multiplying the price of order items and the number of units sold for the selected time period. This field can be dimensioned by ASIN.",METRIC,NUMBER,Sales And Traffic By Asin,Sales And Traffic By Asin
+Total Order Items by ASIN,The total number of order items ordered for the selected time period. This field can be dimensioned by ASIN.,METRIC,NUMBER,Sales And Traffic By Asin,Sales And Traffic By Asin
+Units Ordered by ASIN,Number of units ordered. This field can be dimensioned by ASIN.,METRIC,NUMBER,Sales And Traffic By Asin,Sales And Traffic By Asin
+Average Sales Per Order Item Currency Code,The currency code for Average Sales per Order Item.,DIMENSION,TEXT,Sales And Traffic,Sales And Traffic
+Average Selling Price Currency Code,The currency code for the Average Selling Price.,DIMENSION,TEXT,Sales And Traffic,Sales And Traffic
+Sales Channel,"The source of the order.  Will be either Amazon.com or Non Amazon.  Non Amazon means the order was not placed on Amazon, but it was fulfilled by Amazon.",DIMENSION,TEXT,Orders,"Orders, Feedback"
+Claims Amount,Monetary amount of filed A-to-z Guarantee Claims.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Claims Amount Currency Code,The currency code for the claims amount.,DIMENSION,TEXT,Sales And Traffic,Sales And Traffic
+A-to-Z Claims Granted,Number of A-to-z claims granted.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Ordered Product Sales,"The amount of ordered product sales, calculated by multiplying the price of order items and the number of units sold for the selected time period.",METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Ordered Product Sales Currency Code,The currency code for Ordered Product Sales.,DIMENSION,TEXT,Sales And Traffic,Sales And Traffic
+Orders Shipped,Number of orders shipped.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Sales Price,Your sale price if you are running a sale on the product.,METRIC,CURRENCY,"Estimated Fee Fba, Excess Inventory Fba","Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Sales Rank,Sales rank of an Amazon catalog item.,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Refund Rate,"The refund rate, calculated by dividing the number of units refunded by the number of units sold in the selected time period.",METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Shipped Product Sales,"The amount of shipped product sales, calculated by multiplying the price of the order items and the number of units sold and confirmed shipped for the selected time period.",METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Shipped Product Sales Currency Code,The currency code for Shipped Product Sales.,DIMENSION,TEXT,Sales And Traffic,Sales And Traffic
+Sales Shipped Last 30 Days,Unit sales in the last 30 days,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Sales Shipped Last 60 Days,Unit sales in the last 60 days,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Sales Shipped Last 7 Days,Unit sales in the last 7 days,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Sales Shipped Last 90 Days,Unit sales in the last 90 days,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Total Order Items,The total number of order items ordered for the selected time period.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Sales Total Order Items B2b,**B2B fields not yet ready Nov 2023**,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Units Ordered,Number of units ordered.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Sales Units Ordered B2b,**B2B fields not yet ready Nov 2023**,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Units Refunded,Number of units refunded.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Units Shipped,Number of units shipped.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Sell Through,The rate at which your units sold and shipped over the past 90 days divided by the average inventory available at fulfillment centers during that time period. Tracking your sell-through rate can help you determine whether you need to take action to improve traffic or conversion for your products.,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Seller SKU,SKU designated by the seller.,DIMENSION,TEXT,"Estimated Fee, Inventory","Inventory, Estimated Fee"
+Ship City,The city of a standard address.,DIMENSION,CITY,Orders,"Orders, Feedback"
+Ship Country,ISO 3166 standard two-letter country code.,DIMENSION,COUNTRY,Orders,"Orders, Feedback"
+Ship Postal Code,The postal (ZIP) code of a standard address.,DIMENSION,TEXT,Orders,"Orders, Feedback"
+Ship Promotion Discount,Promotion discount applied to shipping.,METRIC,NUMBER,Orders,"Orders, Feedback"
+Ship Service Level,"An enumerated value that determines the type of fulfilment service that the buyer expects the merchant to use (e.g., Standard vs. Expedited)",DIMENSION,TEXT,Orders,"Orders, Feedback"
+Ship State,The state or region of a standard address.,DIMENSION,REGION,Orders,"Orders, Feedback"
+Shipping Price,"The amount the buyer paid for shipping. Amount is aggregate of the quantity, not unit price.",METRIC,CURRENCY,Orders,"Orders, Feedback"
+Shipping Tax,"The amount the buyer paid for shipping tax. Amount is aggregate of the quantity, not unit price.",METRIC,NUMBER,Orders,"Orders, Feedback"
+Shortest Side,Measurement of the shortest side of your product including its packaging,METRIC,NUMBER,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Inventory SKU,Stock Keeping Units (SKUs) are unique blocks of letters or numbers that identify your products.,DIMENSION,TEXT,"Estimated Fee Fba, Excess Inventory Fba, Fees, Inventory Fba, Inventory Events Fba, Orders, Reimb, Returns Fba, Sales And Traffic By Asin","Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Orders, Fees, Feedback, Inventory Events Fba, Reimb, Returns Fba, Sales And Traffic By Asin"
+Snapshot Date,The date the report was generated.,DIMENSION,YEAR_MONTH_DAY,Excess Inventory Fba,Excess Inventory Fba
+Standard Price Point,The default price of the item when it is not on sale.,METRIC,NUMBER,Inventory,Inventory
+Return Status,Identifies the status of a return.,DIMENSION,TEXT,Returns Fba,"Orders, Returns Fba, Feedback"
+Storage Type,"Storage type category of the product for which storage limits are set. There are six storage types: standard-size, oversize, apparel, footwear, flammable or aerosol.",DIMENSION,TEXT,Excess Inventory Fba,Excess Inventory Fba
+Tax Collection Model,"The tax collection model (Marketplace Facilitator, Third-Party Service Provider, Amazon Tax Calculation Services, or Self-Collecting Seller).",DIMENSION,TEXT,Orders,"Orders, Feedback"
+Tax Collection Responsible Party,The party responsible for tax collection.,DIMENSION,TEXT,Orders,"Orders, Feedback"
+Title,Title or name of the product.,DIMENSION,TEXT,Sales And Traffic By Asin,Sales And Traffic By Asin
+Total Quantity Sellable,The number of units for a SKU in sellable condition in the Amazon fulfillment network.,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Page Views - Browser by ASIN,Hits in your Amazon.com browser presence for the selected time period. This field can be dimensioned by ASIN.,METRIC,NUMBER,Sales And Traffic By Asin,Sales And Traffic By Asin
+Page Views Percentage - Browser by ASIN,Percentage of browser page views that a particular SKU/ASIN receives relative to the total number of page views for all products,METRIC,PERCENT,Sales And Traffic By Asin,Sales And Traffic By Asin
+Session Percentage - Browser by ASIN,Percentage of browser sessions that contain at least one page view for a particular SKU/ASIN relative to the total number of sessions for all products.,METRIC,PERCENT,Sales And Traffic By Asin,Sales And Traffic By Asin
+Sessions - Browser by ASIN,Sessions are visits to your Amazon.com browser pages by an Amazon Customer. All activity within a 24-hour period is considered a session. This field can be dimensioned by ASIN.,METRIC,NUMBER,Sales And Traffic By Asin,Sales And Traffic By Asin
+Featured Offer (Buy Box) Percentage by ASIN,This is the percentage of page views where the Featured Offer (the add to shopping cart link) appeared on the page for customers to add your product to their cart. This field can be dimensioned by ASIN.,METRIC,PERCENT,Sales And Traffic By Asin,Sales And Traffic By Asin
+Page Views - Mobile App by ASIN,Hits in your Amazon.com mobile app presence for the selected time period. This field can be dimensioned by ASIN.,METRIC,NUMBER,Sales And Traffic By Asin,Sales And Traffic By Asin
+Page Views Percentage - Mobile App by ASIN,Percentage of mobile app page views that a particular SKU/ASIN receives relative to the total number of page views for all products.,METRIC,PERCENT,Sales And Traffic By Asin,Sales And Traffic By Asin
+Session Percentage - Mobile App by ASIN,Percentage of mobile app sessions that contain at least one page view for a particular SKU/ASIN relative to the total number of sessions for all products.,METRIC,PERCENT,Sales And Traffic By Asin,Sales And Traffic By Asin
+Sessions - Mobile App by ASIN,Sessions are visits to your Amazon.com mobile app pages by a user. All activity within a 24-hour period is considered a session. This field can be dimensioned by ASIN.,METRIC,NUMBER,Sales And Traffic By Asin,Sales And Traffic By Asin
+Page Views - Total by ASIN,Hits in your Amazon.com presence for the selected time period. This field can be dimensioned by ASIN.,METRIC,NUMBER,Sales And Traffic By Asin,Sales And Traffic By Asin
+Page Views Percentage - Total by ASIN,Percentage of page views that a particular SKU/ASIN receives relative to the total number of page views for all products.,METRIC,PERCENT,Sales And Traffic By Asin,Sales And Traffic By Asin
+Session Percentage - Total by ASIN,Percentage of sessions that contain at least one page view for a particular SKU/ASIN relative to the total number of sessions for all products.,METRIC,PERCENT,Sales And Traffic By Asin,Sales And Traffic By Asin
+Sessions - Total by ASIN,Sessions are visits to your Amazon.com pages by a user. All activity within a 24-hour period is considered a session. This field can be dimensioned by ASIN.,METRIC,NUMBER,Sales And Traffic By Asin,Sales And Traffic By Asin
+Average Offer Count - Deprecated,DEPRECATED,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Average Parent Items,The average number of parent items listed for sale in that particular time period.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Page Views - Browser,Hits in your Amazon.com browser presence for the selected time period.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Sessions - Browser,Sessions are visits to your Amazon.com browser pages by an Amazon Business Customer. All activity within a 24-hour period is considered a session.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Featured Offer (Buy Box) Percentage,This is the percentage of page views where the Featured Offer (the add to shopping cart link) appeared on the page for customers to add your product to their cart.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Feedback Received,Total number of customer feedback received.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Page Views - Mobile App,Hits in your Amazon.com mobile app presence for the selected time period.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Sessions - Mobile App,Sessions are visits to your Amazon.com mobile app pages by a user. All activity within a 24-hour period is considered a session.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Negative Feedback Received,Number of negative feedback received.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Page Views - Total,Hits in your Amazon.com presence for the selected time period.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Received Negative Feedback Rate,Received negative feedback rate.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Sessions - Total,Sessions are visits to your Amazon.com pages by a user. All activity within a 24-hour period is considered a session.,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Traffic Sessions B2b,**B2B fields not yet ready Nov 2023**,METRIC,NUMBER,Sales And Traffic,Sales And Traffic
+Fee Type,"Sub-categorization of fees (Commission, Tax, Principal, GiftWarap, etc.)",DIMENSION,TEXT,Fees,"Orders, Fees, Feedback"
+Unit Of Dimension,The unit of dimension used in measurement,DIMENSION,TEXT,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Unit Of Weight,The unit of weight used in weight measurement,DIMENSION,TEXT,Estimated Fee Fba,"Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+Units Shipped Key,"When paired with Units Shipped Value, displays the count of units shipped in the last 7, 30, 60, or 90 days.",DIMENSION,TEXT,Excess Inventory Fba,Excess Inventory Fba
+Units Shipped Value,"When paired with Units Shipped Key, displays the count of units shipped in the last 7, 30, 60, or 90 days.",METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Units Shipped Last 30 Days,Units shipped in the last 30 days,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Units Shipped Last 60 Days,"Units shipped in the last 60 days
+",METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Units Shipped Last 7 Days,Units shipped in the last 7 days,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+Units Shipped Last 90 Days,Units shipped in the last 90 days,METRIC,NUMBER,Excess Inventory Fba,Excess Inventory Fba
+VAT Exclusive Giftwrap Price,"Price set to gift wrap an item, minus VAT.",METRIC,CURRENCY,Orders,"Orders, Feedback"
+Vat Exclusive Item Price,"Price set for an item, minus VAT",METRIC,CURRENCY,Orders,"Orders, Feedback"
+VAT Exclusive Shipping Price,"Price set to ship an item, minus VAT.",METRIC,CURRENCY,Orders,"Orders, Feedback"
+Will Ship Internationally,Indicates if a SKU can be shipped internationally.,DIMENSION,TEXT,Inventory,Inventory
+Inventory Your Price,Your current selling price.,METRIC,CURRENCY,"Estimated Fee Fba, Excess Inventory Fba, Inventory Fba","Estimated Fee Fba, Inventory Fba, Excess Inventory Fba"
+PMA Subscription ID,Used by Power My Analytics for billing and user-identification with our support staff.,,,"Orders, Fees, Returns, Reimb, Estimated Fee Fba, Returns Fba, Feedback, Inventory Events Fba, Inventory, Estimated Fee, Inventory Fba, Excess Inventory Fba, Sales And Traffic, Sales And Traffic By Asin","Orders, Feedback, Fees, Returns, Reimb, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Returns Fba, Inventory Events Fba, Inventory, Estimated Fee, Sales And Traffic, Sales And Traffic By Asin"
+PMA Trial Status,"Used by Power My Analytics to show trial as Active, Expired or number of days remaining.",,,"Orders, Fees, Returns, Reimb, Estimated Fee Fba, Returns Fba, Feedback, Inventory Events Fba, Inventory, Estimated Fee, Inventory Fba, Excess Inventory Fba, Sales And Traffic, Sales And Traffic By Asin","Orders, Feedback, Fees, Returns, Reimb, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Returns Fba, Inventory Events Fba, Inventory, Estimated Fee, Sales And Traffic, Sales And Traffic By Asin"
+PMA Payment URL,"Used by Power My Analytics to provide URL to activate your account, or to see the billing information.",,,"Orders, Fees, Returns, Reimb, Estimated Fee Fba, Returns Fba, Feedback, Inventory Events Fba, Inventory, Estimated Fee, Inventory Fba, Excess Inventory Fba, Sales And Traffic, Sales And Traffic By Asin","Orders, Feedback, Fees, Returns, Reimb, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Returns Fba, Inventory Events Fba, Inventory, Estimated Fee, Sales And Traffic, Sales And Traffic By Asin"
+PMA Minimum Cached Data Date,Used by Power My Analytics to indicate minimum cached data date.,DIMENSION,YEAR_MONTH_DAY,"Orders, Fees, Returns, Reimb, Estimated Fee Fba, Returns Fba, Feedback, Inventory Events Fba, Inventory, Estimated Fee, Inventory Fba, Excess Inventory Fba, Sales And Traffic, Sales And Traffic By Asin","Orders, Feedback, Fees, Returns, Reimb, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Returns Fba, Inventory Events Fba, Inventory, Estimated Fee, Sales And Traffic, Sales And Traffic By Asin"
+PMA Maximum Cached Data Date,Used by Power My Analytics to indicate maximum cached data date.,DIMENSION,YEAR_MONTH_DAY,"Orders, Fees, Returns, Reimb, Estimated Fee Fba, Returns Fba, Feedback, Inventory Events Fba, Inventory, Estimated Fee, Inventory Fba, Excess Inventory Fba, Sales And Traffic, Sales And Traffic By Asin","Orders, Feedback, Fees, Returns, Reimb, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Returns Fba, Inventory Events Fba, Inventory, Estimated Fee, Sales And Traffic, Sales And Traffic By Asin"
+PMA Is Interpolated?,Used by Power My Analytics to indicate whether lifetime data might be interpolated,,,"Orders, Fees, Returns, Reimb, Estimated Fee Fba, Returns Fba, Feedback, Inventory Events Fba, Inventory, Estimated Fee, Inventory Fba, Excess Inventory Fba, Sales And Traffic, Sales And Traffic By Asin","Orders, Feedback, Fees, Returns, Reimb, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Returns Fba, Inventory Events Fba, Inventory, Estimated Fee, Sales And Traffic, Sales And Traffic By Asin"
+Data Source,Data source title,DIMENSION,TEXT,"Orders, Fees, Returns, Reimb, Estimated Fee Fba, Returns Fba, Feedback, Inventory Events Fba, Inventory, Estimated Fee, Inventory Fba, Excess Inventory Fba, Sales And Traffic, Sales And Traffic By Asin","Orders, Feedback, Fees, Returns, Reimb, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Returns Fba, Inventory Events Fba, Inventory, Estimated Fee, Sales And Traffic, Sales And Traffic By Asin"
+Data Source Logo,Data source logo,DIMENSION,IMAGE,"Orders, Fees, Returns, Reimb, Estimated Fee Fba, Returns Fba, Feedback, Inventory Events Fba, Inventory, Estimated Fee, Inventory Fba, Excess Inventory Fba, Sales And Traffic, Sales And Traffic By Asin","Orders, Feedback, Fees, Returns, Reimb, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Returns Fba, Inventory Events Fba, Inventory, Estimated Fee, Sales And Traffic, Sales And Traffic By Asin"
+Function Execution ID,Firebase functions execution id,DIMENSION,TEXT,"Orders, Fees, Returns, Reimb, Estimated Fee Fba, Returns Fba, Feedback, Inventory Events Fba, Inventory, Estimated Fee, Inventory Fba, Excess Inventory Fba, Sales And Traffic, Sales And Traffic By Asin","Orders, Feedback, Fees, Returns, Reimb, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Returns Fba, Inventory Events Fba, Inventory, Estimated Fee, Sales And Traffic, Sales And Traffic By Asin"
+Year,The dimension that determines how date-based data in a chart is handled.,DIMENSION,YEAR,"Estimated Fee, Estimated Fee Fba, Excess Inventory Fba, Feedback, Fees, Inventory, Inventory Fba, Inventory Events Fba, Orders, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin","Inventory, Estimated Fee, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Feedback, Orders, Fees, Inventory Events Fba, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin"
+Quarter,The dimension that determines how date-based data in a chart is handled.,DIMENSION,QUARTER,"Estimated Fee, Estimated Fee Fba, Excess Inventory Fba, Feedback, Fees, Inventory, Inventory Fba, Inventory Events Fba, Orders, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin","Inventory, Estimated Fee, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Feedback, Orders, Fees, Inventory Events Fba, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin"
+Year Quarter,The dimension that determines how date-based data in a chart is handled.,DIMENSION,YEAR_QUARTER,"Estimated Fee, Estimated Fee Fba, Excess Inventory Fba, Feedback, Fees, Inventory, Inventory Fba, Inventory Events Fba, Orders, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin","Inventory, Estimated Fee, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Feedback, Orders, Fees, Inventory Events Fba, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin"
+Year Month,The dimension that determines how date-based data in a chart is handled.,DIMENSION,YEAR_MONTH,"Estimated Fee, Estimated Fee Fba, Excess Inventory Fba, Feedback, Fees, Inventory, Inventory Fba, Inventory Events Fba, Orders, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin","Inventory, Estimated Fee, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Feedback, Orders, Fees, Inventory Events Fba, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin"
+Week,The dimension that determines how date-based data in a chart is handled.,DIMENSION,WEEK,"Estimated Fee, Estimated Fee Fba, Excess Inventory Fba, Feedback, Fees, Inventory, Inventory Fba, Inventory Events Fba, Orders, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin","Inventory, Estimated Fee, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Feedback, Orders, Fees, Inventory Events Fba, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin"
+Year Week,The dimension that determines how date-based data in a chart is handled.,DIMENSION,YEAR_WEEK,"Estimated Fee, Estimated Fee Fba, Excess Inventory Fba, Feedback, Fees, Inventory, Inventory Fba, Inventory Events Fba, Orders, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin","Inventory, Estimated Fee, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Feedback, Orders, Fees, Inventory Events Fba, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin"
+Month,The dimension that determines how date-based data in a chart is handled.,DIMENSION,MONTH,"Estimated Fee, Estimated Fee Fba, Excess Inventory Fba, Feedback, Fees, Inventory, Inventory Fba, Inventory Events Fba, Orders, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin","Inventory, Estimated Fee, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Feedback, Orders, Fees, Inventory Events Fba, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin"
+Month Day,The dimension that determines how date-based data in a chart is handled.,DIMENSION,MONTH_DAY,"Estimated Fee, Estimated Fee Fba, Excess Inventory Fba, Feedback, Fees, Inventory, Inventory Fba, Inventory Events Fba, Orders, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin","Inventory, Estimated Fee, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Feedback, Orders, Fees, Inventory Events Fba, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin"
+Day Of Week,The dimension that determines how date-based data in a chart is handled.,DIMENSION,DAY_OF_WEEK,"Estimated Fee, Estimated Fee Fba, Excess Inventory Fba, Feedback, Fees, Inventory, Inventory Fba, Inventory Events Fba, Orders, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin","Inventory, Estimated Fee, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Feedback, Orders, Fees, Inventory Events Fba, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin"
+Day Of Month,The dimension that determines how date-based data in a chart is handled.,DIMENSION,DAY,"Estimated Fee, Estimated Fee Fba, Excess Inventory Fba, Feedback, Fees, Inventory, Inventory Fba, Inventory Events Fba, Orders, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin","Inventory, Estimated Fee, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Feedback, Orders, Fees, Inventory Events Fba, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin"
+Date,The dimension that determines how date-based data in a chart is handled.,DIMENSION,YEAR_MONTH_DAY,"Estimated Fee, Estimated Fee Fba, Excess Inventory Fba, Feedback, Fees, Inventory, Inventory Fba, Inventory Events Fba, Orders, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin","Inventory, Estimated Fee, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Feedback, Orders, Fees, Inventory Events Fba, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin"
+Hour,The dimension that determines how date-based data in a chart is handled.,DIMENSION,HOUR,"Estimated Fee, Estimated Fee Fba, Excess Inventory Fba, Feedback, Fees, Inventory, Inventory Fba, Inventory Events Fba, Orders, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin","Inventory, Estimated Fee, Estimated Fee Fba, Inventory Fba, Excess Inventory Fba, Feedback, Orders, Fees, Inventory Events Fba, Reimb, Returns, Returns Fba, Sales And Traffic, Sales And Traffic By Asin"
+Return Reason,Readable Return Reason,DIMENSION,,Returns,"Orders, Returns, Feedback"

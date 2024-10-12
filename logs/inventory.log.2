@@ -1,0 +1,58 @@
+2024-10-11 16:21:26,543 INFO Starting Tampa BOM Inventory import
+2024-10-11 16:21:27,298 INFO Retrieved 109 rows from Google Sheet: 1m2RvQ-l1KWe4ur3IJCum8b3uq6MwcZpdThUtDXwxvQ8, range: RawInventory!A1:AC123
+2024-10-11 16:21:27,298 INFO Retrieved 261 rows from Google Sheet: 1m2RvQ-l1KWe4ur3IJCum8b3uq6MwcZpdThUtDXwxvQ8, range: PackagingBOMs!A1:AB275
+2024-10-11 16:21:27,299 INFO Skipping subheader row: {'BOM ID': 'Powders'}
+2024-10-11 16:21:27,429 INFO Skipping subheader row: {'BOM ID': 'Ingredients'}
+2024-10-11 16:21:27,506 INFO Skipping subheader row: {'BOM ID': 'Stevia Flavors'}
+2024-10-11 16:21:27,518 INFO Skipping subheader row: {'BOM ID': 'Essential Oils'}
+2024-10-11 16:21:27,595 INFO Skipping subheader row: {'BOM ID': 'Essential Oil Water'}
+2024-10-11 16:21:27,644 INFO Skipping subheader row: {'BOM ID': 'Miscellaneous Ingredients'}
+2024-10-11 16:21:27,689 INFO Skipping subheader row: {'BOM ID': 'White Label Cosmetics'}
+2024-10-11 16:21:27,733 INFO Skipping subheader row: WL-Caffeine-Theanine-Capsules-120-Nutrafill
+2024-10-11 16:21:27,752 INFO Skipping subheader row: {'BOM ID': 'Organic Room Packaging'}
+2024-10-11 16:21:27,788 INFO Skipping subheader row: {'BOM ID': 'Pouches'}
+2024-10-11 16:21:27,818 INFO Created new BOM entry for BOM ID: PCH-32oz-Stndup-WHITE-Matt
+2024-10-11 16:21:27,823 INFO Created new BOM entry for BOM ID: PCH-1kg-Stndup-WHITE-Matt
+2024-10-11 16:21:27,831 INFO Created new BOM entry for BOM ID: PCH-32oz-Stndup-BLACK-Matt
+2024-10-11 16:21:27,832 INFO Skipping subheader row: {'BOM ID': 'Brand Name Pouches'}
+2024-10-11 16:21:27,852 INFO Skipping subheader row: {'BOM ID': 'Bottles'}
+2024-10-11 16:21:27,864 INFO Skipping subheader row: {'BOM ID': 'Cylinder Bottles'}
+2024-10-11 16:21:27,871 INFO Skipping subheader row: {'BOM ID': 'Misc Bottles/Containers'}
+2024-10-11 16:21:27,884 INFO Skipping subheader row: {'BOM ID': 'Caps'}
+2024-10-11 16:21:27,897 INFO Created new BOM entry for BOM ID: TRIGGER-SPRAYER-24-410-7.75-WHITE
+2024-10-11 16:21:27,904 INFO Skipping subheader row: {'BOM ID': 'Shrink Bands'}
+2024-10-11 16:21:27,973 INFO Created new BOM entry for BOM ID: CLEARECOBAG-6X1
+2024-10-11 16:21:27,980 INFO Skipping subheader row: {'BOM ID': 'Labels (Liquids)'}
+2024-10-11 16:21:28,019 INFO Skipping subheader row: {'BOM ID': 'Purisure Labels'}
+2024-10-11 16:21:28,101 INFO Created new BOM entry for BOM ID: LABL-PS-3.75x4.75-Spirulina-1kg
+2024-10-11 16:21:28,107 INFO Created new BOM entry for BOM ID: LABL-PS-3.75x4.75-Spirulina-250g
+2024-10-11 16:21:28,119 INFO Skipping subheader row: {'BOM ID': 'Teakihut Labels'}
+2024-10-11 16:21:28,150 INFO Skipping subheader row: {'BOM ID': 'WHYz Labels '}
+2024-10-11 16:21:28,189 INFO Skipping subheader row: LABL-WHYZ-2.5x6.5-Caffeine-Theanine-Capsules-120ct
+2024-10-11 16:21:28,198 INFO Skipping subheader row: {'BOM ID': 'Tejonova Labels'}
+2024-10-11 16:21:28,281 INFO Skipping subheader row: {'BOM ID': 'Alternative Labels for Preprinted Pouches'}
+2024-10-11 16:21:28,298 INFO Skipping subheader row: {'BOM ID': 'TreeActiv Labels'}
+2024-10-11 16:21:28,298 INFO Skipping subheader row: {'BOM ID': 'TA Milia Labels'}
+2024-10-11 16:21:28,304 INFO Created new BOM entry for BOM ID: LABL-TA-3.75x3-TA-Milia-Treatment-Kit
+2024-10-11 16:21:28,317 INFO Skipping subheader row: {'BOM ID': 'TA Skincare Cream Labels'}
+2024-10-11 16:21:28,339 INFO Skipping subheader row: {'BOM ID': 'TA Skincare Lotion Labels'}
+2024-10-11 16:21:28,346 INFO Skipping subheader row: {'BOM ID': 'TA Skincare Spray Labels'}
+2024-10-11 16:21:28,351 INFO Created new BOM entry for BOM ID: LABL-TA-5.75x4.75-Acne-Eliminating-Body-Spray-8oz
+2024-10-11 16:21:28,400 INFO Skipping subheader row: {'BOM ID': 'TA Skincare Cleanser Labels'}
+2024-10-11 16:21:28,424 INFO Skipping subheader row: {'BOM ID': 'TA Misc Cosmetic Labels'}
+2024-10-11 16:21:28,431 INFO Skipping subheader row: LABL-TA-7.5X3-Hair-Savior-60-caps
+2024-10-11 16:21:28,457 INFO Skipping subheader row: {'BOM ID': 'Alternative Labels for CM Cosmetics'}
+2024-10-11 16:21:28,459 ERROR Error during Tampa BOM Inventory import: unconverted data remains: 24
+Traceback (most recent call last):
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/app/data_import/inventory_import.py", line 109, in import_tampa_bom_inventory
+    update_tampa_bom_inventory(db, existing_inventory, row_dict)
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/app/data_import/inventory_import.py", line 369, in update_tampa_bom_inventory
+    new_value = datetime.strptime(new_value, '%m/%d/%y') if new_value else None
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/_strptime.py", line 554, in _strptime_datetime
+    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/_strptime.py", line 336, in _strptime
+    raise ValueError("unconverted data remains: %s" %
+ValueError: unconverted data remains: 24
+2024-10-11 16:21:28,510 INFO Tables reset for initial finished_goods import.

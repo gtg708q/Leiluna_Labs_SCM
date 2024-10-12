@@ -1,0 +1,35 @@
+2024-10-11 16:02:53,451 INFO Starting Tampa BOM Inventory import
+2024-10-11 16:02:54,330 INFO Retrieved 109 rows from Google Sheet: 1m2RvQ-l1KWe4ur3IJCum8b3uq6MwcZpdThUtDXwxvQ8, range: RawInventory!A1:AC123
+2024-10-11 16:02:54,331 INFO Retrieved 261 rows from Google Sheet: 1m2RvQ-l1KWe4ur3IJCum8b3uq6MwcZpdThUtDXwxvQ8, range: PackagingBOMs!A1:AB275
+2024-10-11 16:02:54,331 INFO Skipping subheader row: {'BOM ID': 'Powders'}
+2024-10-11 16:02:54,550 INFO Skipping subheader row: {'BOM ID': 'Ingredients'}
+2024-10-11 16:02:54,599 INFO Skipping subheader row: {'BOM ID': 'Stevia Flavors'}
+2024-10-11 16:02:54,624 INFO Skipping subheader row: {'BOM ID': 'Essential Oils'}
+2024-10-11 16:02:54,670 INFO Skipping subheader row: {'BOM ID': 'Essential Oil Water'}
+2024-10-11 16:02:54,696 INFO Skipping subheader row: {'BOM ID': 'Miscellaneous Ingredients'}
+2024-10-11 16:02:54,746 INFO Skipping subheader row: {'BOM ID': 'White Label Cosmetics'}
+2024-10-11 16:02:54,780 INFO Skipping subheader row: WL-Caffeine-Theanine-Capsules-120-Nutrafill
+2024-10-11 16:02:54,790 INFO Skipping subheader row: {'BOM ID': 'Organic Room Packaging'}
+2024-10-11 16:02:54,812 INFO Skipping subheader row: {'BOM ID': 'Pouches'}
+2024-10-11 16:02:54,833 ERROR Error during Tampa BOM Inventory import: 'name' is an invalid keyword argument for BOM
+Traceback (most recent call last):
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/app/data_import/inventory_import.py", line 112, in import_tampa_bom_inventory
+    create_tampa_bom_inventory(db, row_dict)
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/app/data_import/inventory_import.py", line 284, in create_tampa_bom_inventory
+    bom = create_or_get_bom(db, bom_id)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/app/data_import/inventory_import.py", line 263, in create_or_get_bom
+    new_bom = BOM(
+              ^^^^
+  File "<string>", line 4, in __init__
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/state.py", line 571, in _initialize_instance
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/state.py", line 569, in _initialize_instance
+    manager.original_init(*mixed[1:], **kwargs)
+  File "/Users/derrekwiedeman/Leiluna_Labs_SCM/backend/venv/lib/python3.12/site-packages/sqlalchemy/orm/decl_base.py", line 2167, in _declarative_constructor
+    raise TypeError(
+TypeError: 'name' is an invalid keyword argument for BOM
+2024-10-11 16:02:54,894 INFO Tables reset for initial finished_goods import.

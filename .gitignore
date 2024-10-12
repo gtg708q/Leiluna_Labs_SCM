@@ -1,0 +1,109 @@
+# Virtual Environment
+venv/
+env/
+*.pyc
+__pycache__/
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Python specific
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# dotenv
+.env
+
+# Database
+*.db
+*.sqlite3
+
+# Logs
+*.log
+
+# Node.js (if you're using any JavaScript)
+node_modules/
+
+# Other
+*.bak
+*.swp
+*.swo
+*~
+
+#credentials
+backend/app/config/service_account.json
+
+# Ignore all .env files
+*.env
+
+# Ignore all .pem files (often used for certificates)
+*.pem
+
+# Ignore Python compiled files
+*.pyc
+__pycache__/
+
+# Ignore local development settings
+local_settings.py
+
+# Ignore log files
+*.log
+
+# Ignore database files
+*.sqlite3

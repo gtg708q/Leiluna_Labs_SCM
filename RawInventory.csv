@@ -1,0 +1,123 @@
+﻿BOM ID,TYPE,PHX Class,Theoretical QTY,Location,Cycle Count,Date Counted,UOM,Theo' x Actual Variance,Past 30 MO (metric unit),Past 30 FO (metric unit),Manufactured-Fulfilled,Used for MFG After Actual (-),Conversion,Received QTY After Actual Count (From Receiving Logs Only) (+),Ranking,Current Internal lot number,Used in IHF/ Shipstation After Count,,,Theo Count Static,Actual Count,Date Counted,WH Remarks,Theoretical QTY,Variance,Random Count,Date Counted,Subtype
+Powders,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+RM-PWD-Organic-Monk-Fruit-Extract-10%,Powder,A,1297.12,,"1,298.12",10/04/24,Kg,0.08%,497.2,497.2,0,0,1,0,74777,3,1,,,,"1,298.12",10/04/24,,"1,297.12",0.08%,"1,298.12",10/04/24,Powders
+RM-PWD-Monk-Fruit-Extract-5%,Powder,PLC-2024,200,,200,10/04/24,Kg,0.00%,0,0,0,0,1,0,5000,,0,,,,200,10/04/24,,200,0.00%,200,10/04/24,Powders
+RM-PWD-Organic-Stevia-TSG90,Powder,A,114.76,,114.76,10/04/24,Kg,0.00%,0,0,0,0,1,0,4496,LIQ-001,0,,,,114.76,10/04/24,,114.76,0.00%,114.76,10/04/24,Powders
+RM-PWD-Spirulina-Organic,Powder,C,47.8,,48.8,10/04/24,Kg,2.05%,0,0,0,0,1,0,652,Spi-001,1,,,,48.8,10/04/24,,47.8,2.05%,48.8,10/04/24,Powders
+RM-PWD-Black-Tea-Extract,Powder,A,0,,0.96,10/04/24,Kg,100.00%,943.16,918.76,24.4,0,1,0,0,0,8,,,,0.96,10/04/24,,-7.04,100.00%,0.96,10/04/24,Powders
+RM-PWD-Black-Tea-Extract-Iced,Powder,,0,,0,10/04/24,Kg,0.00%,0,0,0,0,1,0,0,BkT-001,0,,,,0,10/04/24,,0,0.00%,0,10/04/24,Powders
+RM-PWD-Stevia-SG95RA60,Powder,,385.37,,85.37,10/04/24,Kg,351.41%,460.87,458.12,2.75,0,1,300,16956,1,0,,,,85.37,10/04/24,,385.37,-351.41%,584.14,8/19/2024,Powders
+RM-PWD-Stevia-Monk-Fruit-Stevia-Blend,Powder,C,47.49,,47.49,10/04/24,Kg,0.00%,0,0,0,0,1,0,760,Bld-001,0,,,,47.49,10/04/24,,47.49,0.00%,47.49,10/04/24,Powders
+RM-PWD-Magnesium-Bisglycinate-Chelate,Powder,C,157.95,,157.95,10/04/24,Kg,0.00%,0,0,0,0,1,0,4839,LON-001,0,,,,157.95,10/04/24,,157.95,0.00%,157.95,10/04/24,Powders
+RM-PWD-Shilajith,Powder,A,0,,8.09,10/04/24,Kg,100.00%,20,20,0,20,1,0,0,Shi-001,0,,,,8.09,10/04/24,,-11.91,100.00%,8.09,10/04/24,Powders
+RM-PWD-Pu-erh-Tea,Powder,C,48.24,,48.24,10/04/24,Kg,0.00%,0,0,0,0,1,0,1158,Pur-001,0,,,,48.24,10/04/24,,48.24,0.00%,48.24,10/04/24,Powders
+RM-PWD-MyoInositol,Powder,C,56.71,,56.71,10/04/24,Kg,0.00%,0,0,0,0,1,0,1239,Myo-001,0,,,,56.71,10/04/24,,56.71,0.00%,56.71,10/04/24,Powders
+RM-PWD-AlphaGPC,Powder,C,1.88,,1.88,10/04/24,Kg,0.00%,0,0,0,0,1,0,109,GPC-001,0,,,,1.88,10/04/24,,1.88,0.00%,1.88,10/04/24,Powders
+RM-PWD-Citicoline-Sodium,Powder,B,10,,10,10/04/24,Kg,0.00%,0,0,0,0,1,0,1870,CDP-001,0,,,,10,10/04/24,,10,0.00%,10,10/04/24,Powders
+RM-PWD-Cordyceps-Militaris-Organic,Powder,C,73.8,,73.8,10/04/24,Kg,0.00%,0,0,0,0,1,0,3911,Cor-001,0,,,,73.8,10/04/24,,73.8,0.00%,73.8,10/04/24,Powders
+RM-PWD-Tea-MatchGreen,Powder,C,85.34,,85.34,10/04/24,Kg,0.00%,0,0,0,0,1,0,2987,Mat-001,0,,,,85.34,10/04/24,,85.34,0.00%,85.34,10/04/24,Powders
+RM-PWD-Tea-Sencha-Green-Tea-Extract,Powder,B,140.54,,140.54,10/04/24,Kg,0.00%,56.5,56.5,0,0,1,0,2389,GrT-001,0,,,,140.54,10/04/24,,140.54,0.00%,140.54,10/04/24,Powders
+RM-PWD-BetaAlanine,Powder,C,111.47,,111.47,10/04/24,Kg,0.00%,0,0,0,0,1,0,814,BeA-001,0,,,,111.47,10/04/24,,111.47,0.00%,111.47,10/04/24,Powders
+RM-PWD-ALCAR,Powder,C,25,,25,10/04/24,kg,0.00%,0,0,0,0,1,0,913,ALC-001,0,,,,25,10/04/24,,25,0.00%,25,10/04/24,Powders
+RM-PWD-Green-Coffee-Bean-Extract,Powder,B,62.19,,62.19,10/04/24,Kg,0.00%,0,0,0,0,1,0,1866,GCB-001,0,,,,62.19,10/04/24,,62.19,0.00%,62.19,10/04/24,Powders
+RM-PWD-DHM,Powder,A,0,,39.51,10/04/24,Kg,100.00%,40,40,0,40,1,0,0,DHM-001,0,,,,39.51,10/04/24,,-0.49,100.00%,39.51,10/04/24,Powders
+RM-PWD-Longjack-200:1,Powder,,50,,50,10/04/24,Kg,0.00%,0,0,0,0,1,0,1250,ALC-001,0,,,,50,10/04/24,,50,0.00%,50,10/04/24,Powders
+RM-PWD-L-Citrulline-Malate-2:1,Powder,C,202.83,,203.83,10/04/24,Kg,0.49%,0,0,0,0,1,0,2327,Cit-001,1,,,,203.83,10/04/24,,202.83,0.49%,203.83,10/04/24,Powders
+RM-PWD-L-Theanine,Powder,C,25,,25,10/04/24,Kg,0.00%,0,0,0,0,1,0,588,Lth-001,0,,,,25,10/04/24,,25,0.00%,25,10/04/24,Powders
+RM-PWD-AgmatineSulfate,Powder,C,0,,0,10/04/24,Kg,0.00%,0,0,0,0,1,0,0,AgS-001,0,,,,0,10/04/24,,0,0.00%,0,10/04/24,Powders
+RM-PWD-AscorbicAcid,Powder,,0,,0,10/04/24,Kg,0.00%,0,0,0,0,1,0,0,1,0,,,,0,10/04/24,,0,0.00%,0,10/04/24,Powders
+RM-PWD-Methylene-Blue,Powder,PLC-2024,1.5,,1.5,10/04/24,Kg,0.00%,0,0,0,0,1,0,557,,0,,,,1.5,10/04/24,,1.5,0.00%,0.4,8/19/2024,Powders
+RM-PWD-Wheat-Grass-Organic,Powder,C,497.14,,497.14,10/04/24,Kg,0.00%,0,0,0,0,1,0,8451,Whe-001,0,,,,497.14,10/04/24,,497.14,0.00%,497.14,10/04/24,Powders
+Ingredients,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+RM-PURIFIED-WATER,Ingredient,C,402.46,,405,10/04/24,Gal,0.63%,3109.71,3016.15,93.56,9.61,0.26417,0,1523,,0,,,,405,10/04/24,,402.461,0.63%,405,10/04/24,Ingredients
+RM-PWD-Potassium-Sorbate,Powder,,7.82,,7.82,10/04/24,Lbs,0.00%,2.38,2.37,0.01,0,2.20462,0,56,0,0,,,,7.82,10/04/24,,7.82,0.00%,70,8/19/2024,Ingredients
+RM-PWD-Potassium-Sorbate-Granulated,Powder,,30.81,,30.81,10/04/24,lbs,0.00%,0,0,0,0,2.20462,0,0,,0,,,,30.81,10/04/24,,30.81,0.00%,30.81,10/04/24,Ingredients
+RM-PWD-SALICYLIC-ACID,Powder,B,73.91,,74.91,10/04/24,Lbs,1.33%,4.06,4.06,0,0,2.20462,0,373,0,1,,,,74.91,10/04/24,,73.91,1.33%,27.1,8/19/2024,Ingredients
+RM-PWD-CitricAcid,Powder,,108.38,,108.38,10/04/24,lbs,0.00%,2.28,2.27,0.01,0,2.20462,0,478,0,0,,,,108.38,10/04/24,,108.38,0.00%,108.38,10/04/24,Ingredients
+RM-MENTHOL,Ingredient,B,10.68,,10.68,10/04/24,Lbs,0.00%,1.6,1.6,0,0,2.20462,0,70,,0,,,,10.68,10/04/24,,10.68,0.00%,10.68,10/04/24,Ingredients
+RM-PWD-DL-Panthenol,Powder,C,25.1,F,26.45,10/04/24,oz,5.11%,0.04,0.04,0,0.04,33.814,0,2,0,0,,,,26.45,10/04/24,,25.0974,5.11%,26.45,10/04/24,Ingredients
+RM-PWD-Silica,Powder,C,0.86,,0.9,10/04/24,Lbs,4.90%,0.02,0.02,0,0.02,2.20462,0,75,0,0,,,,0.9,10/04/24,,0.8559,4.90%,0.9,10/04/24,Ingredients
+RM-Hydrolized-Keratin,Ingredient,C,13.42,,13.62,10/04/24,Lbs,1.46%,0.09,0.09,0,0.09,2.20462,0,146,,0,,,,13.62,10/04/24,,13.4216,1.46%,13.62,10/04/24,Ingredients
+RM-Hydrolyzed-Silk-Protein,Ingredient,C,26.9,,27,10/04/24,Lbs,0.37%,0.05,0.05,0,0.05,2.20462,0,61,,0,,,,27,10/04/24,,26.9008,0.37%,27,10/04/24,Ingredients
+RM-Aloe-Vera-Juice,Ingredient,C,42.93,,43,10/04/24,Gal,0.15%,39.11,39.11,0,0.25,0.26417,0,705,,0,,,,43,10/04/24,,42.934,0.15%,30,8/19/2024,Ingredients
+RM-Witch-Hazel-Distillate,Ingredient,C,19.26,,20,10/04/24,Gal,3.70%,48.03,43.48,4.54,2.8,0.26417,0,1112,,0,,,,20,10/04/24,,19.2603,3.70%,35,8/19/2024,Ingredients
+RM-Polysorbate-20,Ingredient,C,307.09,,307.42,10/04/24,lbs,0.11%,7.75,6.93,0.83,0.15,2.20462,0,836,,0,,,,307.42,10/04/24,,307.0893,0.11%,150,8/19/2024,Ingredients
+RM-Polysorbate-80,Ingredient,PLC-2024,68.99,,68.99,10/04/24,lbs,0.00%,0,0,0,0,2.20462,0,165,,0,,,,68.99,10/04/24,,68.99,0.00%,50,8/19/2024,Ingredients
+RM-PWD-Organic-Citric-Acid,Ingredient,PLC-2024,5,,5,10/04/24,lbs,0.00%,0,0,0,0,2.20462,0,108,,0,,,,5,10/04/24,,5,0.00%,5,10/04/24,Ingredients
+RM-PWD-Organic-Sugar-Cane-Alcohol-190,Ingredient,PLC-2024,0,,0,10/04/24,Gal,0.00%,0,0,0,0,0.26417,0,0,,0,,,,0,10/04/24,,0,0.00%,0,10/04/24,Ingredients
+Stevia Flavors,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+RM-PWD-Stevia-Flavor-Toffee,Ingredient,C,160.54,,160.54,10/04/24,oz,0.00%,0,0,0,0,33.814,0,1219,,0,,,,160.54,10/04/24,,160.54,0.00%,160.54,10/04/24,Stevia Flavors
+RM-PWD-Stevia-Flavor-Caramel,Ingredient,C,252.43,,252.43,10/04/24,oz,0.00%,0,0,0,0,33.814,0,1917,,0,,,,252.43,10/04/24,,252.43,0.00%,252.43,10/04/24,Stevia Flavors
+RM-PWD-Stevia-Flavor-Vanilla,Ingredient,,190.54,,190.54,10/04/24,oz,0.00%,0,0,0,0,33.814,0,1447,,0,,,,190.54,10/04/24,,190.54,0.00%,190.54,10/04/24,Stevia Flavors
+RM-PWD-Stevia-Flavor-Chocolate,Ingredient,,126.54,,126.54,10/04/24,oz,0.00%,0,0,0,0,33.814,0,961,,0,,,,126.54,10/04/24,,126.54,0.00%,126.54,10/04/24,Stevia Flavors
+Essential Oils,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+RM-TA-EUCALYPTUS-ESSENTIAL-OIL-TMP,Ingredient,B,39.59,,39.59,10/04/24,Lbs,0.00%,2.26,2.26,0.01,0,2.20462,0,314,,0,,,,39.59,10/04/24,,39.59,0.00%,6,8/19/2024,Essential Oils
+RM-TA-TEA-TREE-ESSENTIAL-OIL-TMP,Ingredient,B,30.46,,30.46,10/04/24,Lbs,0.00%,2.26,2.26,0.01,0,2.20462,0,461,,0,,,,30.46,10/04/24,,30.46,0.00%,5,8/19/2024,Essential Oils
+RM-TA-PEPPERMINT-ESSENTIAL-OIL-TMP,Ingredient,B,25.63,,25.63,10/04/24,Lbs,0.00%,2.17,2.17,0,0,2.20462,0,375,,0,,,,25.63,10/04/24,,25.63,0.00%,15,8/19/2024,Essential Oils
+RM-TA-LEMON-ESSENTIAL-OIL-TMP,Ingredient,C,47.17,,47.19,10/04/24,Lbs,0.05%,0.01,0.01,0,0.01,2.20462,0,1653,,0,,,,47.19,10/04/24,,47.168,0.05%,47.19,10/04/24,Essential Oils
+RM-TA-LAVENDER-ESSENTIAL-OIL-TMP,Ingredient,C,7.16,,7.16,10/04/24,Lbs,0.00%,0.55,0,0.55,0,2.20462,0,123,,0,,,,7.16,10/04/24,,7.16,0.00%,5,8/19/2024,Essential Oils
+RM-Clary-Sage-Essential-Oil,Ingredient,A,39,,39,10/04/24,Lbs,0.00%,0,0,0,0,2.20462,0,1438,,0,,,,39,10/04/24,,39,0.00%,39,10/04/24,Essential Oils
+RM-Bamboo-Frangrance-Oil,Ingredient,B,17.62,,17.8,10/04/24,Lbs,0.99%,0.08,0.08,0,0.08,2.20462,0,109,,0,,,,17.8,10/04/24,,17.6236,0.99%,17.8,10/04/24,Essential Oils
+RM-Bergamot-Italian-Essential-Oil,Ingredient,C,15.48,,15.48,10/04/24,Lbs,0.00%,0,0,0,0,2.20462,0,542,,0,,,,15.48,10/04/24,,15.48,0.00%,15.48,10/04/24,Essential Oils
+RM-Chamomile-Blue-Essential-Oil,Ingredient,C,4.56,,4.56,10/04/24,Lbs,0.00%,0.02,0,0.02,0,2.20462,0,101,,0,,,,4.56,10/04/24,,4.56,0.00%,4.56,10/04/24,Essential Oils
+RM-Grapefruit-Pink-Essential-Oil,Ingredient,C,5.62,,5.64,10/04/24,Lbs,0.39%,0.01,0.01,0,0.01,2.20462,0,91,,0,,,,5.64,10/04/24,,5.618,0.39%,5.64,10/04/24,Essential Oils
+RM-Lemongrass-Essential-Oil,Ingredient,C,38.76,,38.76,10/04/24,Lbs,0.00%,0,0,0,0,2.20462,0,407,,0,,,,38.76,10/04/24,,38.76,0.00%,38.76,10/04/24,Essential Oils
+RM-Organic-Orange-Essential-Oil,Ingredient,C,33.4,,33.4,10/04/24,Lbs,0.00%,0,0,0,0,2.20462,0,353,,0,,,,33.4,10/04/24,,33.4,0.00%,33.4,10/04/24,Essential Oils
+RM-Geranium-Egyptian-Essential-Oil,Ingredient,C,4.52,,4.52,10/04/24,Lbs,0.00%,0.22,0,0.22,0,2.20462,0,149,,0,,,,4.52,10/04/24,,4.52,0.00%,4.52,10/04/24,Essential Oils
+RM-Argan-Oil,Ingredient,C,0.88,,0.9,10/04/24,Lbs,2.45%,0.01,0.01,0,0.01,2.20462,0,1,,0,,,,0.9,10/04/24,,0.878,2.45%,0.9,10/04/24,Essential Oils
+RM-Olive-Essential-Oil,Ingredient,C,2.86,,2.86,10/04/24,Lbs,0.00%,0.1,0.09,0.01,0,2.20462,0,17,,0,,,,2.86,10/04/24,,2.86,0.00%,2.86,10/04/24,Essential Oils
+RM-TA-JASMINE-VANILLA-NAT-FRAGRANCE-OIL,Ingredient,C,442,,442,10/04/24,oz,0.00%,0,0,0,0,33.814,0,87,,0,,,,442,10/04/24,,442,0.00%,442,10/04/24,Essential Oils
+RM-Cashmere-Pear-Fragrance-Oil,Ingredient,A,14,,14,10/04/24,oz,0.00%,0,0,0,0,33.814,0,1,,0,,,,14,10/04/24,,14,0.00%,20,8/19/2024,Essential Oils
+Essential Oil Water,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+RM-ROSE-WATER,Ingredient,B,5.25,,5.25,10/04/24,Gal,0.00%,0,0,0,0,0.26417,0,863,,0,,,,5.25,10/04/24,,5.25,0.00%,5.25,10/04/24,Essential Oil Water
+RM-TEA-TREE-WATER,Ingredient,C,19.51,,20.25,10/04/24,Gal,3.65%,2.8,2.8,0,2.8,0.26417,0,1865,,0,,,,20.25,10/04/24,,19.5103,3.65%,150,8/19/2024,Essential Oil Water
+RM-CLARY-SAGE-WATER,Ingredient,B,7,,7,10/04/24,Gal,0.00%,0,0,0,0,0.26417,0,545,,0,,,,7,10/04/24,,7,0.00%,10,8/19/2024,Essential Oil Water
+RM-Peppermint-Water,Ingredient,C,0,,0,10/04/24,Gal,0.00%,2.8,2.8,0,2.8,0.26417,0,0,,0,,,,0,10/04/24,,-0.7397,0.00%,0,10/04/24,Essential Oil Water
+RM-EUCALYPTUS-WATER,Ingredient,B,5,,5,10/04/24,Gal,0.00%,0,0,0,0,0.26417,0,464,,0,,,,5,10/04/24,,5,0.00%,5,8/19/2024,Essential Oil Water
+RM-SPEARMINT-WATER,Ingredient,B,4.5,,4.5,10/04/24,Gal,0.00%,0,0,0,0,0.26417,0,547,,0,,,,4.5,10/04/24,,4.5,0.00%,3,8/19/2024,Essential Oil Water
+RM-LEMONGRASS-WATER,Ingredient,B,4.5,,4.5,10/04/24,Gal,0.00%,0,0,0,0,0.26417,0,418,,0,,,,4.5,10/04/24,,4.5,0.00%,5,8/19/2024,Essential Oil Water
+Miscellaneous Ingredients,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+RM-ISO-ALCOHOL-99,Ingredient,B,885,,885,10/04/24,Gal,0.00%,31.62,27.21,4.42,0,0.26417,0,1113,,0,,,,885,10/04/24,,885,0.00%,885,10/04/24,Miscellaneous Ingredients
+RM-ISO-ALCOHOL-70,Ingredient,,0,,0,10/04/24,Gal,0.00%,0,0,0,0,0.26417,0,0,,0,,,,0,10/04/24,,0,0.00%,0,10/04/24,Miscellaneous Ingredients
+RM-Licorice-Root-Extract,Ingredient,C,6.3,,6.52,10/04/24,Lbs,3.38%,0.1,0.1,0,0.1,2.20462,0,256,,0,,,,6.52,10/04/24,,6.2995,3.38%,6.52,10/04/24,Miscellaneous Ingredients
+RM-Diheptyl-Succinate+Capryloyl-Glycerin/Sebacic-Acid Copolymer,Ingredient,C,0,,0,10/04/24,Lbs,0.00%,0.02,0.02,0,0.02,2.20462,0,0,,0,,,,0,10/04/24,,-0.0441,0.00%,0,10/04/24,Miscellaneous Ingredients
+RM-Euxyl-PE-9010,Ingredient,C,7.8,,8,10/04/24,Lbs,2.48%,0.09,0.09,0,0.09,2.20462,0,64,,0,,,,8,10/04/24,,7.8016,2.48%,9,8/19/2024,Miscellaneous Ingredients
+RM-SODIUM-LACTATE,Ingredient,B,115.17,,115.17,10/04/24,Lbs,0.00%,0,0,0,0,2.20462,0,267,,0,,,,115.17,10/04/24,,115.17,0.00%,58,8/19/2024,Miscellaneous Ingredients
+RM-Butylene-Glycol,Ingredient,PLC-2024,520.65,,520.65,10/04/24,oz,0.00%,0,0,0,0,33.814,0,10,,0,,,,520.65,10/04/24,,520.65,0.00%,33,8/19/2024,Miscellaneous Ingredients
+RM-Cycomethicone-6,Ingredient,PLC-2024,0,,0,10/04/24,lbs,0.00%,0,0,0,0,2.20462,0,0,,0,,,,0,10/04/24,,0,0.00%,35,8/19/2024,Miscellaneous Ingredients
+RM-Glycerin,Ingredient,PLC-2024,89.32,,89.32,10/04/24,lbs,0.00%,0,0,0,0,2.20462,0,142,,0,,,,89.32,10/04/24,,89.32,0.00%,89.32,10/04/24,Miscellaneous Ingredients
+RM-Acetylsalicylic-Acid,Ingredient,PLC-2024,3.7,,3.7,10/04/24,kg,0.00%,0,0,0,0,1,0,247,,0,,,,3.7,10/04/24,,3.7,0.00%,6.75,8/19/2024,Miscellaneous Ingredients
+White Label Cosmetics,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+WL-Crepey-Lotion-8oz-HS,White Label,A,75,,75,10/04/24,units,0.00%,0,0,0,0,1,0,180,,0,,,,75,10/04/24,,75,0.00%,120,8/19/2024,White Label Cosmetics
+WL-Acne-Face-Cream-2oz-PLSF,White Label,A,5270,,"5,270.00",10/04/24,units,0.00%,0,0,0,0,1,0,14493,,0,,,,"5,270.00",10/04/24,,"5,270.00",0.00%,"5,270.00",10/04/24,White Label Cosmetics
+WL-Acne-Face-Cream-2oz-Shay,White Label,A,123,,123,10/04/24,units,0.00%,0,0,0,0,1,0,216,,0,,,,123,10/04/24,,123,0.00%,123,10/04/24,White Label Cosmetics
+WL-Scar-Cream-2oz-Shay,White Label,C,752,,752,10/04/24,units,0.00%,0,0,0,0,1,0,1233,,0,,,,752,10/04/24,,752,0.00%,120,8/19/2024,White Label Cosmetics
+WL-Scar-Cream-2oz-PLSF,White Label,C,0,,0,10/04/24,units,0.00%,0,0,0,0,1,0,0,,0,,,,0,10/04/24,,0,0.00%,0,10/04/24,White Label Cosmetics
+WL-Cucumber-Body-Lotion-8oz-Shay,White Label,A,75,,75,10/04/24,units,0.00%,0,0,0,0,1,0,224,,0,,,,75,10/04/24,,75,0.00%,150,8/19/2024,White Label Cosmetics
+WL-Body-Wash-8oz-Shay,White Label,B,1990,,"1,990.00",10/04/24,units,0.00%,0,50,-50,0,1,0,6498,,0,,,,"1,990.00",10/04/24,,"1,990.00",0.00%,"1,994.00",8/19/2024,White Label Cosmetics
+WL-Body-Wash-8oz-PLSF,White Label,,0,,0,10/04/24,units,0.00%,0,0,0,0,1,0,0,,0,,,,0,10/04/24,,0,0.00%,0,10/04/24,White Label Cosmetics
+WL-Cystic-Spot-0.5oz-PLSF,White Label,,0,,0,10/04/24,units,0.00%,0,0,0,0,1,0,0,,0,,,,0,10/04/24,,0,0.00%,0,10/04/24,White Label Cosmetics
+WL-Invisible-Spot-Treatment-PLSF,White Label,B,1898,,"1,898.00",10/04/24,units,0.00%,0,0,0,0,1,0,4726,,0,,,,"1,898.00",10/04/24,,"1,898.00",0.00%,"1,898.00",10/04/24,White Label Cosmetics
+WL-Four-In-One-8oz-PLSF,White Label,C,333,,333,10/04/24,units,0.00%,0,0,0,0,1,0,2194,,0,,,,333,10/04/24,,333,0.00%,333,10/04/24,White Label Cosmetics
+WL-Four-In-One-4oz-PLSF,White Label,B,1507,,"1,507.00",10/04/24,units,0.00%,0,0,0,0,1,0,6103,,0,,,,"1,507.00",10/04/24,,"1,507.00",0.00%,"1,507.00",10/04/24,White Label Cosmetics
+WL-Retinol-Cream-2oz-PLSF,White Label,C,25,,25,10/04/24,units,0.00%,0,0,0,0,1,0,88,,0,,,,25,10/04/24,,25,0.00%,25,10/04/24,White Label Cosmetics
+WL-Oil-Free-Skin-Repair-Serum-2oz-Shay,White Label,C,1832,,"1,882.00",10/04/24,units,2.66%,50,50,0,50,1,0,531,,0,,,,"1,882.00",10/04/24,,"1,832.00",2.66%,"1,882.00",10/04/24,White Label Cosmetics
+WL-Acne-Patches,White Label,B,9450,,"9,450.00",10/04/24,units,0.00%,500,500,0,0,1,0,2745,,0,,,,"9,450.00",10/04/24,,"9,450.00",0.00%,"6,000.00",8/19/2024,White Label Cosmetics
+WL-Caffeine-Theanine-Capsules-120-Nutrafill,White Label,C,847,,847,10/04/24,units,0.00%,0,0,0,0,1,0,3943,,0,,,,847,10/04/24,,847,0.00%,847,10/04/24,White Label Cosmetics
+WL-Skin-Vitamins-60-Nutrafill,White Label,,0,,0,10/04/24,units,0.00%,0,0,0,0,1,0,0,,0,,,,0,10/04/24,,0,0.00%,0,10/04/24,White Label Cosmetics
+WL-Hair-Savior-60-Norax,White Label,C,33,,33,10/04/24,units,0.00%,0,0,0,0,1,0,157,,0,,,,33,10/04/24,,33,0.00%,33,10/04/24,White Label Cosmetics
+TA-Pimple-Tool-Kit,Ingredient,C,206,,206,10/04/24,units,0.00%,500,500,0,0,1,0,351,,0,,,,206,10/04/24,,206,0.00%,206,10/04/24,White Label Cosmetics
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,
