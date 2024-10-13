@@ -17,24 +17,21 @@ import argparse
 from typing import Any
 import logging
 import sys
+from google.cloud import storage
 
 # Add these helper functions after the imports and before the main functions
 
 def clean_float(value):
-    if value is None or value == '':
-        return 0.0
-    try:
-        return float(value)
-    except ValueError:
-        return 0.0
+    if isinstance(value, str):
+        # Remove percentage sign and convert to float
+        value = value.replace('%', '').strip()
+        return float(value.replace(',', '').strip() or 0) / 100 if '%' in value else float(value.replace(',', '').strip() or 0)
+    return float(value or 0)
 
 def clean_int(value):
-    if value is None or value == '':
-        return None
-    try:
-        return int(float(value))
-    except ValueError:
-        return None
+    if isinstance(value, str):
+        return int(value.replace(',', '').strip() or 0)
+    return int(value or 0)
 
 def log_inventory_change(db: Session, model, item_id: int, field: str, old_value: Any, new_value: Any):
     change_log_model = {
@@ -114,10 +111,7 @@ def import_tampa_bom_inventory(db: Session, is_initial_import: bool):
                     if existing_inventory:
                         update_tampa_bom_inventory(db, existing_inventory, row_dict)
                     else:
-                        try:
-                            create_tampa_bom_inventory(db, row_dict)
-                        except Exception as e:
-                            inventory_logger.error(f"Error processing row {row_dict.get('BOM ID', 'Unknown')}: {str(e)}")
+                        create_tampa_bom_inventory(db, row_dict)
                     current_bom_ids.add(bom_id)
 
         # Check for deletions
@@ -135,37 +129,83 @@ def import_tampa_bom_inventory(db: Session, is_initial_import: bool):
         inventory_logger.error(f"Error during Tampa BOM Inventory import: {e}", exc_info=True)
 
 def import_finished_goods(db: Session, is_initial_import: bool):
-    inventory_logger.info("Starting Finished Goods import")
-    if is_initial_import:
-        reset_finished_goods_table(db)
-        inventory_logger.info("Tables reset for initial finished_goods import.")
+    try:
+        clear_log(inventory_logger)
+        inventory_logger.info("Starting Finished Goods import")
+        data = get_finished_goods_data()
+        if not data or len(data) < 2:
+            inventory_logger.error("No data retrieved for Finished Goods")
+            return
 
-    data = get_finished_goods_data()
-    if not data or len(data) < 2:  # Check if data is empty or has only headers
-        inventory_logger.error("No data retrieved for Finished Goods")
-        return
-
-    headers = data[0]
-    total_rows = len(data) - 1
-    processed_rows = 0
-    error_count = 0
-
-    for row in data[1:]:  # Skip the header row
-        try:
+        headers = data[0]
+        current_iskus = set()
+        for row in data[1:]:
             row_dict = dict(zip(headers, row))
-            finished_good = create_finished_good(db, row_dict)
-            if finished_good:
-                processed_rows += 1
-                if processed_rows % 100 == 0:
-                    inventory_logger.info(f"Processed {processed_rows}/{total_rows} rows")
-                    db.commit()
-        except Exception as e:
-            error_count += 1
-            inventory_logger.error(f"Error processing row {processed_rows + 1}: {str(e)}")
-            db.rollback()
+            isku = row_dict.get('iSKU', '').strip()
+            if not isku:
+                inventory_logger.warning(f"Skipping row with empty iSKU: {row_dict}")
+                continue
 
-    db.commit()
-    inventory_logger.info(f"Finished Goods import completed. Processed {processed_rows} rows with {error_count} errors.")
+            existing_fg = db.query(FinishedGoods).filter_by(isku=isku).first()
+            if existing_fg:
+                update_finished_good(db, existing_fg, row_dict)
+            else:
+                create_finished_good(db, row_dict)
+            current_iskus.add(isku)
+
+        # Mark FinishedGoods as deleted if they're not in the current import
+        db.query(FinishedGoods).filter(FinishedGoods.isku.notin_(current_iskus), FinishedGoods.isku != '').update({FinishedGoods.is_deleted: True}, synchronize_session=False)
+
+        db.commit()
+        inventory_logger.info("Finished Goods import completed successfully")
+    except Exception as e:
+        db.rollback()
+        inventory_logger.error(f"Error during Finished Goods import: {e}", exc_info=True)
+
+def import_finished_goods_inventory(db: Session, is_initial_import: bool):
+    try:
+        clear_log(inventory_logger)
+        inventory_logger.info("Starting Finished Goods Inventory import")
+        data = get_finished_goods_inventory_data()
+        if not data or len(data) < 2:
+            inventory_logger.error("No data retrieved for Finished Goods Inventory")
+            return
+
+        headers = data[0]
+        current_items = set()
+        for row in data[1:]:
+            try:
+                row_dict = dict(zip(headers, row))
+                isku = row_dict.get('iSKU', '').strip()
+                if not isku:
+                    inventory_logger.warning(f"Skipping row with empty iSKU: {row_dict}")
+                    continue
+
+                existing_inventory = db.query(FinishedGoodsInventory).filter_by(isku=isku).first()
+                if existing_inventory:
+                    if update_finished_goods_inventory(db, existing_inventory, row_dict):
+                        db.commit()  # Commit only if changes were made
+                else:
+                    # Check if the FinishedGoods exists before creating inventory
+                    existing_finished_good = db.query(FinishedGoods).filter_by(isku=isku).first()
+                    if existing_finished_good:
+                        create_finished_goods_inventory(db, row_dict)
+                        db.commit()  # Commit after creating new inventory
+                    else:
+                        inventory_logger.warning(f"Skipping inventory for non-existent FinishedGoods: {isku}")
+                current_items.add(isku)
+            except Exception as e:
+                db.rollback()
+                inventory_logger.error(f"Error processing row {row}: {str(e)}")
+
+        # Remove FinishedGoodsInventory items that are not in the current import
+        db.query(FinishedGoodsInventory).filter(FinishedGoodsInventory.isku.notin_(current_items), FinishedGoodsInventory.isku != '').delete(synchronize_session=False)
+
+        db.commit()
+        inventory_logger.info("Finished Goods Inventory import completed successfully")
+    except Exception as e:
+        db.rollback()
+        inventory_logger.error(f"Error during Finished Goods Inventory import: {e}", exc_info=True)
 
 SUBHEADERS_TO_SKIP = [
     "Natrisweet Powders",
@@ -200,43 +240,6 @@ SUBHEADERS_TO_SKIP = [
 
 def is_subheader(isku: str) -> bool:
     return isku.strip() in SUBHEADERS_TO_SKIP
-
-def import_finished_goods_inventory(db: Session, is_initial_import: bool):
-    inventory_logger.info("Starting Finished Goods Inventory import")
-    try:
-        if is_initial_import:
-            initial_setup(db, FinishedGoodsInventory)
-        
-        clear_log(inventory_logger)
-        data = get_finished_goods_inventory_data()
-        if not data:
-            inventory_logger.error("No data retrieved for Finished Goods Inventory")
-            return
-
-        headers = data[0]
-        current_items = set()
-        row_count = 0
-        error_count = 0
-        for row in data[1:]:
-            row_dict = dict(zip(headers, row))
-            try:
-                create_finished_goods_inventory(db, row_dict)
-                row_count += 1
-            except Exception as e:
-                error_count += 1
-                inventory_logger.error(f"Error processing row {row_count + 1}: {str(e)}")
-        inventory_logger.info(f"Finished Goods Inventory import completed. Processed {row_count} rows with {error_count} errors.")
-    except Exception as e:
-        db.rollback()
-        inventory_logger.error(f"Error during Finished Goods Inventory import: {e}", exc_info=True)
-
-def is_subheader(bom_id):
-    subheader_keywords = [
-        "Powders", "Ingredients", "Essential Oils", "Miscellaneous Ingredients",
-        "White Label Cosmetics", "Organic Room Packaging", "Pouches", "Brand Name Pouches",
-        "Bottles", "Caps", "Shrink Bands", "Labels", "TreeActiv Labels", "Alternative Labels", "Stickers"
-    ]
-    return any(keyword.lower() in bom_id.lower() for keyword in subheader_keywords)
 
 def parse_date(date_string):
     if not date_string or date_string.strip() == '':
@@ -359,62 +362,50 @@ def update_tampa_bom_inventory(db: Session, existing_inventory: TampaBOMInventor
 def create_finished_good(db: Session, row_dict):
     isku = row_dict.get('iSKU', '').strip()
     if not isku:
-        inventory_logger.warning(f"Skipping row with empty iSKU: {row_dict}")
+        inventory_logger.warning(f"Skipping creation of FinishedGood with empty iSKU: {row_dict}")
         return None
 
-    existing_fg = db.query(FinishedGoods).filter_by(isku=isku).first()
-    if existing_fg:
-        # Update existing entry
-        try:
-            for key, value in row_dict.items():
-                if hasattr(existing_fg, key.lower()):
-                    if key.lower() == 'similar':
-                        value = clean_int(value)
-                    setattr(existing_fg, key.lower(), value)
-            db.flush()
-            inventory_logger.info(f"Updated FinishedGoods entry for iSKU: {isku}")
-        except SQLAlchemyError as e:
-            db.rollback()
-            inventory_logger.error(f"Error updating FinishedGoods entry for iSKU {isku}: {str(e)}")
-        return existing_fg
-    else:
-        # Create new entry
-        try:
-            finished_good = FinishedGoods(
-                asin=row_dict.get('ASIN', ''),
-                isku=isku,
-                common_name=row_dict.get('Common Name', ''),
-                phoenix_class=row_dict.get('Phoenix Class', ''),
-                brand=row_dict.get('Brand', ''),
-                size=row_dict.get('Size', ''),
-                material_cost=clean_float(row_dict.get('Material Cost', 0)),
-                labor_cost=clean_float(row_dict.get('Labor Cost', 0)),
-                total_unit_cost=clean_float(row_dict.get('Total Unit Cost', 0)),
-                replenishment_type=row_dict.get('Replenishment Type', ''),
-                manufacturing_class=row_dict.get('Manufacturing Class', ''),
-                lead_time=clean_int(row_dict.get('Lead Time', 0)),
-                amz_safety_days=clean_int(row_dict.get('AMZ Safety Days', 0)),
-                wh_safety_days=clean_int(row_dict.get('WH Safety Days', 0)),
-                reorder_qty_days=clean_int(row_dict.get('Reorder QTY Days', 0)),
-                similar=clean_int(row_dict.get('Similar', None)),
-                in_bom_mapping=row_dict.get('In BOM Mapping', '').lower() == 'true',
-                duplicate_asin=row_dict.get('Duplicate ASIN', '').lower() == 'true',
-                count_tkfg=clean_int(row_dict.get('Count TKFG', 0)),
-                status=row_dict.get('Status', ''),
-                batch_run=row_dict.get('Batch Run', '')
-            )
-            db.add(finished_good)
-            db.flush()
-            inventory_logger.info(f"Created FinishedGoods entry for iSKU: {isku}")
-            return finished_good
-        except IntegrityError as e:
-            db.rollback()
-            inventory_logger.error(f"Error creating FinishedGoods entry for iSKU {isku}: {str(e)}")
-            return None
+    try:
+        finished_good = FinishedGoods(
+            isku=isku,
+            asin=row_dict.get('ASIN', ''),
+            common_name=row_dict.get('Common Name', ''),
+            phoenix_class=row_dict.get('Phoenix Class', ''),
+            brand=row_dict.get('Brand', ''),
+            size=row_dict.get('Size', ''),
+            material_cost=clean_float(row_dict.get('Material Cost', 0)),
+            labor_cost=clean_float(row_dict.get('Labor Cost', 0)),
+            total_unit_cost=clean_float(row_dict.get('Total Unit Cost', 0)),
+            replenishment_type=row_dict.get('Replenishment Type', ''),
+            manufacturing_class=row_dict.get('Manufacturing Class', ''),
+            lead_time=clean_int(row_dict.get('Lead Time', 0)),
+            amz_safety_days=clean_int(row_dict.get('AMZ Safety Days', 0)),
+            wh_safety_days=clean_int(row_dict.get('WH Safety Days', 0)),
+            reorder_qty_days=clean_int(row_dict.get('Reorder QTY Days', 0)),
+            similar=clean_int(row_dict.get('Similar', None)),
+            in_bom_mapping=row_dict.get('In BOM Mapping', '').lower() == 'true',
+            duplicate_asin=row_dict.get('Duplicate ASIN', '').lower() == 'true',
+            count_tkfg=clean_int(row_dict.get('Count TKFG', 0)),
+            status=row_dict.get('Status', ''),
+            batch_run=row_dict.get('Batch Run', '')
+        )
+        db.add(finished_good)
+        db.flush()
+        inventory_logger.info(f"Created FinishedGoods entry for iSKU: {isku}")
+        return finished_good
+    except IntegrityError as e:
+        db.rollback()
+        inventory_logger.error(f"Error creating FinishedGoods entry for iSKU {isku}: {str(e)}")
+        return None
 
 def update_finished_good(db: Session, existing_finished_good: FinishedGoods, row_dict):
+    isku = row_dict.get('iSKU', '').strip()
+    if not isku:
+        inventory_logger.warning(f"Skipping update of FinishedGood with empty iSKU: {row_dict}")
+        return
+
     fields = [
-        'asin', 'isku', 'common_name', 'phoenix_class', 'brand', 'size',
+        'asin', 'common_name', 'phoenix_class', 'brand', 'size',
         'material_cost', 'labor_cost', 'total_unit_cost', 'replenishment_type',
         'manufacturing_class', 'lead_time', 'amz_safety_days', 'wh_safety_days',
         'reorder_qty_days', 'similar', 'in_bom_mapping', 'duplicate_asin',
@@ -429,9 +420,7 @@ def update_finished_good(db: Session, existing_finished_good: FinishedGoods, row
         elif field in ['lead_time', 'amz_safety_days', 'wh_safety_days', 'reorder_qty_days', 'count_tkfg']:
             new_value = clean_int(new_value)
         elif field == 'similar':
-            new_value = clean_int(new_value)
-            if new_value is None:
-                continue  # Skip updating 'similar' if it's an empty string or invalid integer
+            new_value = clean_int(new_value) if new_value else None
         elif field in ['in_bom_mapping', 'duplicate_asin']:
             new_value = new_value.lower() == 'true'
         
@@ -442,6 +431,7 @@ def update_finished_good(db: Session, existing_finished_good: FinishedGoods, row
     
     if changes:
         create_inventory_history(db, FinishedGoods, existing_finished_good)
+        inventory_logger.info(f"Updated FinishedGoods entry for iSKU: {isku}")
 
 def create_finished_goods_inventory(db: Session, row_dict):
     isku = row_dict.get('iSKU', '').strip()
@@ -494,8 +484,13 @@ def create_finished_goods_inventory(db: Session, row_dict):
     return finished_goods_inventory
 
 def update_finished_goods_inventory(db: Session, existing_inventory: FinishedGoodsInventory, row_dict):
+    isku = row_dict.get('iSKU', '').strip()
+    if not isku:
+        inventory_logger.warning(f"Skipping update of FinishedGoodsInventory with empty iSKU: {row_dict}")
+        return False
+
     fields = [
-        'isku', 'brand', 'phx_class', 'theoretical_qty', 'location', 'actual_count',
+        'brand', 'phx_class', 'theoretical_qty', 'location', 'actual_count',
         'date_counted', 'uom', 'mfg_after_date_counted', 'received_qty_after_actual_count',
         'fo_after_date_counted', 'fo_after_date_counted_from_bundles', 'ihf_after_date_counted',
         'duplicate', 'asin', 'fba_veloz_ranking', 'past_30_mo', 'past_30_fo',
@@ -526,6 +521,11 @@ def update_finished_goods_inventory(db: Session, existing_inventory: FinishedGoo
     
     if changes:
         create_inventory_history(db, FinishedGoodsInventory, existing_inventory)
+        inventory_logger.info(f"Updated FinishedGoodsInventory entry for iSKU: {isku}. Changed fields: {', '.join(changes)}")
+        return True
+    else:
+        inventory_logger.info(f"No changes for FinishedGoodsInventory entry with iSKU: {isku}")
+        return False
 
 def main(is_initial_import=False, should_create_tables=False):
     if should_create_tables:

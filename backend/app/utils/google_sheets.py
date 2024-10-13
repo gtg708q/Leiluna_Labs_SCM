@@ -80,14 +80,19 @@ def get_bom_data():
     Expected structure: [BOM ID, Component Type, PHX Class, ...]
     """
     RANGE_NAME = 'BOM Master!A:AE'  # Adjust this range as needed
-    return get_sheet_data(BOM_SHEET_ID, RANGE_NAME)
+    data = get_sheet_data(BOM_SHEET_ID, RANGE_NAME)
+    if data:
+        bom_logger.info(f"Retrieved {len(data)} rows from BOM Master sheet")
+    else:
+        bom_logger.warning("No data retrieved from BOM Master sheet")
+    return data
 
 def get_tampa_bom_inventory_data():
     """
     Retrieves Tampa BOM Inventory data from two tabs.
     Expected structure for each tab: [BOM ID, Type, PHX Class, ...]
     """
-    RANGE_NAMES = ['RawInventory', 'PackagingBOMs']
+    RANGE_NAMES = ['RawInventory!A:AC', 'PackagingBOMs!A:AB']
     return get_multiple_sheet_data(TAMPA_INVENTORY_SHEET_ID, RANGE_NAMES)
 
 def get_finished_goods_data():
@@ -96,7 +101,12 @@ def get_finished_goods_data():
     Expected structure: [ASIN, iSKU, Common Name, Phoenix Class, ...]
     """
     RANGE_NAME = 'Master List & Unit Cost!A:U'  # Adjust this range to include all necessary columns
-    return get_sheet_data(FINISHED_GOODS_SHEET_ID, RANGE_NAME)
+    data = get_sheet_data(FINISHED_GOODS_SHEET_ID, RANGE_NAME)
+    if data:
+        inventory_logger.info(f"Retrieved {len(data)} rows from Finished Goods sheet")
+    else:
+        inventory_logger.warning("No data retrieved from Finished Goods sheet")
+    return data
 
 def get_finished_goods_inventory_data():
     """
@@ -104,4 +114,9 @@ def get_finished_goods_inventory_data():
     Expected structure: [iSKU, Brand, PHX Class, Theoretical Qty, ...]
     """
     RANGE_NAME = 'FG!A:AD'  # Adjust this range to include all necessary columns
-    return get_sheet_data(TAMPA_INVENTORY_SHEET_ID, RANGE_NAME)
+    data = get_sheet_data(TAMPA_INVENTORY_SHEET_ID, RANGE_NAME)
+    if data:
+        inventory_logger.info(f"Retrieved {len(data)} rows from Finished Goods Inventory sheet")
+    else:
+        inventory_logger.warning("No data retrieved from Finished Goods Inventory sheet")
+    return data

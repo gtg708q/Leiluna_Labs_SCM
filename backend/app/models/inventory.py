@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey, Boolean
 from sqlalchemy.orm import relationship
-from ..database import Base
+from backend.app.database import Base
 from sqlalchemy.sql import func
 from .bom import BOM 
 
@@ -32,6 +32,7 @@ class TampaBOMInventory(Base):
     variance = Column(Float)
     random_count = Column(Float)
     subtype = Column(String)
+    is_deleted = Column(Boolean, default=False)
 
     bom = relationship("BOM", back_populates="tampa_inventory")
 
@@ -60,8 +61,10 @@ class FinishedGoods(Base):
     count_tkfg = Column(Integer)
     status = Column(String)
     batch_run = Column(String)
+    is_deleted = Column(Boolean, default=False)
 
     inventory = relationship("FinishedGoodsInventory", back_populates="finished_good")
+    bom_components = relationship("FinishedGoodsBOMComponent", back_populates="finished_good")
 
 class FinishedGoodsInventory(Base):
     __tablename__ = "finished_goods_inventory"
@@ -93,6 +96,7 @@ class FinishedGoodsInventory(Base):
     variance = Column(Float)
     not_in_wir_fg = Column(String)
     category = Column(String)
+    is_deleted = Column(Boolean, default=False)
 
     finished_good = relationship("FinishedGoods", back_populates="inventory")
 
@@ -106,6 +110,7 @@ class TampaBOMInventoryChangeLog(Base):
     new_value = Column(String)
     changed_at = Column(DateTime(timezone=True), server_default=func.now())
     changed_by = Column(String)
+    is_deleted = Column(Boolean, default=False)
 
 class TampaBOMInventoryHistory(Base):
     __tablename__ = "tampa_bom_inventory_history"
@@ -118,17 +123,19 @@ class TampaBOMInventoryHistory(Base):
     actual_count = Column(Float)
     date_counted = Column(DateTime)
     recorded_at = Column(DateTime(timezone=True), server_default=func.now())
+    is_deleted = Column(Boolean, default=False)
 
 class FinishedGoodsChangeLog(Base):
     __tablename__ = "finished_goods_change_log"
 
     id = Column(Integer, primary_key=True, index=True)
-    finished_goods_id = Column(Integer, ForeignKey("finished_goods.id"))  # Change this line
+    finished_goods_id = Column(Integer, ForeignKey("finished_goods.id"))
     field_name = Column(String)
     old_value = Column(String)
     new_value = Column(String)
     changed_at = Column(DateTime(timezone=True), server_default=func.now())
     changed_by = Column(String)
+    is_deleted = Column(Boolean, default=False)
 
 class FinishedGoodsHistory(Base):
     __tablename__ = "finished_goods_history"
@@ -140,6 +147,7 @@ class FinishedGoodsHistory(Base):
     total_unit_cost = Column(Float)
     status = Column(String)
     recorded_at = Column(DateTime(timezone=True), server_default=func.now())
+    is_deleted = Column(Boolean, default=False)
 
 class FinishedGoodsInventoryChangeLog(Base):
     __tablename__ = "finished_goods_inventory_change_log"
@@ -151,6 +159,7 @@ class FinishedGoodsInventoryChangeLog(Base):
     new_value = Column(String)
     changed_at = Column(DateTime(timezone=True), server_default=func.now())
     changed_by = Column(String)
+    is_deleted = Column(Boolean, default=False)
 
 class FinishedGoodsInventoryHistory(Base):
     __tablename__ = "finished_goods_inventory_history"
@@ -162,3 +171,4 @@ class FinishedGoodsInventoryHistory(Base):
     actual_count = Column(Float)
     date_counted = Column(DateTime)
     recorded_at = Column(DateTime(timezone=True), server_default=func.now())
+    is_deleted = Column(Boolean, default=False)

@@ -1,7 +1,7 @@
-from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey
+from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey, Boolean
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
-from ..database import Base
+from backend.app.database import Base
 import datetime
 
 class BOM(Base):
@@ -43,10 +43,12 @@ class BOM(Base):
     version = Column(Integer, default=1)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
+    is_deleted = Column(Boolean, default=False)
     
     changes = relationship("BOMChangeLog", back_populates="bom")
     history = relationship("BOMHistory", back_populates="bom")
     tampa_inventory = relationship("TampaBOMInventory", back_populates="bom")
+    finished_goods_components = relationship("FinishedGoodsBOMComponent", back_populates="bom")
 
 class BOMChangeLog(Base):
     __tablename__ = 'bom_change_log'
@@ -58,6 +60,7 @@ class BOMChangeLog(Base):
     new_value = Column(String)
     change_type = Column(String)  # 'update', 'create', or 'delete'
     timestamp = Column(DateTime, default=datetime.datetime.utcnow)
+    is_deleted = Column(Boolean, default=False)
 
     bom = relationship("BOM", back_populates="changes")
 
@@ -99,5 +102,6 @@ class BOMHistory(Base):
     comments = Column(String)
     version = Column(Integer)
     timestamp = Column(DateTime, default=datetime.datetime.utcnow)
+    is_deleted = Column(Boolean, default=False)
 
     bom = relationship("BOM", back_populates="history")

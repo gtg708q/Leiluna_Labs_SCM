@@ -12,7 +12,6 @@ def log_bom_change(db: Session, bom_id: int, field_name: str, old_value: str, ne
     db.add(change_log)
 
 def create_bom_history(db: Session, bom: BOM):
-    bom_dict = {c.name: getattr(bom, c.name) for c in bom.__table__.columns 
-                if c.name not in ['id', 'bom_id', 'created_at', 'updated_at']}
+    bom_dict = {c.name: getattr(bom, c.name) for c in bom.__table__.columns if c.name not in ['id', 'bom_id', 'created_at', 'updated_at']}
     history = BOMHistory(**bom_dict, bom_id=bom.id)
     db.add(history)
