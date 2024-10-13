@@ -28,7 +28,7 @@ print(f"DB_HOST: {DB_HOST}")
 print(f"DB_PORT: {DB_PORT}")
 
 # Construct the database URL
-db_url = URL.create(
+DATABASE_URL = URL.create(
     drivername="postgresql",
     username=DB_USER,
     password=DB_PASSWORD,
@@ -37,7 +37,9 @@ db_url = URL.create(
     database=DB_NAME
 )
 
-engine = create_engine(db_url, connect_args={"connect_timeout": 5})
+print(f"DATABASE_URL: {DATABASE_URL}")  # This will print the URL without the password
+
+engine = create_engine(DATABASE_URL, connect_args={"connect_timeout": 5})
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()

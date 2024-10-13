@@ -34,6 +34,7 @@ def setup_logger(name, log_file, level=logging.INFO, clear_log=False):
 # Create loggers
 bom_logger = setup_logger('bom_logger', 'logs/bom.log', clear_log=True)
 inventory_logger = setup_logger('inventory_logger', 'logs/inventory.log', clear_log=True)
+po_logger = setup_logger('purchase_order_log', 'logs/purchase_order.log', clear_log=True)
 
 def clear_log(logger):
     """Function to clear the log file associated with the given logger."""

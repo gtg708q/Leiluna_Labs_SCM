@@ -4,6 +4,9 @@ from sqlalchemy.orm import relationship
 from backend.app.database import Base
 import datetime
 
+# Import FinishedGoodsBOMComponent
+from .finished_goods_bom_component import FinishedGoodsBOMComponent
+
 class BOM(Base):
     __tablename__ = "boms"
 
@@ -49,6 +52,7 @@ class BOM(Base):
     history = relationship("BOMHistory", back_populates="bom")
     tampa_inventory = relationship("TampaBOMInventory", back_populates="bom")
     finished_goods_components = relationship("FinishedGoodsBOMComponent", back_populates="bom")
+    purchase_orders = relationship("PurchaseOrderLog", back_populates="bom")
 
 class BOMChangeLog(Base):
     __tablename__ = 'bom_change_log'

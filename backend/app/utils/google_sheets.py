@@ -2,7 +2,7 @@ import os
 from google.oauth2.credentials import Credentials
 from googleapiclient.discovery import build
 from google.oauth2 import service_account
-from .logger import bom_logger, inventory_logger
+from .logger import bom_logger, inventory_logger, po_logger
 
 SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 
@@ -119,4 +119,17 @@ def get_finished_goods_inventory_data():
         inventory_logger.info(f"Retrieved {len(data)} rows from Finished Goods Inventory sheet")
     else:
         inventory_logger.warning("No data retrieved from Finished Goods Inventory sheet")
+    return data
+
+def get_purchase_order_log_data():
+    """
+    Retrieves Purchase Order Log data.
+    """
+    SHEET_ID = '1-hV07B23uHc6bR5n7K3EODJD4IRPuZLaqewlw6dAYEM'
+    RANGE_NAME = 'Sheet1!A4:BB'
+    data = get_sheet_data(SHEET_ID, RANGE_NAME)
+    if data:
+        po_logger.info(f"Retrieved {len(data)} rows from Purchase Order Log sheet")
+    else:
+        po_logger.warning("No data retrieved from Purchase Order Log sheet")
     return data
