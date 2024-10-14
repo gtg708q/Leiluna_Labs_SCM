@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey, Boolean
 from sqlalchemy.orm import relationship
-from backend.app.database import Base
+from app.database import Base  # Change this line
 from sqlalchemy.sql import func
 
 class PurchaseOrderLog(Base):
@@ -18,7 +18,7 @@ class PurchaseOrderLog(Base):
     product = Column(String)
     qty = Column(Float)
     uom = Column(String)
-    supplier = Column(String)
+    supplier = Column(String)  # Ensure this field is defined
     status = Column(String)
     estimated_mfg_completion_date = Column(DateTime)
     estimated_mfg_lead_time_days = Column(Integer)

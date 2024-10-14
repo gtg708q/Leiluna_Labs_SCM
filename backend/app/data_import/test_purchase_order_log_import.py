@@ -12,7 +12,10 @@ from backend.app.db_init import init_db
 import os
 import re
 
+# ... (keep all the helper functions like clean_float, clean_int, parse_date, map_po_data, create_or_update_bom)
+
 def clean_float(value):
+    po_logger.info(f"clean_float input: {value}, type: {type(value)}")
     if value is None:
         return None
     if isinstance(value, (int, float)):
@@ -20,6 +23,7 @@ def clean_float(value):
     if isinstance(value, str):
         # Remove currency symbols, commas, and whitespace
         cleaned_value = re.sub(r'[^\d.-]', '', value.strip())
+        po_logger.info(f"clean_float cleaned value: {cleaned_value}")
         if cleaned_value == '' or cleaned_value == '#REF!':
             return None
         try:
@@ -53,6 +57,97 @@ def parse_date(date_string):
         except ValueError:
             po_logger.warning(f"Invalid date format: {date_string}")
             return None
+
+def initial_setup(db: Session):
+    try:
+        # Check if the purchase_order_log table is empty
+        po_count = db.query(PurchaseOrderLog).count()
+        if po_count == 0:
+            db.execute(text("TRUNCATE TABLE purchase_order_log RESTART IDENTITY CASCADE;"))
+            db.execute(text("SELECT setval(pg_get_serial_sequence('purchase_order_log', 'id'), 1, false);"))
+            db.commit()
+            po_logger.info("purchase_order_log table reset for initial import.")
+        else:
+            po_logger.info("purchase_order_log table already contains data. Skipping reset.")
+    except Exception as e:
+        db.rollback()
+        po_logger.error(f"Error during initial setup: {e}")
+        raise
+
+def test_import_purchase_order_log(db: Session, is_initial_import: bool = False):
+    try:
+        po_logger.info(f"Current working directory: {os.getcwd()}")
+        po_logger.info(f"Attempting to connect to database: {DATABASE_URL}")
+        po_logger.info(f"Engine URL: {engine.url}")
+        
+        if is_initial_import:
+            po_logger.info("Performing initial setup...")
+            init_db()
+            initial_setup(db)
+
+        po_logger.info("Starting Test Purchase Order Log import (first 5 rows)")
+        data = get_purchase_order_log_data()
+        
+        if not data or len(data) < 4:  # Ensure we have data and headers
+            po_logger.error("No data retrieved for Purchase Order Log")
+            return
+
+        headers = data[0]  # Headers are in the first row of the retrieved data
+        po_logger.info(f"Headers: {headers}")
+
+        # Log a sample row
+        po_logger.info(f"Sample row data: {data[1]}")
+
+        # Find the index of the 'PO #' column
+        po_number_index = next((i for i, h in enumerate(headers) if 'PO #' in h), None)
+        if po_number_index is None:
+            po_logger.error("'PO #' column not found in the headers")
+            return
+
+        current_po_numbers = set()
+
+        processed_rows = 0
+        for row in data[1:6]:  # Process only the first 5 rows after the header
+            if len(row) <= po_number_index:
+                po_logger.warning(f"Skipping row with insufficient columns: {row}")
+                continue
+
+            po_number = row[po_number_index]
+            
+            if not po_number:
+                po_logger.warning(f"Skipping row without PO number: {row}")
+                continue  # Skip rows without PO number
+
+            row_dict = dict(zip(headers, row))
+            po_data = map_po_data(row_dict)
+            
+            existing_po = db.query(PurchaseOrderLog).filter_by(po_number=po_number).first()
+            
+            if existing_po:
+                for key, value in po_data.items():
+                    setattr(existing_po, key, value)
+                po_logger.info(f"Updated Purchase Order: {po_number}")
+            else:
+                new_po = PurchaseOrderLog(**po_data)
+                db.add(new_po)
+                po_logger.info(f"Created new Purchase Order: {po_number}")
+
+            current_po_numbers.add(po_number)
+
+            # Create or update BOM if necessary
+            bom_id = po_data.get('bom_id')
+            if bom_id:
+                create_or_update_bom(db, bom_id)
+
+            processed_rows += 1
+
+        po_logger.info(f"Processed {processed_rows} rows from Purchase Order Log")
+
+        db.commit()
+        po_logger.info("Test Purchase Order Log import completed successfully")
+    except Exception as e:
+        db.rollback()
+        po_logger.error(f"Error during Test Purchase Order Log import: {e}", exc_info=True)
 
 def map_po_data(row: Dict[str, Any]) -> Dict[str, Any]:
     mapped_data = {
@@ -110,10 +205,8 @@ def map_po_data(row: Dict[str, Any]) -> Dict[str, Any]:
         'month': row.get('Month'),
         'week': clean_int(row.get('Week')),
         'findings': row.get('FINDINGS'),
-        'type': row.get('Type'),
-        'isku_bom': row.get('ISKU/BOM'),
-        'status_2': row.get('Status'),
     }
+    po_logger.info(f"Mapped PO data: {mapped_data}")
     return {k: v for k, v in mapped_data.items() if v is not None}
 
 def create_or_update_bom(db: Session, bom_id: str):
@@ -128,101 +221,11 @@ def create_or_update_bom(db: Session, bom_id: str):
         po_logger.info(f"Created new BOM entry for BOM ID: {bom_id}")
     return bom
 
-def import_purchase_order_log(db: Session, is_initial_import: bool = False):
-    try:
-        po_logger.info(f"Current working directory: {os.getcwd()}")
-        po_logger.info(f"Attempting to connect to database: {DATABASE_URL}")
-        po_logger.info(f"Engine URL: {engine.url}")
-        
-        if is_initial_import:
-            po_logger.info("Performing initial setup...")
-            init_db()
-            initial_setup(db)
-
-        po_logger.info("Starting Purchase Order Log import")
-        data = get_purchase_order_log_data()
-        
-        if not data or len(data) < 4:  # Ensure we have data and headers
-            po_logger.error("No data retrieved for Purchase Order Log")
-            return
-
-        headers = data[0]  # Headers are in the first row of the retrieved data
-        po_logger.info(f"Headers: {headers}")
-
-        # Find the index of the 'PO #' column
-        po_number_index = next((i for i, h in enumerate(headers) if 'PO #' in h), None)
-        if po_number_index is None:
-            po_logger.error("'PO #' column not found in the headers")
-            return
-
-        current_po_numbers = set()
-
-        processed_rows = 0
-        for row in data[1:]:  # Start from the second row (index 1)
-            if len(row) <= po_number_index:
-                po_logger.warning(f"Skipping row with insufficient columns: {row}")
-                continue
-
-            po_number = row[po_number_index]
-            
-            if not po_number:
-                po_logger.warning(f"Skipping row without PO number: {row}")
-                continue  # Skip rows without PO number
-
-            row_dict = dict(zip(headers, row))
-            po_data = map_po_data(row_dict)
-            
-            existing_po = db.query(PurchaseOrderLog).filter_by(po_number=po_number).first()
-            
-            if existing_po:
-                # Update existing PO
-                for key, value in po_data.items():
-                    if getattr(existing_po, key) != value:
-                        setattr(existing_po, key, value)
-                po_logger.info(f"Updated Purchase Order: {po_number}")
-            else:
-                # Create new PO
-                new_po = PurchaseOrderLog(**po_data)
-                db.add(new_po)
-                po_logger.info(f"Created new Purchase Order: {po_number}")
-
-            current_po_numbers.add(po_number)
-
-            # Create or update BOM if necessary
-            bom_id = po_data.get('bom_id')
-            if bom_id:
-                create_or_update_bom(db, bom_id)
-
-            processed_rows += 1
-
-        po_logger.info(f"Processed {processed_rows} rows from Purchase Order Log")
-
-        # Mark Purchase Orders as deleted if they're not in the current import
-        db.query(PurchaseOrderLog).filter(PurchaseOrderLog.po_number.notin_(current_po_numbers)).update({PurchaseOrderLog.is_deleted: True}, synchronize_session=False)
-
-        db.commit()
-        po_logger.info("Purchase Order Log import completed successfully")
-    except Exception as e:
-        db.rollback()
-        po_logger.error(f"Error during Purchase Order Log import: {e}", exc_info=True)
-
-def initial_setup(db: Session):
-    try:
-        po_logger.info("Performing initial setup: Erasing all existing data in the purchase_order_log table")
-        db.execute(text("TRUNCATE TABLE purchase_order_log RESTART IDENTITY CASCADE;"))
-        db.execute(text("SELECT setval(pg_get_serial_sequence('purchase_order_log', 'id'), 1, false);"))
-        db.commit()
-        po_logger.info("purchase_order_log table reset for initial import.")
-    except Exception as e:
-        db.rollback()
-        po_logger.error(f"Error during initial setup: {e}")
-        raise
-
 if __name__ == "__main__":
     db = SessionLocal()
     try:
         # Set this to True for the initial import, False for subsequent imports
         is_initial_import = True  # Change this to False after the initial import
-        import_purchase_order_log(db, is_initial_import)
+        test_import_purchase_order_log(db, is_initial_import)
     finally:
         db.close()

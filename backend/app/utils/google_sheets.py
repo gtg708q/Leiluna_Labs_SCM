@@ -130,6 +130,7 @@ def get_purchase_order_log_data():
     data = get_sheet_data(SHEET_ID, RANGE_NAME)
     if data:
         po_logger.info(f"Retrieved {len(data)} rows from Purchase Order Log sheet")
+        po_logger.info(f"Sample row: {data[1]}")  # Log the first data row
     else:
         po_logger.warning("No data retrieved from Purchase Order Log sheet")
     return data

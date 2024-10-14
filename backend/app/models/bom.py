@@ -1,7 +1,7 @@
 from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey, Boolean
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
-from backend.app.database import Base
+from app.database import Base  # Changed this line
 import datetime
 
 # Import FinishedGoodsBOMComponent

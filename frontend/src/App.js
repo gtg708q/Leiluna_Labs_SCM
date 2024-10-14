@@ -1,11 +1,22 @@
 import React from 'react';
-import Dashboard from './pages/Dashboard';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Sidebar from './components/Sidebar';
+import ProcurementPage from './pages/ProcurementPage';
+import './App.css'; // Add this line
 
 function App() {
   return (
-    <div className="App">
-      <Dashboard />
-    </div>
+    <Router>
+      <div className="app-container">
+        <Sidebar />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<div>Home Page</div>} />
+            <Route path="/procurement" element={<ProcurementPage />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 }
 
