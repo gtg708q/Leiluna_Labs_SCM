@@ -1,0 +1,312 @@
+{
+  "schema": [
+    {
+      "name": "amazon_order_id",
+      "requestColumn": "amazon_order_id",
+      "label": "Amazon Order ID",
+      "tables": [
+        "feedback",
+        "fees",
+        "orders",
+        "reimb",
+        "returns",
+        "returns_FBA"
+      ],
+      "dataType": "STRING",
+      "semantics": {
+        "conceptType": "DIMENSION",
+        "semanticType": "TEXT"
+      },
+      "description": "Amazon\u2019s unique, displayable identifier for an order.",
+      "faker": {
+        "class": "number",
+        "customCsv": "",
+        "subclass": "int"
+      },
+      "join": [
+        "feedback",
+        "orders",
+        "fees",
+        "reimb",
+        "returns",
+        "returns_FBA"
+      ]
+    },
+    {
+      "name": "asin",
+      "requestColumn": "asin",
+      "label": "ASIN",
+      "tables": [
+        "estimated_fee",
+        "estimated_fee_FBA",
+        "excess_inventory_FBA",
+        "inventory",
+        "inventory_FBA",
+        "orders",
+        "reimb",
+        "returns",
+        "returns_FBA",
+        "sales_and_traffic_by_asin"
+      ],
+      "dataType": "STRING",
+      "semantics": {
+        "conceptType": "DIMENSION",
+        "semanticType": "TEXT"
+      },
+      "description": "Amazon Standard Identification Numbers (ASINs) are unique blocks of 10 letters and/or numbers that identify items. ASINs are assigned by Amazon. You can find the ASIN on the product detail page.",
+      "faker": {
+        "class": "CUSTOM",
+        "customCsv": "1A2B3C4D5E, F6G7H8I9J0, K1L2M3N4O5, P6Q7R8S9T0, U1V2W3X4Y5, Z6A7B8C9D0, E1F2G3H4I5, J6K7L8M9N0, O1P2Q3R4S5, T6U7V8W9X0, Y1Z2A3B4C5, D6E7F8G9H0, I1J2K3L4M5, N0O1P2Q3R4, S5T6U7V8W9, X0Y1Z2A3B4, C5D6E7F8G9, H0I1J2K3L4, M5N6O7P8Q9, R0S1T2U3V4, W5X6Y7Z8A9, B0C1D2E3F4, G5H6I7J8K9, L0M1N2O3P4, Q5R6S7T8U9, V0W1X2Y3Z4, A5B6C7D8E9, F0G1H2I3J4, K5L6M7N8O9, P0Q1R2S3T4, U5V6W7X8Y9, Z0A1B2C3D4, E5F6G7H8I9, J0K1L2M3N4, O5P6Q7R8S9, T0U1V2W3X4, Y5Z6A7B8C9, D0E1F2G3H4, I5J6K7L8M9, N0O1P2Q3R4, S5T6U7V8W9, X0Y1Z2A3B4, C5D6E7F8G9, H0I1J2K3L4, M5N6O7P8Q9, R0S1T2U3V4, W5X6Y7Z8A9, B0C1D2E3F4, G5H6I7J8K9, L0M1N2O3P4, Q5R6S7T8U9, V0W1X2Y3Z4, A5B6C7D8E9, F0G1H2I3J4, K5L6M7N8O9, P0Q1R2S3T4, U5V6W7X8Y9, Z0A1B2C3D4, E5F6G7H8I9, J0K1L2M3N4, O5P6Q7R8S9, T0U1V2W3X4, Y5Z6A7B8C9, D0E1F2G3H4, I5J6K7L8M9, N0O1P2Q3R4, S5T6U7V8W9, X0Y1Z2A3B4, F9G8H7I6J5, K8L7M6N5O4, P3Q2R1S0T9, U8V7W6X5Y4, Z1A2B3C4D5, E6F7G8H9I0, J5K4L3M2N1, O0P9Q8R7S6, T5U4V3W2X1, Y0Z9A8B7C6, C5D4E3F2G1, H0I9J8K7L6, M5N4O3P2Q1, R0S9T8U7V6, W5X4Y3Z2A1, B0C9D8E7F6, G5H4I3J2K1, L0M9N8O7P6, Q5R4S3T2U1, V0W9X8Y7Z6, A5B4C3D2E1, F0G9H8I7J6, K5L4M3N2O1, P9Q8R7S6T5, U4V3W2X1Y0, Z9A8B7C6D5, E4F3G2H1I0, J9K8L7M6N5, O4P3Q2R1S0, T9U8V7W6X5, Y4Z3A2B1C0, D9E8F7G6H5, I4J3K2L1M0, N9O8P7Q6R5, S4T3U2V1W0, X9Y8Z7A6B5, C4D3E2F1G0, H9I8J7K6L5, M4N3O2P1Q0, R9S8T7U6V5, W4X3Y2Z1A0, B9C8D7E6F5, G4H3I2J1K0, L9M8N7O6P5, Q4R3S2T1U0, V9W8X7Y6Z5, A4B3C2D1E0, F9G8H7I6J5, K4L3M2N1O0, P9Q8R7S6T5, U4V3W2X1Y0, Z9A8B7C6D5, E4F3G2H1I0, J9K8L7M6N5, O4P3Q2R1S0, T9U8V7W6X5, Y4Z3A2B1C0, D9E8F7G6H5, I4J3K2L1M0, N9O8P7Q6R5, S4T3U2V1W0, X9Y8Z7A6B5, C4D3E2F1G0, H9I8J7K6L5, M4N3O2P1Q0, R9S8T7U6V5, W4X3Y2Z1A0",
+        "subclass": "fileName"
+      },
+      "join": [
+        "inventory",
+        "estimated_fee",
+        "estimated_fee_FBA",
+        "inventory_FBA",
+        "excess_inventory_FBA",
+        "orders",
+        "feedback",
+        "reimb",
+        "returns",
+        "returns_FBA",
+        "sales_and_traffic_by_asin"
+      ]
+    },
+    {
+      "name": "date",
+      "requestColumn": "date",
+      "label": "Date And Time",
+      "tables": [
+        "estimated_fee",
+        "estimated_fee_FBA",
+        "excess_inventory_FBA",
+        "feedback",
+        "fees",
+        "inventory",
+        "inventory_FBA",
+        "inventory_events_FBA",
+        "orders",
+        "reimb",
+        "returns",
+        "returns_FBA",
+        "sales_and_traffic",
+        "sales_and_traffic_by_asin"
+      ],
+      "dataType": "STRING",
+      "semantics": {
+        "conceptType": "DIMENSION",
+        "semanticType": "YEAR_MONTH_DAY_HOUR",
+        "semanticGroup": "DATETIME"
+      },
+      "description": "Date and time for reporting.",
+      "join": [
+        "inventory",
+        "estimated_fee",
+        "estimated_fee_FBA",
+        "inventory_FBA",
+        "excess_inventory_FBA",
+        "feedback",
+        "orders",
+        "fees",
+        "inventory_events_FBA",
+        "reimb",
+        "returns",
+        "returns_FBA",
+        "sales_and_traffic",
+        "sales_and_traffic_by_asin"
+      ]
+    },
+    {
+      "name": "item_price",
+      "requestColumn": "item_price",
+      "label": "Item Subtotal",
+      "tables": [
+        "orders"
+      ],
+      "dataType": "NUMBER",
+      "semantics": {
+        "conceptType": "METRIC",
+        "semanticGroup": "CURRENCY",
+        "semanticType": "CURRENCY_USD"
+      },
+      "description": "The amount the buyer paid for the item. Amount is aggregate of the quantity, not unit price.",
+      "dummy": {
+        "mean": 63.56,
+        "round": false
+      },
+      "join": [
+        "orders",
+        "feedback"
+      ]
+    },
+    {
+      "name": "item_tax",
+      "requestColumn": "item_tax",
+      "label": "Item Tax",
+      "tables": [
+        "orders"
+      ],
+      "dataType": "NUMBER",
+      "semantics": {
+        "conceptType": "METRIC",
+        "semanticGroup": "NUMERIC",
+        "semanticType": "NUMBER"
+      },
+      "description": "The amount the buyer paid for item tax. Amount is aggregate of the quantity, not unit price.",
+      "dummy": {
+        "mean": 4.83,
+        "round": false
+      },
+      "join": [
+        "orders",
+        "feedback"
+      ]
+    },
+    {
+      "name": "product_name",
+      "requestColumn": "product_name",
+      "label": "Product Name",
+      "tables": [
+        "estimated_fee_FBA",
+        "excess_inventory_FBA",
+        "inventory_FBA",
+        "inventory_events_FBA",
+        "orders",
+        "reimb",
+        "returns_FBA"
+      ],
+      "dataType": "STRING",
+      "semantics": {
+        "conceptType": "DIMENSION",
+        "semanticType": "TEXT"
+      },
+      "description": "The short title for the product, displayed in bold on the detail web page and in the title bar of the browser window.",
+      "faker": {
+        "class": "commerce",
+        "customCsv": "",
+        "subclass": "productName"
+      },
+      "join": [
+        "estimated_fee_FBA",
+        "inventory_FBA",
+        "excess_inventory_FBA",
+        "inventory_events_FBA",
+        "orders",
+        "feedback",
+        "reimb",
+        "returns_FBA"
+      ]
+    },
+    {
+      "name": "quantity",
+      "requestColumn": "quantity",
+      "label": "Quantity",
+      "tables": [
+        "orders"
+      ],
+      "dataType": "NUMBER",
+      "semantics": {
+        "conceptType": "METRIC",
+        "semanticGroup": "NUMERIC",
+        "semanticType": "NUMBER"
+      },
+      "description": "Quantity of items ordered.",
+      "dummy": {
+        "mean": 1,
+        "round": true
+      },
+      "join": [
+        "orders",
+        "feedback"
+      ]
+    },
+    {
+      "name": "shipping_price",
+      "requestColumn": "shipping_price",
+      "label": "Shipping Price",
+      "tables": [
+        "orders"
+      ],
+      "dataType": "NUMBER",
+      "semantics": {
+        "conceptType": "METRIC",
+        "semanticGroup": "CURRENCY",
+        "semanticType": "CURRENCY_USD"
+      },
+      "description": "The amount the buyer paid for shipping. Amount is aggregate of the quantity, not unit price.",
+      "dummy": {
+        "mean": 7.76,
+        "round": false
+      },
+      "join": [
+        "orders",
+        "feedback"
+      ]
+    },
+    {
+      "name": "shipping_tax",
+      "requestColumn": "shipping_tax",
+      "label": "Shipping Tax",
+      "tables": [
+        "orders"
+      ],
+      "dataType": "NUMBER",
+      "semantics": {
+        "conceptType": "METRIC",
+        "semanticGroup": "NUMERIC",
+        "semanticType": "NUMBER"
+      },
+      "description": "The amount the buyer paid for shipping tax. Amount is aggregate of the quantity, not unit price.",
+      "dummy": {
+        "mean": 1.86,
+        "round": false
+      },
+      "join": [
+        "orders",
+        "feedback"
+      ]
+    },
+    {
+      "name": "sku",
+      "requestColumn": "sku",
+      "label": "Inventory SKU",
+      "tables": [
+        "estimated_fee_FBA",
+        "excess_inventory_FBA",
+        "fees",
+        "inventory_FBA",
+        "inventory_events_FBA",
+        "orders",
+        "reimb",
+        "returns_FBA",
+        "sales_and_traffic_by_asin"
+      ],
+      "dataType": "STRING",
+      "semantics": {
+        "conceptType": "DIMENSION",
+        "semanticType": "TEXT"
+      },
+      "description": "Stock Keeping Units (SKUs) are unique blocks of letters or numbers that identify your products.",
+      "faker": {
+        "class": "number",
+        "customCsv": "",
+        "subclass": "int"
+      },
+      "join": [
+        "estimated_fee_FBA",
+        "inventory_FBA",
+        "excess_inventory_FBA",
+        "orders",
+        "fees",
+        "feedback",
+        "inventory_events_FBA",
+        "reimb",
+        "returns_FBA",
+        "sales_and_traffic_by_asin"
+      ]
+    }
+  ],
+  "executionId": "0mif0n7zju2m",
+  "data": []
+}

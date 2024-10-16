@@ -51,21 +51,23 @@ def get_db():
     finally:
         db.close()
 
-# Import all models here
-# We'll comment these out for now to test the connection
-# from app.models.amazon_seller_central import SalesAndTraffic, InventoryFba
-# from app.models.bom import BOM
-# from app.models.inventory import (
-#     TampaBOMInventory, FinishedGoods, FinishedGoodsInventory,
-#     TampaBOMInventoryChangeLog, FinishedGoodsChangeLog, FinishedGoodsInventoryChangeLog,
-#     TampaBOMInventoryHistory, FinishedGoodsHistory, FinishedGoodsInventoryHistory
-# )
-
 def create_tables():
+    # Import all models here to avoid circular imports
+    from app.models.amazon_seller_central import SalesAndTraffic, InventoryFba
+    from app.models.bom import BOM
+    from app.models.inventory import (
+        TampaBOMInventory, FinishedGoods, FinishedGoodsInventory,
+        TampaBOMInventoryChangeLog, FinishedGoodsChangeLog, FinishedGoodsInventoryChangeLog,
+        TampaBOMInventoryHistory, FinishedGoodsHistory, FinishedGoodsInventoryHistory
+    )
+    from app.models.purchase_order_log import PurchaseOrderLog
+    from app.models.sales_per_day_per_product import SalesPerDayPerProduct
+    from app.models.sales_statistics import SalesStatistics
+
     Base.metadata.create_all(bind=engine)
 
 # Create the tables
-# create_tables()  # Commented out for now
+create_tables()
 
 def test_db_connection():
     try:

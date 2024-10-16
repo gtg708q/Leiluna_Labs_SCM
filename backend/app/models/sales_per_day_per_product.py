@@ -1,0 +1,77 @@
+import sys
+import os
+
+# Add the parent directory to sys.path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+
+from sqlalchemy import Column, Integer, String, Float, Boolean, Date
+from app.database import Base
+
+class SalesPerDayPerProduct(Base):
+    __tablename__ = 'sales_per_day_per_product'
+
+    id = Column(Integer, primary_key=True)
+    date = Column(Date)
+    title = Column(String)
+    account_title = Column(String)
+    market_place = Column(String)
+    sku = Column(String)
+    fnsku = Column(String)
+    asin = Column(String)
+    parent_asin = Column(String)
+    is_parent = Column(Boolean)
+    internal_name = Column(String)
+    brand = Column(String)
+    product_group = Column(String)
+    tags = Column(String)
+    active = Column(Boolean)
+    orders = Column(Integer)
+    canceled_orders = Column(Integer)
+    units = Column(Integer)
+    shipped = Column(Integer)
+    refunded = Column(Integer)
+    refund_percentage = Column(Float)
+    promo_units = Column(Integer)
+    non_promo_units = Column(Integer)
+    promo_revenue = Column(Float)
+    non_promo_revenue = Column(Float)
+    ordered_product_sales = Column(Float)
+    customer_pays = Column(Float)
+    revenue = Column(Float)
+    per_unit_revenue = Column(Float)
+    fba_fees = Column(Float)
+    commissions = Column(Float)
+    promo_amount = Column(Float)
+    cogs = Column(Float)
+    shipping_cost = Column(Float)
+    miscellaneous_cost = Column(Float)
+    ooe = Column(Float)
+    reported_tax_vat = Column(Float)
+    internal_tax_vat = Column(Float)
+    withheld_tax = Column(Float)
+    remitting_tax = Column(Float)
+    net_profit = Column(Float)
+    net_margin = Column(Float)
+    net_roi = Column(Float)
+    ppc_orders = Column(Integer)
+    ppc_impressions = Column(Integer)
+    ppc_clicks = Column(Integer)
+    ppc_sales = Column(Float)
+    ppc_cost = Column(Float)
+    tacos = Column(Float)
+    ppc_conv = Column(Float)
+    page_views = Column(Integer)
+    sessions = Column(Integer)
+    unit_session_percentage = Column(Float)
+    ppc_product_sales = Column(Float)
+    ppc_product_cost = Column(Float)
+    ppc_product_clicks = Column(Integer)
+    ppc_product_impressions = Column(Integer)
+    ppc_video_sales = Column(Float)
+    ppc_video_cost = Column(Float)
+    ppc_video_clicks = Column(Integer)
+    ppc_video_impressions = Column(Integer)
+    currency = Column(String)
+
+    def __repr__(self):
+        return f"<SalesPerDayPerProduct(id={self.id}, date='{self.date}', sku='{self.sku}')>"

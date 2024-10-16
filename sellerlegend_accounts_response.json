@@ -1,0 +1,134 @@
+{
+  "status": "Success",
+  "code": 200,
+  "message": "Accounts List",
+  "path": "api/user/accounts",
+  "accounts": [
+    {
+      "id": 9700,
+      "account_title": "Sirius Store 2",
+      "country_code": "US",
+      "currency_code": "USD",
+      "timezone": "America/Los_Angeles",
+      "marketplace": "ATVPDKIKX0DER",
+      "seller_id": "A26KHELG1S2YF0"
+    },
+    {
+      "id": 9735,
+      "account_title": "Monkberry Store 6",
+      "country_code": "US",
+      "currency_code": "USD",
+      "timezone": "America/Los_Angeles",
+      "marketplace": "ATVPDKIKX0DER",
+      "seller_id": "A3TD0OQKW9N2ZL"
+    },
+    {
+      "id": 9736,
+      "account_title": "Vega Nexus Store 5",
+      "country_code": "US",
+      "currency_code": "USD",
+      "timezone": "America/Los_Angeles",
+      "marketplace": "ATVPDKIKX0DER",
+      "seller_id": "A1PHGG2N6N5I0P"
+    },
+    {
+      "id": 9742,
+      "account_title": "Health Orion Store 3",
+      "country_code": "US",
+      "currency_code": "USD",
+      "timezone": "America/Los_Angeles",
+      "marketplace": "ATVPDKIKX0DER",
+      "seller_id": "A1XPJTH5VCJMWG"
+    },
+    {
+      "id": 10786,
+      "account_title": "Sirius Store 2 Canada",
+      "country_code": "CA",
+      "currency_code": "CAD",
+      "timezone": "America/Los_Angeles",
+      "marketplace": "A2EUQ1WTGCTBG2",
+      "seller_id": "A26KHELG1S2YF0"
+    },
+    {
+      "id": 13436,
+      "account_title": "Kreativ Farms",
+      "country_code": "US",
+      "currency_code": "USD",
+      "timezone": "America/Los_Angeles",
+      "marketplace": "ATVPDKIKX0DER",
+      "seller_id": "A46Y3YEAL88YG"
+    },
+    {
+      "id": 14964,
+      "account_title": "OrganiKart",
+      "country_code": "US",
+      "currency_code": "USD",
+      "timezone": "America/Los_Angeles",
+      "marketplace": "ATVPDKIKX0DER",
+      "seller_id": "AM8E6BPT7U4YE"
+    },
+    {
+      "id": 15555,
+      "account_title": "Orion Canada",
+      "country_code": "CA",
+      "currency_code": "CAD",
+      "timezone": "America/Los_Angeles",
+      "marketplace": "A2EUQ1WTGCTBG2",
+      "seller_id": "A1XPJTH5VCJMWG"
+    },
+    {
+      "id": 15556,
+      "account_title": "Orion Mexico",
+      "country_code": "MX",
+      "currency_code": "MXD",
+      "timezone": "America/Mexico_City",
+      "marketplace": "A1AM78C64UM0Y8",
+      "seller_id": "A1XPJTH5VCJMWG"
+    },
+    {
+      "id": 18876,
+      "account_title": "Mind and Mana",
+      "country_code": "US",
+      "currency_code": "USD",
+      "timezone": "America/Los_Angeles",
+      "marketplace": "ATVPDKIKX0DER",
+      "seller_id": "A8YCR05DHF8XC"
+    },
+    {
+      "id": 20207,
+      "account_title": "Body&Mind US",
+      "country_code": "US",
+      "currency_code": "USD",
+      "timezone": "America/Los_Angeles",
+      "marketplace": "ATVPDKIKX0DER",
+      "seller_id": "AMDDC4NXQ03GH"
+    },
+    {
+      "id": 20318,
+      "account_title": "Magnificent Store US",
+      "country_code": "US",
+      "currency_code": "USD",
+      "timezone": "America/Los_Angeles",
+      "marketplace": "ATVPDKIKX0DER",
+      "seller_id": "A3MAQKU8W5VLAP"
+    },
+    {
+      "id": 20669,
+      "account_title": "StandMore US",
+      "country_code": "US",
+      "currency_code": "USD",
+      "timezone": "America/Los_Angeles",
+      "marketplace": "ATVPDKIKX0DER",
+      "seller_id": "AS8CSQPR9M3FS"
+    },
+    {
+      "id": 21821,
+      "account_title": "Ohana US",
+      "country_code": "US",
+      "currency_code": "USD",
+      "timezone": "America/Los_Angeles",
+      "marketplace": "ATVPDKIKX0DER",
+      "seller_id": "A3DA69BBFHI7YK"
+    }
+  ]
+}
