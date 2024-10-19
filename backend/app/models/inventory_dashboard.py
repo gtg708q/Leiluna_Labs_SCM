@@ -1,0 +1,51 @@
+from sqlalchemy import Column, Integer, String, Float, Date, Text
+from ..database import Base
+
+class InventoryDashboard(Base):
+    __tablename__ = 'inventory_dashboard'
+
+    id = Column(Integer, primary_key=True, index=True)
+    asin = Column(String, index=True)
+    isku = Column(String, index=True)
+    brand = Column(String)
+    phoenix_class = Column(String)
+    status = Column(String)
+    velocity_7d = Column(Float)
+    velocity_14d = Column(Float)
+    velocity_30d = Column(Float)
+    velocity_60d = Column(Float)
+    velocity_90d = Column(Float)
+    velocity_180d = Column(Float)
+    variance_7_14 = Column(Float)
+    variance_7_30 = Column(Float)
+    variance_7_60 = Column(Float)
+    variance_15_30 = Column(Float)
+    variance_15_60 = Column(Float)
+    variance_30_60 = Column(Float)
+    avg_7_30_60 = Column(Float)
+    max_7_30_60 = Column(Float)
+    reference_period = Column(String)
+    final_velocity = Column(Float)
+    comments = Column(Text)
+    fba_in_stock_qty = Column(Integer)
+    fba_in_stock_days = Column(Float)
+    inbound_qty = Column(Integer)
+    reserved_qty = Column(Integer)
+    inbound_days = Column(Float)
+    reserved_days = Column(Float)
+    total_fba_qty = Column(Integer)
+    total_fba_days = Column(Float)
+    lead_time = Column(Integer)
+    amz_safety_days = Column(Integer)
+    reorder_qty_days = Column(Integer)
+    reorder_point_days = Column(Integer)
+    reorder_point_qty = Column(Float)
+    inventory_health = Column(String)
+    fo_qty = Column(Float)
+    wh_qty = Column(Float)
+    replenishment_type = Column(String)
+    fo_date = Column(Date)
+    thirty_day_net_profit = Column(Float)
+
+    def __repr__(self):
+        return f"<InventoryDashboard(id={self.id}, asin='{self.asin}', isku='{self.isku}')>"
