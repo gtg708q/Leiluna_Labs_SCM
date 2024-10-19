@@ -151,7 +151,7 @@ def main():
 
     if not accounts:
         logger.error("No accounts found.")
-        return
+        return {"error": "No accounts found."}
 
     end_date = datetime.now().date()
     start_date = end_date - timedelta(days=30)
@@ -161,10 +161,13 @@ def main():
 
     total_new_records = 0
     total_updated_records = 0
+    account_results = []
 
     for account in accounts:
         logger.info(f"Processing account: {account['account_title']}")
         
+        account_new_records = 0
+        account_updated_records = 0
         page = 1
         while True:
             logger.info(f"Fetching page {page}")
@@ -176,8 +179,8 @@ def main():
                     break
 
                 new_records, updated_records = import_data(session, data)
-                total_new_records += new_records
-                total_updated_records += updated_records
+                account_new_records += new_records
+                account_updated_records += updated_records
 
                 logger.info(f"Page {page} import completed. New records: {new_records}, Updated records: {updated_records}")
 
@@ -190,6 +193,14 @@ def main():
                 logger.error("Unexpected data structure or no data received.")
                 break
 
+        total_new_records += account_new_records
+        total_updated_records += account_updated_records
+        account_results.append({
+            "account": account['account_title'],
+            "new_records": account_new_records,
+            "updated_records": account_updated_records
+        })
+
     end_time = time.time()
     duration = end_time - start_time
 
@@ -199,6 +210,13 @@ def main():
     logger.info(f"Total time taken: {duration:.2f} seconds")
 
     session.close()
+
+    return {
+        "total_new_records": total_new_records,
+        "total_updated_records": total_updated_records,
+        "duration": f"{duration:.2f} seconds",
+        "account_results": account_results
+    }
 
 if __name__ == "__main__":
     main()

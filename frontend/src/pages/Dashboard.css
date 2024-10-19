@@ -1,0 +1,71 @@
+.dashboard-controls {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.control-item {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+.control-item label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #9CA3AF;
+}
+
+/* Ensure all control items have the same height */
+.control-item > div,
+.control-item > form {
+  height: 38px;
+}
+
+/* Style for react-select components */
+.react-select__control {
+  background-color: #fff !important;
+  min-height: 38px !important;
+  height: 38px !important;
+}
+
+.react-select__value-container {
+  height: 38px !important;
+  padding: 0 6px !important;
+}
+
+.react-select__input-container {
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 38px !important;
+}
+
+.react-select__indicators {
+  height: 38px !important;
+}
+
+.react-select__single-value,
+.react-select__input-container {
+  color: #000 !important;
+}
+
+.react-select__menu {
+  background-color: #fff !important;
+}
+
+.react-select__option {
+  color: #000 !important;
+}
+
+/* Style for the search input */
+.search-bar input {
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #000;
+  background-color: #fff;
+}

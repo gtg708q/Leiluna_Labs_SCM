@@ -1,11 +1,11 @@
 import React from 'react';
 import PurchaseOrderTable from '../components/PurchaseOrderTable';
+import './ProcurementPage.css';
 
 const ProcurementPage = () => {
   console.log('Rendering ProcurementPage');
   return (
-    <div>
-      <h1>Procurement Page</h1>
+    <div className="procurement-page">
       <PurchaseOrderTable />
     </div>
   );

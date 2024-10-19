@@ -53,21 +53,14 @@ def get_db():
 
 def create_tables():
     # Import all models here to avoid circular imports
-    from app.models.amazon_seller_central import SalesAndTraffic, InventoryFba
-    from app.models.bom import BOM
-    from app.models.inventory import (
-        TampaBOMInventory, FinishedGoods, FinishedGoodsInventory,
-        TampaBOMInventoryChangeLog, FinishedGoodsChangeLog, FinishedGoodsInventoryChangeLog,
-        TampaBOMInventoryHistory, FinishedGoodsHistory, FinishedGoodsInventoryHistory
+    from backend.app.models import (
+        BOM, TampaBOMInventory, FinishedGoods, 
+        FinishedGoodsInventory, TampaBOMInventoryChangeLog, FinishedGoodsChangeLog, 
+        FinishedGoodsInventoryChangeLog, TampaBOMInventoryHistory, FinishedGoodsHistory, 
+        FinishedGoodsInventoryHistory, PurchaseOrderLog, SalesPerDayPerProduct, SalesStatistics
     )
-    from app.models.purchase_order_log import PurchaseOrderLog
-    from app.models.sales_per_day_per_product import SalesPerDayPerProduct
-    from app.models.sales_statistics import SalesStatistics
 
     Base.metadata.create_all(bind=engine)
-
-# Create the tables
-create_tables()
 
 def test_db_connection():
     try:
@@ -100,7 +93,6 @@ def test_db_connection():
         print(f"Error connecting to the database: {e}")
         logger.exception("Detailed error information:")
 
-# Add this at the end of your file
 if __name__ == "__main__":
     test_db_connection()
 

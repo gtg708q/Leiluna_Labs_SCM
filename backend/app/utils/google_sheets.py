@@ -79,7 +79,7 @@ def get_bom_data():
     Retrieves BOM data.
     Expected structure: [BOM ID, Component Type, PHX Class, ...]
     """
-    RANGE_NAME = 'BOM Master!A:AE'  # Adjust this range as needed
+    RANGE_NAME = 'BOM Master!A:AJ'  # Adjust this range as needed
     data = get_sheet_data(BOM_SHEET_ID, RANGE_NAME)
     if data:
         bom_logger.info(f"Retrieved {len(data)} rows from BOM Master sheet")

@@ -1,24 +1,113 @@
 .sidebar {
-  width: 200px;
+  width: 280px;
   height: 100vh;
-  background-color: #f0f0f0;
-  padding: 20px;
+  background-color: #111827;
+  padding: 1.5rem;
+  transition: width 0.3s ease;
+  position: relative;
 }
 
-.sidebar ul {
+.sidebar.collapsed {
+  width: 60px;
+}
+
+.sidebar-menu {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
-.sidebar li {
-  margin-bottom: 10px;
+.sidebar-menu > li {
+  margin-bottom: 0.75rem;
 }
 
-.sidebar a {
+.sidebar-menu a,
+.sidebar-menu button.dropdown-toggle {
   text-decoration: none;
-  color: #333;
+  color: #D1D5DB;
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: bold;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s, color 0.2s;
 }
 
-.sidebar a:hover {
-  color: #007bff;
+.sidebar-menu a:hover,
+.sidebar-menu button.dropdown-toggle:hover {
+  background-color: #374151;
+  color: #F9FAFB;
+}
+
+.dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  border: solid #D1D5DB;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 4px;
+  transform: rotate(45deg);
+  transition: transform 0.3s;
+  margin-left: 10px;
+}
+
+.arrow.open {
+  transform: rotate(-135deg);
+}
+
+.submenu {
+  list-style-type: none;
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.submenu-item {
+  margin-bottom: 0.5rem;
+}
+
+.submenu-item a {
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 0.5rem 1rem 0.5rem 2rem !important;
+}
+
+.sidebar-collapse-btn {
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  transform: translateY(-50%);
+  background-color: #374151;
+  color: #D1D5DB;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.sidebar-collapse-btn:hover {
+  background-color: #4B5563;
+}
+
+.sidebar.collapsed .sidebar-collapse-btn {
+  right: -15px;
+}
+
+.sidebar.collapsed .sidebar-menu {
+  display: none;
 }

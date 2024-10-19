@@ -1,14 +1,14 @@
-from backend.app.database import SessionLocal, create_tables
-from backend.app.models.inventory import (
+from ..database import SessionLocal, create_tables
+from ..models.inventory import (
     TampaBOMInventory, FinishedGoods, FinishedGoodsInventory,
     TampaBOMInventoryChangeLog, FinishedGoodsChangeLog, FinishedGoodsInventoryChangeLog,
     TampaBOMInventoryHistory, FinishedGoodsHistory, FinishedGoodsInventoryHistory
 )
-from backend.app.models.bom import BOM, BOMChangeLog, BOMHistory
-from backend.app.utils.google_sheets import (
+from ..models.bom import BOM, BOMChangeLog, BOMHistory
+from ..utils.google_sheets import (
     get_tampa_bom_inventory_data, get_finished_goods_data, get_finished_goods_inventory_data
 )
-from backend.app.utils.logger import inventory_logger, clear_log
+from ..utils.logger import inventory_logger, clear_log
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
 from sqlalchemy import text, func
@@ -30,7 +30,14 @@ def clean_float(value):
 
 def clean_int(value):
     if isinstance(value, str):
-        return int(value.replace(',', '').strip() or 0)
+        value = value.replace(',', '').strip()
+        if value.lower() == 'xxx' or value == '':
+            return 0  # or you might want to return None, depending on your needs
+        try:
+            return int(value)
+        except ValueError:
+            inventory_logger.warning(f"Invalid integer value: {value}. Defaulting to 0.")
+            return 0  # or return None
     return int(value or 0)
 
 def log_inventory_change(db: Session, model, item_id: int, field: str, old_value: Any, new_value: Any):
@@ -89,7 +96,7 @@ def initial_setup(db: Session, model):
 def import_tampa_bom_inventory(db: Session, is_initial_import: bool):
     try:
         if is_initial_import:
-            initial_setup(db, TampaBOMInventory)
+            initial_setup(db)
         
         clear_log(inventory_logger)
         inventory_logger.info("Starting Tampa BOM Inventory import")
@@ -114,13 +121,8 @@ def import_tampa_bom_inventory(db: Session, is_initial_import: bool):
                         create_tampa_bom_inventory(db, row_dict)
                     current_bom_ids.add(bom_id)
 
-        # Check for deletions
-        existing_bom_ids = set(item.bom_id for item in db.query(TampaBOMInventory.bom_id).all())
-        bom_ids_to_delete = existing_bom_ids - current_bom_ids
-
-        for bom_id in bom_ids_to_delete:
-            db.query(TampaBOMInventory).filter_by(bom_id=bom_id).delete()
-            inventory_logger.info(f"Deleted TampaBOMInventory item: {bom_id}")
+        # Mark items as deleted instead of deleting them
+        db.query(TampaBOMInventory).filter(TampaBOMInventory.bom_id.notin_(current_bom_ids)).update({TampaBOMInventory.is_deleted: True}, synchronize_session=False)
 
         db.commit()
         inventory_logger.info("Tampa BOM Inventory import completed successfully")
@@ -138,28 +140,41 @@ def import_finished_goods(db: Session, is_initial_import: bool):
             return
 
         headers = data[0]
+        inventory_logger.info(f"Headers: {headers}")
         current_iskus = set()
+        successful_imports = 0
+
         for row in data[1:]:
             row_dict = dict(zip(headers, row))
+            inventory_logger.info(f"Processing row: {row_dict}")
             isku = row_dict.get('iSKU', '').strip()
             if not isku:
                 inventory_logger.warning(f"Skipping row with empty iSKU: {row_dict}")
                 continue
 
-            existing_fg = db.query(FinishedGoods).filter_by(isku=isku).first()
-            if existing_fg:
-                update_finished_good(db, existing_fg, row_dict)
-            else:
-                create_finished_good(db, row_dict)
-            current_iskus.add(isku)
+            try:
+                existing_fg = db.query(FinishedGoods).filter_by(isku=isku).first()
+                if existing_fg:
+                    update_finished_good(db, existing_fg, row_dict)
+                else:
+                    create_finished_good(db, row_dict)
+                current_iskus.add(isku)
+                db.commit()
+                successful_imports += 1
+            except SQLAlchemyError as e:
+                db.rollback()
+                inventory_logger.error(f"Error processing row for iSKU {isku}: {str(e)}")
 
         # Mark FinishedGoods as deleted if they're not in the current import
-        db.query(FinishedGoods).filter(FinishedGoods.isku.notin_(current_iskus), FinishedGoods.isku != '').update({FinishedGoods.is_deleted: True}, synchronize_session=False)
+        try:
+            db.query(FinishedGoods).filter(FinishedGoods.isku.notin_(current_iskus), FinishedGoods.isku != '').update({FinishedGoods.is_deleted: True}, synchronize_session=False)
+            db.commit()
+        except SQLAlchemyError as e:
+            db.rollback()
+            inventory_logger.error(f"Error marking deleted FinishedGoods: {str(e)}")
 
-        db.commit()
-        inventory_logger.info("Finished Goods import completed successfully")
+        inventory_logger.info(f"Finished Goods import completed. Successfully imported/updated {successful_imports} items.")
     except Exception as e:
-        db.rollback()
         inventory_logger.error(f"Error during Finished Goods import: {e}", exc_info=True)
 
 def import_finished_goods_inventory(db: Session, is_initial_import: bool):
@@ -198,8 +213,11 @@ def import_finished_goods_inventory(db: Session, is_initial_import: bool):
                 db.rollback()
                 inventory_logger.error(f"Error processing row {row}: {str(e)}")
 
-        # Remove FinishedGoodsInventory items that are not in the current import
-        db.query(FinishedGoodsInventory).filter(FinishedGoodsInventory.isku.notin_(current_items), FinishedGoodsInventory.isku != '').delete(synchronize_session=False)
+        # Instead of deleting, mark as deleted
+        db.query(FinishedGoodsInventory).filter(
+            FinishedGoodsInventory.isku.notin_(current_items),
+            FinishedGoodsInventory.isku != ''
+        ).update({FinishedGoodsInventory.is_deleted: True}, synchronize_session=False)
 
         db.commit()
         inventory_logger.info("Finished Goods Inventory import completed successfully")
@@ -368,7 +386,7 @@ def create_finished_good(db: Session, row_dict):
     try:
         finished_good = FinishedGoods(
             isku=isku,
-            asin=row_dict.get('ASIN', ''),
+            asin=row_dict.get('ASIN', '').strip(),
             common_name=row_dict.get('Common Name', ''),
             phoenix_class=row_dict.get('Phoenix Class', ''),
             brand=row_dict.get('Brand', ''),
@@ -378,16 +396,16 @@ def create_finished_good(db: Session, row_dict):
             total_unit_cost=clean_float(row_dict.get('Total Unit Cost', 0)),
             replenishment_type=row_dict.get('Replenishment Type', ''),
             manufacturing_class=row_dict.get('Manufacturing Class', ''),
-            lead_time=clean_int(row_dict.get('Lead Time', 0)),
-            amz_safety_days=clean_int(row_dict.get('AMZ Safety Days', 0)),
-            wh_safety_days=clean_int(row_dict.get('WH Safety Days', 0)),
-            reorder_qty_days=clean_int(row_dict.get('Reorder QTY Days', 0)),
+            lead_time=clean_int(row_dict.get('LEAD TIME', 0)),
+            amz_safety_days=clean_int(row_dict.get('AMZ SAFETY DAYS', 0)),
+            wh_safety_days=clean_int(row_dict.get('WH SAFETY DAYS', 0)),
+            reorder_qty_days=clean_int(row_dict.get('REORDER QTY (Days)', 0)),
             similar=clean_int(row_dict.get('Similar', None)),
-            in_bom_mapping=row_dict.get('In BOM Mapping', '').lower() == 'true',
-            duplicate_asin=row_dict.get('Duplicate ASIN', '').lower() == 'true',
-            count_tkfg=clean_int(row_dict.get('Count TKFG', 0)),
-            status=row_dict.get('Status', ''),
-            batch_run=row_dict.get('Batch Run', '')
+            in_bom_mapping=row_dict.get('in BOMMapping?', '').lower() == 'true' or row_dict.get('in BOMMapping?', '') == '1',
+            duplicate_asin=row_dict.get('duplicate asin', '').lower() == 'true' or row_dict.get('duplicate asin', '') == '1',
+            count_tkfg=clean_int(row_dict.get('count TKFG', 0)),
+            status=row_dict.get('STATUS', '').strip(),
+            batch_run=row_dict.get('BATCH RUN', '').strip()
         )
         db.add(finished_good)
         db.flush()
@@ -405,29 +423,49 @@ def update_finished_good(db: Session, existing_finished_good: FinishedGoods, row
         return
 
     fields = [
-        'asin', 'common_name', 'phoenix_class', 'brand', 'size',
-        'material_cost', 'labor_cost', 'total_unit_cost', 'replenishment_type',
-        'manufacturing_class', 'lead_time', 'amz_safety_days', 'wh_safety_days',
-        'reorder_qty_days', 'similar', 'in_bom_mapping', 'duplicate_asin',
-        'count_tkfg', 'status', 'batch_run'
+        'ASIN', 'Common Name', 'Phoenix Class', 'Brand', 'Size',
+        'Material Cost', 'Labor Cost', 'Total Unit Cost', 'Replenishment Type',
+        'Manufacturing Class', 'LEAD TIME', 'AMZ SAFETY DAYS', 'WH SAFETY DAYS',
+        'REORDER QTY (Days)', 'Similar', 'in BOMMapping?', 'duplicate asin',
+        'count TKFG', 'STATUS', 'BATCH RUN'
     ]
     changes = []
     for field in fields:
-        old_value = getattr(existing_finished_good, field)
-        new_value = row_dict.get(field.replace('_', ' ').title(), '')
-        if field in ['material_cost', 'labor_cost', 'total_unit_cost']:
-            new_value = clean_float(new_value)
-        elif field in ['lead_time', 'amz_safety_days', 'wh_safety_days', 'reorder_qty_days', 'count_tkfg']:
-            new_value = clean_int(new_value)
-        elif field == 'similar':
-            new_value = clean_int(new_value) if new_value else None
-        elif field in ['in_bom_mapping', 'duplicate_asin']:
-            new_value = new_value.lower() == 'true'
+        db_field = field.lower().replace(' ', '_').replace('(', '').replace(')', '')
+        if db_field == 'in_bommapping?':
+            db_field = 'in_bom_mapping'
+        elif db_field == 'duplicate_asin':
+            db_field = 'duplicate_asin'
+        elif db_field == 'batch_run':
+            db_field = 'batch_run'
+        elif db_field == 'reorder_qty_days':
+            db_field = 'reorder_qty_days'
         
-        if old_value != new_value:
-            setattr(existing_finished_good, field, new_value)
-            log_inventory_change(db, FinishedGoods, existing_finished_good.id, field, old_value, new_value)
-            changes.append(field)
+        if not hasattr(existing_finished_good, db_field):
+            inventory_logger.warning(f"Field {db_field} not found in FinishedGoods model. Skipping.")
+            continue
+
+        old_value = getattr(existing_finished_good, db_field)
+        new_value = row_dict.get(field, '')
+        
+        try:
+            if field in ['Material Cost', 'Labor Cost', 'Total Unit Cost']:
+                new_value = clean_float(new_value)
+            elif field in ['LEAD TIME', 'AMZ SAFETY DAYS', 'WH SAFETY DAYS', 'REORDER QTY (Days)', 'count TKFG']:
+                new_value = clean_int(new_value)
+            elif field == 'Similar':
+                new_value = clean_int(new_value) if new_value else None
+            elif field in ['in BOMMapping?', 'duplicate asin']:
+                new_value = new_value.lower() == 'true' or new_value == '1'
+            elif field in ['ASIN', 'STATUS', 'BATCH RUN']:
+                new_value = new_value.strip()
+            
+            if old_value != new_value:
+                setattr(existing_finished_good, db_field, new_value)
+                log_inventory_change(db, FinishedGoods, existing_finished_good.id, db_field, old_value, new_value)
+                changes.append(db_field)
+        except Exception as e:
+            inventory_logger.error(f"Error processing field {field} for iSKU {isku}: {str(e)}")
     
     if changes:
         create_inventory_history(db, FinishedGoods, existing_finished_good)

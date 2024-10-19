@@ -5,15 +5,19 @@ import logging
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.schema import CreateTable
-
-# Add the project root directory to the Python path
+print("Current working directory:", os.getcwd())
+print("Python path:", sys.path)
+#Add the project root directory to the Python path
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-sys.path.insert(0, project_root)
+print("Project root:", project_root)
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
+print("Updated Python path:", sys.path)
 
-from backend.app.models.finished_goods_bom_component import FinishedGoodsBOMComponent
-from backend.app.models.inventory import FinishedGoods
-from backend.app.models.bom import BOM
-from backend.app.database import SessionLocal, engine, Base
+from ..models.finished_goods_bom_component import FinishedGoodsBOMComponent
+from ..models.inventory import FinishedGoods
+from ..models.bom import BOM
+from ..database import SessionLocal, engine, Base
 
 # Ensure log directory exists
 log_dir = os.path.join(project_root, 'logs')

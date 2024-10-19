@@ -5,7 +5,7 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 from sqlalchemy import Column, Integer, String, Float, Boolean, Date
-from app.database import Base
+from ..database import Base
 
 class SalesPerDayPerProduct(Base):
     __tablename__ = 'sales_per_day_per_product'

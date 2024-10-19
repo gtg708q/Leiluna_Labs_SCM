@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Float, DateTime, ForeignKey, Boolean
 from sqlalchemy.orm import relationship
-from app.database import Base  # Change this line
+from ..database import Base  # Change this line
 from sqlalchemy.sql import func
 
 class PurchaseOrderLog(Base):

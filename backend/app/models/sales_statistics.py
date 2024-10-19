@@ -5,7 +5,7 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 from sqlalchemy import Column, Integer, String, Float, Date
-from app.database import Base
+from ..database import Base
 
 class SalesStatistics(Base):
     __tablename__ = 'sales_statistics'

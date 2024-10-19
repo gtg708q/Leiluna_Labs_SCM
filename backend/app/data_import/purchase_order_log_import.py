@@ -8,7 +8,7 @@ from sqlalchemy import text
 import datetime
 from typing import List, Dict, Any
 from sqlalchemy.exc import IntegrityError
-from backend.app.db_init import init_db
+from ..db_init import init_db
 import os
 import re
 

@@ -1,0 +1,27 @@
+.data-imports-page {
+  padding: 20px;
+}
+
+.import-button-container {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.import-button-container button {
+  margin-right: 10px;
+}
+
+.import-info {
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+.import-status {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  color: #333;  /* Dark color for better visibility on white background */
+}

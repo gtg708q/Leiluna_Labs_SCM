@@ -64,15 +64,15 @@ def map_bom_data(row_data):
         'address': str(row_data.get('Address', '')).strip(),
         'email': str(row_data.get('Email', '')).strip(),
         'contact_number': str(row_data.get('Contact Number', '')).strip(),
-        'supplier_mfg_lt': clean_int(row_data.get('Supplier/Mfg LT')),
-        'transit_lt': clean_int(row_data.get('Transit LT')),
+        'supplier_mfg_lt': clean_int(row_data.get('SUPPLIER MFG LT')),
+        'transit_lt': clean_int(row_data.get('TRANSIT LT')),
         'amz_safety_days': clean_int(row_data.get('AMZ Safety Days')),
         'wh_safety_days': clean_int(row_data.get('WH Safety Days')),
         'po_issue_days': clean_int(row_data.get('PO Issue Days')),
         'master_pack': clean_int(row_data.get('Master Pack')),
         'moq': clean_int(row_data.get('MOQ')),
-        'ordering_uom': str(row_data.get('Ordering UOM', '')).strip(),
-        'unit_price': clean_float(row_data.get('Unit Price')),
+        'ordering_uom': str(row_data.get('OrderingUOM', '')).strip(),
+        'unit_price': clean_float(row_data.get('Unit Price (Published Online)')),
         'shipping_cost': clean_float(row_data.get('Shipping Cost')),
         'landed_cost': clean_float(row_data.get('Landed Cost')),
         'conversion': clean_float(row_data.get('Conversion')),
@@ -87,7 +87,7 @@ def map_bom_data(row_data):
         'alternative_supplier_2': str(row_data.get('Alternative Supplier 2', '')).strip(),
         'monthly_usage': clean_float(row_data.get('Monthly Usage')),
         'monthly_spend': clean_float(row_data.get('Monthly Spend')),
-        'total_lt_bom_master': clean_int(row_data.get('Total LT BOM Master')),
+        'total_lt_bom_master': clean_int(row_data.get('TOTAL LT BOM MASTER', '')),
         'comments': str(row_data.get('Comments', '')).strip(),
     }
     return {k: v for k, v in bom_data.items() if v}  # Remove empty values
@@ -125,7 +125,7 @@ def set_last_update_time(time):
     blob = bucket.blob('last_bom_update.txt')
     blob.upload_from_string(time.isoformat())
 
-def import_boms(db: Session, is_initial_import: bool):
+def import_boms(db: Session, is_initial_import: bool = False):
     try:
         if is_initial_import:
             initial_setup(db)
@@ -135,10 +135,13 @@ def import_boms(db: Session, is_initial_import: bool):
         data = get_bom_data()
         if not data or len(data) < 2:
             bom_logger.error("No data retrieved for BOMs")
-            return
+            return {"updated": 0, "added": 0, "deleted": 0}
 
         headers = data[0]
         current_bom_ids = set()
+        updated_count = 0
+        added_count = 0
+
         for row in data[1:]:
             row_dict = dict(zip(headers, row))
             bom_data = map_bom_data(row_dict)
@@ -151,19 +154,23 @@ def import_boms(db: Session, is_initial_import: bool):
             if existing_bom:
                 if update_bom(db, existing_bom, bom_data):
                     bom_logger.info(f"Updated BOM: {bom_id}")
+                    updated_count += 1
             else:
                 new_bom = create_new_bom(db, bom_data)
                 bom_logger.info(f"Created new BOM: {bom_id}")
+                added_count += 1
             current_bom_ids.add(bom_id)
 
         # Mark BOMs as deleted if they're not in the current import
-        db.query(BOM).filter(BOM.bom_id.notin_(current_bom_ids)).update({BOM.is_deleted: True}, synchronize_session=False)
+        deleted_count = db.query(BOM).filter(BOM.bom_id.notin_(current_bom_ids)).update({BOM.is_deleted: True}, synchronize_session=False)
 
         db.commit()
         bom_logger.info("BOM import completed successfully")
+        return {"updated": updated_count, "added": added_count, "deleted": deleted_count}
     except Exception as e:
         db.rollback()
         bom_logger.error(f"Error during BOM import: {e}", exc_info=True)
+        raise  # Re-raise the exception to be caught by the router
 
 def get_bom_data():
     data = fetch_bom_data()

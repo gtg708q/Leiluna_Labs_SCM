@@ -1,87 +1,62 @@
-from pydantic import BaseModel
-from datetime import date
-from typing import Optional
+from pydantic import BaseModel, Field
+from typing import List, Optional
 
 class SalesSummary(BaseModel):
-    sales: float
-    sales_volumes: int
-    net_before_cogs: float
-    net_profit: float
-class SalesDataBase(BaseModel):
-    date: date
-    title: str
-    account_title: str
-    marketplace: str
-    sku: str
-    fnsku: Optional[str]
-    asin: str
-    parent_asin: Optional[str]
-    is_parent: bool
-    internal_name: Optional[str]
-    brand: Optional[str]
-    product_group: Optional[str]
-    tags: Optional[str]
-    active: bool
-    orders: int
-    canceled_orders: int
-    units: int
-    shipped: int
-    refunded: int
-    refund_percent: float
-    promo_units: int
-    non_promo_units: int
-    promo_revenue: float
-    non_promo_revenue: float
-    ordered_product_sales: float
-    customer_pays: float
-    revenue: float
-    per_unit_revenue: float
-    fba_fees: float
-    commissions: float
-    promo_amount: float
-    cogs: float
-    shipping_cost: float
-    miscellaneous_cost: float
-    ooe: float
-    reported_tax_vat: float
-    internal_tax_vat: float
-    withheld_tax: float
-    remitting_tax: float
-    net_profit: float
-    net_margin: float
-    net_roi: float
-    ppc_orders: int
-    ppc_impressions: int
-    ppc_clicks: int
-    ppc_sales: float
-    ppc_cost: float
-    tacos: float
-    ppc_conv: float
-    page_views: int
-    sessions: int
-    unit_session_percent: float
-    ppc_product_sales: float
-    ppc_product_cost: float
-    ppc_product_clicks: int
-    ppc_product_impressions: int
-    ppc_video_sales: float
-    ppc_video_cost: float
-    ppc_video_clicks: int
-    ppc_video_impressions: int
-
-class SalesDataCreate(SalesDataBase):
-    pass
+    gross_sales: float = Field(default=0.0)
+    revenue: float = Field(default=0.0)
+    orders: int = Field(default=0)
+    units: int = Field(default=0)
+    refunds: int = Field(default=0)
+    cogs: float = Field(default=0.0)
+    ppc_cost: float = Field(default=0.0)
+    net_profit: float = Field(default=0.0)
+    net_before_cogs: float = Field(default=0.0)
 
 class SalesData(BaseModel):
-    asin: str
-    title: str
-    units: int
-    revenue: float
-    net_profit: float
+    id: str
+    accounts: List[str] = Field(default_factory=list)
+    sku: List[str] = Field(default_factory=list)
+    fnsku: List[str] = Field(default_factory=list)
+    brand: List[str] = Field(default_factory=list)
+    orders: int = Field(default=0)
+    units: int = Field(default=0)
+    canceled_orders: int = Field(default=0)
+    shipped: int = Field(default=0)
+    refunded: int = Field(default=0)
+    promo_units: int = Field(default=0)
+    non_promo_units: int = Field(default=0)
+    non_promo_revenue: float = Field(default=0.0)
+    sales: float = Field(default=0.0)
+    fba_commissions: float = Field(default=0.0)
+    commissions: float = Field(default=0.0)
+    cogs: float = Field(default=0.0)
+    net_profit: float = Field(default=0.0)
+    ppc_orders: int = Field(default=0)
+    ppc_impressions: int = Field(default=0)
+    ppc_clicks: int = Field(default=0)
+    ppc_sales: float = Field(default=0.0)
+    ppc_cost: float = Field(default=0.0)
+    tacos: float = Field(default=0.0)
+    ppc_conversions: float = Field(default=0.0)
+    page_views: int = Field(default=0)
+    sessions: int = Field(default=0)
+    unit_session_percentage: float = Field(default=0.0)
+    ppc_product_sales: float = Field(default=0.0)
+    ppc_product_cost: float = Field(default=0.0)
+    ppc_product_clicks: int = Field(default=0)
+    ppc_product_impressions: int = Field(default=0)
+    ppc_video_sales: float = Field(default=0.0)
+    ppc_video_cost: float = Field(default=0.0)
+    ppc_video_clicks: int = Field(default=0)
+    ppc_video_impressions: int = Field(default=0)
+    revenue: float = Field(default=0.0)
+    velocity: float = Field(default=0.0)
 
     class Config:
         from_attributes = True
 
 class SalesResponse(BaseModel):
     summary: SalesSummary
-    details: list[SalesData]
+    details: List[SalesData]
+    total_pages: int
+    current_page: int

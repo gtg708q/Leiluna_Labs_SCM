@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Float, ForeignKey
 from sqlalchemy.orm import relationship
-from app.database import Base  # Change this line
+from ..database import Base  # Change this line
 
 class FinishedGoodsBOMComponent(Base):
     __tablename__ = "finished_goods_bom_components"
