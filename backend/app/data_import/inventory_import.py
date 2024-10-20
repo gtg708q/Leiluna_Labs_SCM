@@ -18,6 +18,9 @@ from typing import Any
 import logging
 import sys
 from google.cloud import storage
+from sqlalchemy import event
+from sqlalchemy.engine import Engine
+import time
 
 # Add these helper functions after the imports and before the main functions
 
@@ -527,6 +530,16 @@ def update_finished_goods_inventory(db: Session, existing_inventory: FinishedGoo
         inventory_logger.warning(f"Skipping update of FinishedGoodsInventory with empty iSKU: {row_dict}")
         return False
 
+    inventory_logger.debug(f"Row data for iSKU {isku}: {row_dict}")
+    inventory_logger.debug(f"Column names from Google Sheet: {list(row_dict.keys())}")
+
+    # Define a mapping for special column names
+    column_mapping = {
+        'phx_class': 'PHX Class',
+        'theoretical_qty': 'Theoretical QTY',
+        # Add any other special mappings here
+    }
+
     fields = [
         'brand', 'phx_class', 'theoretical_qty', 'location', 'actual_count',
         'date_counted', 'uom', 'mfg_after_date_counted', 'received_qty_after_actual_count',
@@ -538,7 +551,12 @@ def update_finished_goods_inventory(db: Session, existing_inventory: FinishedGoo
     changes = []
     for field in fields:
         old_value = getattr(existing_inventory, field)
-        new_value = row_dict.get(field.replace('_', ' ').title(), '')
+        # Use the column mapping if available, otherwise use the field name
+        column_name = column_mapping.get(field, field.replace('_', ' ').title())
+        new_value = row_dict.get(column_name, '')
+        
+        inventory_logger.debug(f"Checking field {field} (column: {column_name}): old_value = {old_value}, new_value = {new_value}")
+        
         if field in ['theoretical_qty', 'actual_count', 'mfg_after_date_counted',
                      'received_qty_after_actual_count', 'fo_after_date_counted',
                      'fo_after_date_counted_from_bundles', 'ihf_after_date_counted',
@@ -550,7 +568,7 @@ def update_finished_goods_inventory(db: Session, existing_inventory: FinishedGoo
         elif field in ['date_counted', 'date_counted_2']:
             new_value = parse_date(new_value)
         elif field == 'duplicate':
-            new_value = new_value.lower() == 'true'
+            new_value = str(new_value).lower() == 'true'
         
         if old_value != new_value:
             setattr(existing_inventory, field, new_value)
@@ -638,6 +656,17 @@ def setup_logger():
 
 inventory_logger = setup_logger()
 
+@event.listens_for(Engine, "before_cursor_execute")
+def before_cursor_execute(conn, cursor, statement, parameters, context, executemany):
+    conn.info.setdefault('query_start_time', []).append(time.time())
+    inventory_logger.debug("SQL: %s" % statement)
+    inventory_logger.debug("Parameters: %r" % (parameters,))
+
+@event.listens_for(Engine, "after_cursor_execute")
+def after_cursor_execute(conn, cursor, statement, parameters, context, executemany):
+    total = time.time() - conn.info['query_start_time'].pop(-1)
+    inventory_logger.debug("Total Time: %.02fms" % (total*1000))
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Import inventory data")
     parser.add_argument("--initial", action="store_true", help="Perform initial import (clears existing data)")
@@ -645,3 +674,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     main(args.initial, args.create_tables)
+

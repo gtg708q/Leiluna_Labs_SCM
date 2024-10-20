@@ -4,12 +4,15 @@ from fastapi.middleware.cors import CORSMiddleware
 import logging
 from fastapi.responses import JSONResponse
 
+# Add this import at the top of the file
+from backend.app.schemas import inventory_dashboard
+
 # Import all models
 from backend.app.models import Base, import_log
 from backend.app.database import engine, get_db
 
 # Import routers
-from backend.app.routers import imports_router, sales_router, bom_router, purchase_orders_router, finished_goods_router
+from backend.app.routers import imports_router, sales_router, bom_router, purchase_orders_router, finished_goods_router, inventory_dashboard_router
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -33,6 +36,7 @@ app.include_router(bom_router, prefix="/api/v1")
 app.include_router(purchase_orders_router)
 app.include_router(finished_goods_router, prefix="/api/v1", tags=["finished_goods"])
 app.include_router(imports_router, prefix="/api/v1/imports", tags=["imports"])
+app.include_router(inventory_dashboard_router.router, prefix="/api/v1", tags=["inventory_dashboard"])
 
 @app.on_event("startup")
 async def startup_event():

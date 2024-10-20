@@ -1,4 +1,4 @@
-from app.database import Base
+from ..database import Base
 
 # Import all models here
 from .bom import BOM, BOMChangeLog, BOMHistory

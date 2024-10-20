@@ -1,0 +1,12 @@
+.inventory-dashboard-page {
+  background-color: #111827;
+  color: #F9FAFB;
+  padding: 20px;
+}
+
+.inventory-dashboard-page h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #F9FAFB;
+}

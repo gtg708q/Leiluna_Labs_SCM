@@ -1,7 +1,7 @@
 import sys
 import os
 from datetime import datetime, timedelta
-from sqlalchemy import func, case, literal, create_engine, and_
+from sqlalchemy import func, case, literal, create_engine, and_, or_
 from sqlalchemy.orm import aliased, sessionmaker
 from sqlalchemy.exc import ProgrammingError
 
@@ -90,14 +90,14 @@ def populate_inventory_dashboard():
         print("Creating sales stats subquery...")
         sales_stats_subquery = db.query(
             SalesStatistics.asin,
-            SalesStatistics.in_stock.label('fba_in_stock_qty'),
-            SalesStatistics.inbound.label('inbound_qty'),
-            SalesStatistics.reserved.label('reserved_qty')
+            func.sum(SalesStatistics.in_stock).label('fba_in_stock_qty'),
+            func.sum(SalesStatistics.inbound).label('inbound_qty'),
+            func.sum(SalesStatistics.reserved).label('reserved_qty')
         ).join(
             latest_sales_stats,
             (SalesStatistics.asin == latest_sales_stats.c.asin) &
             (SalesStatistics.date == latest_sales_stats.c.max_date)
-        ).subquery()
+        ).group_by(SalesStatistics.asin).subquery()
 
         # Create subquery for 30-day net profit
         print("Creating 30-day net profit subquery...")
@@ -141,9 +141,6 @@ def populate_inventory_dashboard():
         for index, item in enumerate(inventory_data):
             try:
                 print(f"Processing item {index + 1}: ASIN {item.asin}")
-                # Check if the ASIN already exists in the inventory_dashboard
-                existing_item = db.query(InventoryDashboard).filter(InventoryDashboard.asin == item.asin).first()
-
                 # Calculate all the values
                 variance_7_14 = calculate_variance(item.velocity_7d, item.velocity_14d)
                 variance_7_30 = calculate_variance(item.velocity_7d, item.velocity_30d)
@@ -212,12 +209,12 @@ def populate_inventory_dashboard():
                     'thirty_day_net_profit': item.thirty_day_net_profit,
                 }
 
+                # Update existing row or insert new row
+                existing_item = db.query(InventoryDashboard).filter(InventoryDashboard.asin == item.asin).first()
                 if existing_item:
-                    # Update existing row
                     for key, value in data.items():
                         setattr(existing_item, key, value)
                 else:
-                    # Create new row
                     new_item = InventoryDashboard(asin=item.asin, **data)
                     db.add(new_item)
 
@@ -227,7 +224,7 @@ def populate_inventory_dashboard():
                 raise
 
         db.commit()
-        print("Inventory dashboard populated successfully.")
+        print("Inventory dashboard updated successfully.")
     except Exception as e:
         print(f"An error occurred: {str(e)}")
         import traceback
@@ -263,7 +260,7 @@ def calculate_fo_qty(total_fba_days, reorder_point_days, reorder_qty_days, final
     if total_fba_days is None or reorder_point_days is None or total_fba_days > reorder_point_days:
         return 0
     else:
-        return (reorder_qty_days or 0) + (reorder_point_days - total_fba_days) * (final_velocity or 0)
+        return (reorder_qty_days + (reorder_point_days - total_fba_days)) * final_velocity
 
 def calculate_fo_date(total_fba_days, reorder_point_days, current_date):
     if total_fba_days is None or reorder_point_days is None or total_fba_days < reorder_point_days:

@@ -8,6 +8,7 @@ import BOMListPage from './pages/BOMListPage';
 import DataImportsPage from './pages/DataImportsPage';  // Add this import
 import './App.css';
 import ErrorBoundary from './components/ErrorBoundary';
+import InventoryDashboardPage from './pages/InventoryDashboardPage';
 
 function App() {
   return (
@@ -32,6 +33,11 @@ function App() {
             <Route path="/data-imports" element={
               <ErrorBoundary>
                 <DataImportsPage />
+              </ErrorBoundary>
+            } />
+            <Route path="/inventory-dashboard" element={
+              <ErrorBoundary>
+                <InventoryDashboardPage />
               </ErrorBoundary>
             } />
           </Routes>

@@ -7,6 +7,7 @@ const Sidebar = () => {
   const [finishedGoodsDropdownOpen, setFinishedGoodsDropdownOpen] = useState(false);
   const [bomsDropdownOpen, setBomsDropdownOpen] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
+  const [inventoryDropdownOpen, setInventoryDropdownOpen] = useState(false);
 
   const toggleSalesDropdown = () => {
     setSalesDropdownOpen(!salesDropdownOpen);
@@ -22,6 +23,10 @@ const Sidebar = () => {
 
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
+  };
+
+  const toggleInventoryDropdown = () => {
+    setInventoryDropdownOpen(!inventoryDropdownOpen);
   };
 
   return (
@@ -61,8 +66,18 @@ const Sidebar = () => {
             </ul>
           )}
         </li>
+        <li className="has-submenu">
+          <button onClick={toggleInventoryDropdown} className="dropdown-toggle">
+            Inventory
+            <span className={`arrow ${inventoryDropdownOpen ? 'open' : ''}`}></span>
+          </button>
+          {inventoryDropdownOpen && (
+            <ul className="submenu">
+              <li className="submenu-item"><Link to="/inventory-dashboard">Inventory Dashboard</Link></li>
+            </ul>
+          )}
+        </li>
         <li><Link to="/procurement">Procurement</Link></li>
-        <li><Link to="/inventory">Inventory</Link></li>
         <li><Link to="/shipping">Shipping</Link></li>
         <li><Link to="/accounting">Accounting</Link></li>
         <li><Link to="/data-imports">Data Imports</Link></li>
